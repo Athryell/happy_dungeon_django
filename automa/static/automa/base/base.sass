@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Luckiest+Guy&display=swap')
+
+$primary-color: #FE9A1F
+$secondary-color: #21B4FF
+$white-blue: #E2EDF3
+$black-navbar: #292929
+
+body
+    height: 100vh
+    margin: 0
+    background: $white-blue
+    font-family: 'Bitter', arial
+    box-sizing: border-box
+    max-width: 100%
+    overflow-x: hidden
+
+.container
+    margin: 2em
+    text-align: center
+
+button
+    padding: 0.5em 0.7em
+    background: $black-navbar
+    border: 1px solid $black-navbar
+    color: $white-blue
+    font-weight: 700
+    border-radius: 3px
+    cursor: pointer
+    transition: background 0.3s, color 0.3s
+    font-size: 1em
+
+    &:hover
+        background: $white-blue
+        color: $black-navbar
+        
+    &:active
+        background: #a7a7a7
+        
+.btn-primary
+    background: $primary-color
+    color: $black-navbar
+
+.btn-secondary
+    background: $secondary-color
+    color: $black-navbar
+ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+
+img
+    height: 100%
+
+// - - - - - - - - - - - 
+
+#happy
+    color: $primary-color
+
+#dungeon
+    color: $secondary-color
+
+.nav-container
+    background: $black-navbar
+
+    a
+        color: white
+
+header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1em
+
+    .logo
+        font-weight: bold
+        font-size: 1.5rem
+        letter-spacing: 0.2rem
+        padding: 0 1.5rem
+
+    .btn-flip
+        opacity: 1
+        line-height: 30px
+        position: relative
+        text-align: center
+        display: inline-block
+        text-transform: uppercase
+        border-left: 1px solid #444444
+
+        &::after
+            top: 0
+            left: 0
+            opacity: 0
+            width: 100%
+            color: $black-navbar
+            display: block
+            transition: 0.5s
+            position: absolute
+            background: $white-blue
+            content: attr(data-text)
+            transform: translateY(-50%) rotateX(90deg)
+        
+        &::before
+            top: 0
+            left: 0
+            opacity: 1
+            color: $white-blue
+            display: block
+            padding: 0 1.5rem
+            transition: 0.5s
+            position: relative
+            background: $black-navbar
+            content: attr(data-text)
+            transform: translateY(0) rotateX(0)
+
+        &:hover
+            &::after
+                opacity: 1
+                transform: translateY(0) rotateX(0)
+
+            &::before
+                opacity: 0
+                transform: translateY(50%) rotateX(90deg)
+
+    .active
+        &::before
+            background: $white-blue
+            color: $black-navbar
+
+@media screen and ( min-width: 800px )
+    nav
+        ul
+            display: flex
+    

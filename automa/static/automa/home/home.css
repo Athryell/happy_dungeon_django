@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Luckiest+Guy&display=swap");
+body {
+  height: 100vh;
+  margin: 0;
+  background: #E2EDF3;
+  font-family: 'Bitter', arial;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 2em;
+  text-align: center;
+}
+
+button {
+  padding: 0.5em 0.7em;
+  background: #292929;
+  border: 1px solid #292929;
+  color: #E2EDF3;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1em;
+}
+
+button:hover {
+  background: #E2EDF3;
+  color: #292929;
+}
+
+button:active {
+  background: #a7a7a7;
+}
+
+.btn-primary {
+  background: #FE9A1F;
+  color: #292929;
+}
+
+.btn-secondary {
+  background: #21B4FF;
+  color: #292929;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: 100%;
+}
+
+#happy {
+  color: #FE9A1F;
+}
+
+#dungeon {
+  color: #21B4FF;
+}
+
+.nav-container {
+  background: #292929;
+}
+
+.nav-container a {
+  color: white;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  padding: 0 1.5rem;
+}
+
+header .btn-flip {
+  opacity: 1;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+  border-left: 1px solid #444444;
+}
+
+header .btn-flip::after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #292929;
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  background: #E2EDF3;
+  content: attr(data-text);
+  -webkit-transform: translateY(-50%) rotateX(90deg);
+          transform: translateY(-50%) rotateX(90deg);
+}
+
+header .btn-flip::before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #E2EDF3;
+  display: block;
+  padding: 0 1.5rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  background: #292929;
+  content: attr(data-text);
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+
+header .btn-flip:hover::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+
+header .btn-flip:hover::before {
+  opacity: 0;
+  -webkit-transform: translateY(50%) rotateX(90deg);
+          transform: translateY(50%) rotateX(90deg);
+}
+
+header .active::before {
+  background: #E2EDF3;
+  color: #292929;
+}
+
+@media screen and (min-width: 800px) {
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+a img {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  margin: 3em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  -ms-grid-rows: (minmax(30px, 1fr))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(30px, 1fr));
+}
+
+.container .game-containers {
+  position: relative;
+  padding: 1em;
+}
+
+.container .game-container-L {
+  height: 150px;
+  width: 150px;
+  grid-column: span 7;
+  grid-row: span 7;
+}
+
+.container .game-container-M {
+  height: 150px;
+  width: 100px;
+  grid-column: span 5;
+  grid-row: span 7;
+}
+
+.container .game-container-M img {
+  border-top-right-radius: 2px;
+}
+
+.container .game-container-S {
+  height: 60px;
+  width: 60px;
+  grid-column: span 5;
+  grid-row: span 5;
+  padding: 2em;
+}
+
+.container .game-bottom {
+  z-index: -1;
+  position: absolute;
+  top: 4%;
+  left: 4%;
+  height: 95%;
+  width: 95%;
+}
+
+.container .game-bottom::before {
+  position: absolute;
+  content: '';
+  text-align: center;
+  color: white;
+  letter-spacing: 0.3em;
+  font-size: 1em;
+  font-weight: bold;
+  border-bottom-right-radius: 3px;
+  bottom: -20px;
+  height: 21px;
+  width: 100%;
+  left: 6px;
+  -webkit-transform: skewX(30deg);
+          transform: skewX(30deg);
+  background-color: #292929;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.container .game-bottom::after {
+  position: absolute;
+  content: '';
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-align: center;
+  letter-spacing: 0.3em;
+  font-size: 0.7em;
+  color: white;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  right: -11px;
+  height: 100%;
+  width: 13px;
+  bottom: -10px;
+  -webkit-transform: skewY(60deg);
+          transform: skewY(60deg);
+  border-bottom-right-radius: 4px;
+  background-color: black;
+}
+
+.container .game-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: 15px 25px 5px rgba(0, 0, 0, 0.1), 20px 30px 10px rgba(0, 0, 0, 0.1), 30px 40px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 15px 25px 5px rgba(0, 0, 0, 0.1), 20px 30px 10px rgba(0, 0, 0, 0.1), 30px 40px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.container .game-top img {
+  border-bottom-right-radius: 0;
+}
+
+.container .game-top::before {
+  position: absolute;
+  content: attr(data-label);
+  text-align: center;
+  color: white;
+  letter-spacing: 0.3em;
+  font-size: 1em;
+  font-weight: bold;
+  left: 6px;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  border-bottom-right-radius: 2px;
+  -webkit-transform: skewX(30deg);
+          transform: skewX(30deg);
+  background-color: #7a4d06;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.container .game-top::after {
+  position: absolute;
+  content: '';
+  right: -11px;
+  height: 100%;
+  width: 11px;
+  bottom: -9px;
+  -webkit-transform: skewY(60deg);
+          transform: skewY(60deg);
+  border-top-left-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 #452205;
+          box-shadow: 0 1px 0 #452205;
+  background-color: #452205;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.container .game-top:hover {
+  margin-left: -8px;
+  margin-top: -15px;
+  -webkit-box-shadow: 20px 30px 5px rgba(0, 0, 0, 0.1), 25px 35px 15px rgba(0, 0, 0, 0.1), 40px 50px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 20px 30px 5px rgba(0, 0, 0, 0.1), 25px 35px 15px rgba(0, 0, 0, 0.1), 40px 50px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  margin: 2em;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  text-align: center;
+}
+
+.search-bar .bar {
+  cursor: pointer;
+  background: #E2EDF3;
+  border: 1px solid #292929;
+  height: 50px;
+  display: inline-block;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(90deg) translateX(100px);
+          transform: rotateY(90deg) translateX(100px);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.search-bar .bar input {
+  height: 50%;
+  width: 80%;
+  border-radius: 10px;
+  margin-top: 12px;
+  padding-left: 0.5em;
+  font-size: 1.5em;
+  border: none;
+}
+
+.search-bar .bar input:focus {
+  outline: none;
+}
+
+.search-bar .bar::before {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f002";
+  color: #E2EDF3;
+  font-size: 1.5em;
+  line-height: 240%;
+  padding: 0 0.5em;
+  background: #292929;
+  border: 1px solid #292929;
+  -webkit-transform: rotateY(-90deg) translate3d(-22px, -1px, -21px);
+          transform: rotateY(-90deg) translate3d(-22px, -1px, -21px);
+}
+
+.search-bar .bar .hover {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+/*# sourceMappingURL=home.css.map */

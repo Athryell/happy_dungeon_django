@@ -1,0 +1,69 @@
+{% extends 'automa/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'automa/home/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha512-6/gTF62BJ06BajySRzTm7i8N2ZZ6StspU9uVWDdoBiuuNu5rs1a8VwiJ7skCz2BcvhpipLKfFerXkuzs+npeKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block title %}Happy Dungeon{% endblock %}
+
+{% block body %}
+    <div class="search-bar">
+        <div class="bar">
+            <input type="text" placeholder="Cosa cerchi?">
+        </div>
+    </div>
+    
+    <div class="container">
+        {% for bg in bg_list %}
+            <div data-title="{{ bg.title }}" data-tags="{% for t in bg.tags.all %}{{ t.name|lower }} {% endfor %}" class="game-containers game-container-{{ bg.size }}">
+                <div class="game-top" data-label="{% if 'automa' in bg.tags.all|lower %}automa{% else %}solitario{% endif %}">
+                    <div class="shadow"></div>
+                    <a href="{% url 'automa' bg.short_title %}">
+                        <img src="{% static bg.image.url %}" alt="{{ bg.title }}">
+                    </a>
+                </div>
+                <div class="game-bottom"></div>
+            </div>
+        {% endfor %}
+
+        {% for bg in bg_list %}
+        <div data-title="{{ bg.title }}" data-tags="{% for t in bg.tags.all %}{{ t.name|lower }} {% endfor %}" class="game-containers game-container-{{ bg.size }}">
+            <div class="game-top">
+                    <div class="shadow"></div>
+                    <a href="{% url 'automa' bg.short_title %}">
+                    </a>
+                </div>
+                <div class="game-bottom"></div>
+            </div>
+        {% endfor %}
+
+        {% for bg in bg_list %}
+        <div data-title="{{ bg.title }}" data-tags="{% for t in bg.tags.all %}{{ t.name|lower }} {% endfor %}" class="game-containers game-container-{{ bg.size }}">
+            <div class="game-top">
+                    <div class="shadow"></div>
+                    <a href="{% url 'automa' bg.short_title %}">
+                    </a>
+                </div>
+                <div class="game-bottom"></div>
+            </div>
+        {% endfor %}
+
+        {% for bg in bg_list %}
+        <div data-title="{{ bg.title }}" data-tags="{% for t in bg.tags.all %}{{ t.name|lower }} {% endfor %}" class="game-containers game-container-{{ bg.size }}">
+            <div class="game-top">
+                    <div class="shadow"></div>
+                    <a href="{% url 'automa' bg.short_title %}">
+                    </a>
+                </div>
+                <div class="game-bottom"></div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'automa/home/home.js' %}"></script>
+{% endblock %}

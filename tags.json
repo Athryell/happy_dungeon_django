@@ -1,0 +1,30 @@
+[
+    {
+        "model": "automa.tags",
+        "pk": 1,
+        "fields": {
+            "name": "Official"
+        }
+    },
+    {
+        "model": "automa.tags",
+        "pk": 2,
+        "fields": {
+            "name": "Fan made"
+        }
+    },
+    {
+        "model": "automa.tags",
+        "pk": 3,
+        "fields": {
+            "name": "Automa"
+        }
+    },
+    {
+        "model": "automa.tags",
+        "pk": 4,
+        "fields": {
+            "name": "Solitaire"
+        }
+    }
+]

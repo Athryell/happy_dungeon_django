@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "automa",
+        "coltivatori",
+        "gsap",
+        "magico",
+        "mercante",
+        "militare",
+        "regolamenti"
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.linting.banditEnabled": true,
+    "python.linting.enabled": true
+}

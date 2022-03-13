@@ -1,0 +1,57 @@
+[
+    {
+        "model": "automa.automa_boardgames",
+        "pk": 1,
+        "fields": {
+            "title": "Near and Far",
+            "short_title": "nearandfar",
+            "image": "games_cover/NearAndFar.jpg",
+            "tags": ["3"],
+            "size": "L"
+        }
+    },
+    {
+        "model": "automa.automa_boardgames",
+        "pk": 2,
+        "fields": {
+            "title": "Conspiracy: abyss universe",
+            "short_title": "conspiracy",
+            "image": "games_cover/Conspiracy.jpg",
+            "tags": ["3", "1"],
+            "size": "S"
+        }
+    },
+    {
+        "model": "automa.automa_boardgames",
+        "pk": 3,
+        "fields": {
+            "title": "7 Wonders Duel",
+            "short_title": "7wondersduel",
+            "image": "games_cover/7WondersDuel.jpg",
+            "tags": ["3"],
+            "size": "S"
+        }
+    },
+    {
+        "model": "automa.automa_boardgames",
+        "pk": 4,
+        "fields": {
+            "title": "Galaxy Trucker",
+            "short_title": "galaxytrucker",
+            "image": "games_cover/Galaxy_Trucker.jpg",
+            "tags": ["2", "4"],
+            "size": "M"
+        }
+    },
+    {
+        "model": "automa.automa_boardgames",
+        "pk": 5,
+        "fields": {
+            "title": "Unmatched",
+            "short_title": "unmatched",
+            "image": "games_cover/Unmatched.jpg",
+            "tags": ["2", "3"],
+            "size": "M"
+        }
+    }
+]

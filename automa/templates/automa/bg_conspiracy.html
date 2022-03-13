@@ -1,0 +1,79 @@
+{% extends 'automa/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'automa/bg_conspiracy/bg_conspiracy.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha512-6/gTF62BJ06BajySRzTm7i8N2ZZ6StspU9uVWDdoBiuuNu5rs1a8VwiJ7skCz2BcvhpipLKfFerXkuzs+npeKA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+{% endblock %}
+
+{% block title %}Automa Conspiracy{% endblock %}
+
+{% block body %}
+    <div class='container'>
+
+        <h2>Scegli un avversario leggendario</h2>
+        <button type="button">O scegli a caso</button>
+        
+        <div class="display-leaders">
+            <div class="leader-box" data-faction="military">
+                <img class="flip-card-front" src="{% static 'media/bg_conspiracy/leader-military.jpg' %}" alt="Leader militare">
+                <img class="flip-card-back" src="{% static 'media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+                <span class="tooltip tooltip-power">
+                    Quando il tuo Avversario aggiunge un Lord di tipo Militare (rosso) alla propria camera del senato, <strong>ti costringe</strong>, durante il tuo prossimo turno, a estendere il tuo senato pescando solo <strong> la prima carta dal mazzo</strong> dei Lord
+                </span>
+                <span class="tooltip tooltip-bonuspoints">
+                    Alla fine del gioco, questo Avversario guadagna 1 PI + 2PI <strong>per ogni Lord di tipo Militare</strong> (rosso) nella propria camera del senato
+                </span>
+                <span class="tooltip tooltip-conditions">
+                    <p>1 - La pila degli scarti deve contenere almeno <strong>Lord Militare</strong> (rosso)</p>
+                    <p>2 - La pila degli scarti deve contenere 1 Lord con <strong>6 PI</strong></p>
+                    <p>3 - La pila degli scarti deve permettere all'avversario di <strong>estendere una coalizione</strong></p>
+                    <p>4 - La pila degli scarti deve contenere almeno <strong>2 Lord</strong></p>
+                </span>
+            </div>
+            <div class="leader-box" data-faction="magic">
+                <img class="flip-card-front" src="{% static 'media/bg_conspiracy/leader-magic.jpg' %}" alt="Leader magico">
+                <img class="flip-card-back" src="{% static 'media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+                
+                <span class="tooltip tooltip-power">
+                    Questo Avversario ha bisogno di <strong>due chiavi qualsiasi</strong> per prendere il controllo di un Luogo
+                </span>
+                <span class="tooltip tooltip-bonuspoints">
+                    Alla fine del gioco, questo Avversario guadagna <strong>1 PI aggiuntivo per ogni Luogo</strong> sotto il proprio controllo
+                </span>
+                <span class="tooltip tooltip-conditions">
+                    <p>1 - La pila degli scarti deve contenere almeno 1 Lord con <strong>una chiave</strong></p>
+                    <p>2 - La pila degli scarti deve permettere all'avversario di <strong>estendere una coalizione</strong></p>
+                    <p>4 - La pila degli scarti deve contenere almeno <strong>2 Lord</strong></p>
+                </span>
+            </div>
+            <div class="leader-box" data-faction="politic">
+                <img class="flip-card-front" src="{% static 'media/bg_conspiracy/leader-politic.jpg' %}" alt="Leader politico">
+                <img class="flip-card-back" src="{% static 'media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+            </div>
+            <div class="leader-box" data-faction="grower">
+                <img class="flip-card-front" src="{% static 'media/bg_conspiracy/leader-grower.jpg' %}" alt="Leader coltivatori">
+                <img class="flip-card-back" src="{% static 'media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+            </div>
+            <div class="leader-box" data-faction="merchant">
+                <img class="flip-card-front" src="{% static 'media/bg_conspiracy/leader-merchant.jpg' %}" alt="Leader mercante">
+                <img class="flip-card-back" src="{% static 'media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+            </div>
+            <img hidden id="replay-token" class="faded" src="{% static 'media/bg_conspiracy/replay-token.png'%}" alt="Replay token">
+        </div>
+
+        <div id="confirmation-box" hidden>
+            <h3>Vuoi sfidare questo Avversario Leggendario?</h3>
+            <button id="yes" class="btn-secondary" type="button">Certamente!</button>
+            <button id="no" class="btn-primary" type="button">Mmm... no</button>
+        </div>
+
+    </div>
+    
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Flip.min.js"></script>
+    <script src="{% static 'automa/bg_conspiracy/bg_conspiracy.js' %}"></script>
+{% endblock %}

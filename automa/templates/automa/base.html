@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'automa/base/base.css' %}" rel="stylesheet">
+    {% block link %}{% endblock %}
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+</head>
+<body>
+    <div class="nav-container">
+        <header>
+            <a class="logo" href="{% url 'home' %}"><span id="happy">Happy</span> <span id="dungeon">Dungeon</span></a>
+
+            <nav>
+                <ul>
+                    <li><a class="btn-flip{% if request.path == '/' %} active{% endif %}" href="{% url 'home' %}" data-text="Automa"></a></li>
+                    <li><a class="btn-flip{% if request.path == '/rulebooks/' %} active{% endif %}" href="{% url 'rulebooks' %}" data-text="Regolamenti"></a></li>
+                    <li><a class="btn-flip" href="#" data-text="Video tutorial"></a></li>
+                    <li><a class="btn-flip" href="#" data-text="Game design"></a></li>
+                    <li><a class="btn-flip" href="#" data-text="Altro"></a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    {% block body %}{% endblock %}
+    
+    <footer>
+        
+    </footer>
+
+    <!-- <script src="{% static 'automa/base.js' %}"></script> -->
+    {% block script %}{% endblock %}
+</body>
+</html>

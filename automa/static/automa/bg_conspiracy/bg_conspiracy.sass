@@ -1,0 +1,95 @@
+.display-leaders
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    width: 100%
+    margin-top: 2em
+
+    .leader-box
+        position: relative
+        min-height: 230px
+        max-width: 15%
+        min-width: 170px
+        margin: 0.5rem
+        cursor: pointer
+        perspective: 500px
+        transform-style: preserve-3d
+
+        // .flip-card-inner
+        //     position: absolute
+        //     height: 100%
+        //     width: 100%
+        //     transition: transform 0.8s
+
+        .flip-card-front, .flip-card-back
+            position: absolute
+            top: 0
+            left: 0
+            border: 1px solid black
+            border-radius: 5px
+            cursor: pointer
+            backface-visibility: hidden
+
+        .flip-card-back
+            transform: rotateY(180deg)
+
+        .tooltip
+            z-index: 1
+            position: absolute
+            padding: 0.5em
+            border-radius: 5px
+            background: #ababab
+            font-size: 0.7em
+            visibility: hidden
+            opacity: 0
+            transition: opacity 0.5s ease
+
+        .tooltip-power
+            top: 0
+            right: 100%
+            width: 50%
+
+        .tooltip-bonuspoints
+            top: 0
+            left: 100%
+            width: 50%
+
+        .tooltip-conditions
+            top: 100%
+            left: 0
+
+#replay-token
+    max-width: 120px
+    border-radius: 100px
+    cursor: pointer
+    margin: 0 4em
+
+.faded
+    filter: grayscale(100%)
+    filter: brightness(70%)
+
+.ready
+    border: 3px solid orange
+    filter: brightness(130%)
+    animation: pulse 10s ease-in-out infinite alternate
+
+@keyframes pulse
+    0%
+        box-shadow: 0 0 100px blue
+    25%
+        box-shadow: 0 0 100px red
+    50%
+        box-shadow: 0 0 100px yellow
+    75%
+        box-shadow: 0 0 100px green
+    100%
+        box-shadow: 0 0 100px purple
+
+@media screen and ( min-width: 800px )
+    .leader-box
+        &:hover
+            .tooltip
+                visibility: visible
+                opacity: 1
+            

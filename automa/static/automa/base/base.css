@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Luckiest+Guy&display=swap");
+body {
+  height: 100vh;
+  margin: 0;
+  background: #E2EDF3;
+  font-family: 'Bitter', arial;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 2em;
+  text-align: center;
+}
+
+button {
+  padding: 0.5em 0.7em;
+  background: #292929;
+  border: 1px solid #292929;
+  color: #E2EDF3;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1em;
+}
+
+button:hover {
+  background: #E2EDF3;
+  color: #292929;
+}
+
+button:active {
+  background: #a7a7a7;
+}
+
+.btn-primary {
+  background: #FE9A1F;
+  color: #292929;
+}
+
+.btn-secondary {
+  background: #21B4FF;
+  color: #292929;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: 100%;
+}
+
+#happy {
+  color: #FE9A1F;
+}
+
+#dungeon {
+  color: #21B4FF;
+}
+
+.nav-container {
+  background: #292929;
+}
+
+.nav-container a {
+  color: white;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  padding: 0 1.5rem;
+}
+
+header .btn-flip {
+  opacity: 1;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+  border-left: 1px solid #444444;
+}
+
+header .btn-flip::after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #292929;
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  background: #E2EDF3;
+  content: attr(data-text);
+  -webkit-transform: translateY(-50%) rotateX(90deg);
+          transform: translateY(-50%) rotateX(90deg);
+}
+
+header .btn-flip::before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #E2EDF3;
+  display: block;
+  padding: 0 1.5rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  background: #292929;
+  content: attr(data-text);
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+
+header .btn-flip:hover::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+
+header .btn-flip:hover::before {
+  opacity: 0;
+  -webkit-transform: translateY(50%) rotateX(90deg);
+          transform: translateY(50%) rotateX(90deg);
+}
+
+header .active::before {
+  background: #E2EDF3;
+  color: #292929;
+}
+
+@media screen and (min-width: 800px) {
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=base.css.map */
