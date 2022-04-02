@@ -17,3 +17,6 @@ def games_api(request):
     game_list = Automa_boardgames.objects.all()
 
     return JsonResponse([game.serialize() for game in game_list], safe=False)
+
+def contacts(request):
+    return render(request, 'automa/contacts.html')

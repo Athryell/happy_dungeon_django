@@ -1,0 +1,59 @@
+#contact-form
+    display: flex
+    flex-direction: column
+    max-width: 500px
+    margin: 3em auto 
+    // position: relative
+
+    h2
+        text-align: center
+        font-size: 2rem
+
+    p
+        margin: 2em 0
+        max-width: 55ch
+
+    textarea
+        resize: vertical
+        min-height: 10em
+
+form
+    .input-container
+        position: relative
+        margin-bottom: 1em
+        width: min(20em, 100%)
+
+        &__input
+            width: 100%
+            border: 2px solid black
+            border-radius: 15px
+            color: white
+            outline: none
+            padding: 1em 1em
+            background: none
+
+            &:hover
+                border-color: #fbb32d //! Non funziona?
+
+            &:focus
+                border-color: #fbb32d
+
+        &__textarea
+            width: min(35em, 100%)
+
+        &__label
+            position: absolute
+            left: 0.7em
+            top: 0.7em
+            padding: 0 0.5rem
+            font-weight: 700
+            background-color: #E2EDF3
+            cursor: text
+            transition: top, font-size, left, 0.2s ease-in
+
+        .input-container__input:focus ~ .input-container__label,
+        .input-container__input:not(:placeholder-shown).input-container__input:not(:focus) ~ .input-container__label
+            top: -0.5rem
+            font-size: 0.8rem
+            left: 0.8rem
+            color: #fbb32d

@@ -12,6 +12,7 @@ class Tags(models.Model):
     
 
 class Automa_boardgames(models.Model):
+    is_ready = models.BooleanField()
     title = models.CharField(max_length=32)
     short_title = models.CharField(max_length=16, default=title)
     image = models.ImageField(upload_to="automa/games_cover", null=True, blank=True)
@@ -19,7 +20,7 @@ class Automa_boardgames(models.Model):
     size = models.CharField(max_length=8)
 
     def __str__(self):
-        return f'{self.title} ({self.short_title})'
+        return f'{self.title} ({self.short_title}) - {self.is_ready}'
 
     def serialize(self):
         tag_list = []
@@ -30,6 +31,7 @@ class Automa_boardgames(models.Model):
             'title': self.title,
             'short_title': self.short_title,
             'tags': tag_list,
-            'size': self.size
+            'size': self.size,
+            'ready': self.is_ready
         }
     

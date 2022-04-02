@@ -14,12 +14,14 @@ inputSearch.addEventListener('blur', () => {
 
 inputSearch.addEventListener('keyup', () => {
     games.forEach(g => {
-        if (g.dataset.tags.includes(inputSearch.value.toLowerCase()))
+        const gameTags = g.dataset.tags.toLowerCase()
+        const gameTitle = g.dataset.title.toLowerCase()
+        const userInput = inputSearch.value.toLowerCase()
+
+        if ((gameTags.includes(userInput)) || (gameTitle.includes(userInput)))
         {
-            console.log(`includes: ${inputSearch.value}`  )
             g.hidden = false
         }else{
-            console.log(`NOT include: ${inputSearch.value}`  )
             g.hidden = true
         }
     }) 
