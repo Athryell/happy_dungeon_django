@@ -1,3 +1,23 @@
 from django.db import models
 
-# Create your models here.
+class Rulebook(models.Model):
+    title = models.CharField(max_length=32)
+    thumbnail = models.ImageField(upload_to="rulebooks/thumbnails", null=True, blank=True)
+    description = models.TextField()
+    link_to_page_rules = models.CharField(max_length=128)
+    link_original = models.CharField(max_length=128, null=True, blank=True)
+    link_ita = models.CharField(max_length=128, null=True, blank=True)
+    link_amazon = models.CharField(max_length=128, null=True, blank=True)
+    # file_PDF = models.FileField(null=True, blank=True)
+
+    def __str__(self):
+        return f'Rulebook: {self.title}'
+
+class Rulebook_additional_url(models.Model):
+    game = models.ForeignKey("Rulebook", on_delete=models.CASCADE, related_name="url")
+    url_name = models.CharField(max_length=32)
+    url = models.CharField(max_length=128, null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.game} - {self.url_name} '
+    

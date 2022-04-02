@@ -16,9 +16,17 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'automa/static/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = "/media/"
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'automa/static/media'),
+#     os.path.join(BASE_DIR, 'rulebooks/static/media')
+# ]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -30,7 +38,6 @@ SECRET_KEY = 'django-insecure-$+$g76-o%k8!b(6c5-gny_$yu0#0%^((1(otc3^4%n8_mez7_u
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 

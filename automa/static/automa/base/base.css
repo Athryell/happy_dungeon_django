@@ -1,11 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Luckiest+Guy&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
 body {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   background: #E2EDF3;
-  font-family: 'Bitter', arial;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  font-family: "Bitter", arial;
+  box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -23,16 +34,13 @@ button {
   font-weight: 700;
   border-radius: 3px;
   cursor: pointer;
-  -webkit-transition: background 0.3s, color 0.3s;
   transition: background 0.3s, color 0.3s;
   font-size: 1em;
 }
-
 button:hover {
   background: #E2EDF3;
   color: #292929;
 }
-
 button:active {
   background: #a7a7a7;
 }
@@ -55,6 +63,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 img {
@@ -69,34 +78,34 @@ img {
   color: #21B4FF;
 }
 
-.nav-container {
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
   background: #292929;
+  color: white;
 }
 
-.nav-container a {
+footer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100%;
+  width: 100%;
+}
+footer a {
   color: white;
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1em;
+  padding-right: 0.5em;
 }
-
 header .logo {
   font-weight: bold;
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
-  padding: 0 1.5rem;
 }
-
 header .btn-flip {
   opacity: 1;
   line-height: 30px;
@@ -106,7 +115,6 @@ header .btn-flip {
   text-transform: uppercase;
   border-left: 1px solid #444444;
 }
-
 header .btn-flip::after {
   top: 0;
   left: 0;
@@ -114,15 +122,12 @@ header .btn-flip::after {
   width: 100%;
   color: #292929;
   display: block;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   position: absolute;
   background: #E2EDF3;
   content: attr(data-text);
-  -webkit-transform: translateY(-50%) rotateX(90deg);
-          transform: translateY(-50%) rotateX(90deg);
+  transform: translateY(-50%) rotateX(90deg);
 }
-
 header .btn-flip::before {
   top: 0;
   left: 0;
@@ -130,27 +135,20 @@ header .btn-flip::before {
   color: #E2EDF3;
   display: block;
   padding: 0 1.5rem;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   position: relative;
   background: #292929;
   content: attr(data-text);
-  -webkit-transform: translateY(0) rotateX(0);
-          transform: translateY(0) rotateX(0);
+  transform: translateY(0) rotateX(0);
 }
-
 header .btn-flip:hover::after {
   opacity: 1;
-  -webkit-transform: translateY(0) rotateX(0);
-          transform: translateY(0) rotateX(0);
+  transform: translateY(0) rotateX(0);
 }
-
 header .btn-flip:hover::before {
   opacity: 0;
-  -webkit-transform: translateY(50%) rotateX(90deg);
-          transform: translateY(50%) rotateX(90deg);
+  transform: translateY(50%) rotateX(90deg);
 }
-
 header .active::before {
   background: #E2EDF3;
   color: #292929;
@@ -158,9 +156,6 @@ header .active::before {
 
 @media screen and (min-width: 800px) {
   nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
-}
-/*# sourceMappingURL=base.css.map */
+}/*# sourceMappingURL=base.css.map */

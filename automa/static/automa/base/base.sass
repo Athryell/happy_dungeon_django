@@ -5,8 +5,18 @@ $secondary-color: #21B4FF
 $white-blue: #E2EDF3
 $black-navbar: #292929
 
+*,
+*::before,
+*::after
+    box-sizing: border-box
+
+img,
+picture
+    max-width: 100%
+    display: block
+    
 body
-    height: 100vh
+    min-height: 100vh
     margin: 0
     background: $white-blue
     font-family: 'Bitter', arial
@@ -50,6 +60,7 @@ ul
 
 a
     text-decoration: none
+    color: black
 
 img
     height: 100%
@@ -62,23 +73,30 @@ img
 #dungeon
     color: $secondary-color
 
-.nav-container
+header,
+footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1em 2em
     background: $black-navbar
+    color: white
+
+footer
+    position: sticky
+    top: 100%
+    width: 100%
 
     a
         color: white
 
 header
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 1em
+    padding-right: 0.5em
 
     .logo
         font-weight: bold
         font-size: 1.5rem
         letter-spacing: 0.2rem
-        padding: 0 1.5rem
 
     .btn-flip
         opacity: 1

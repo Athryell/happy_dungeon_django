@@ -1,19 +1,11 @@
 .display-leaders {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   margin-top: 2em;
 }
-
 .display-leaders .leader-box {
   position: relative;
   min-height: 230px;
@@ -21,12 +13,9 @@
   min-width: 170px;
   margin: 0.5rem;
   cursor: pointer;
-  -webkit-perspective: 500px;
-          perspective: 500px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  perspective: 500px;
+  transform-style: preserve-3d;
 }
-
 .display-leaders .leader-box .flip-card-front, .display-leaders .leader-box .flip-card-back {
   position: absolute;
   top: 0;
@@ -37,12 +26,9 @@
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-
 .display-leaders .leader-box .flip-card-back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-
 .display-leaders .leader-box .tooltip {
   z-index: 1;
   position: absolute;
@@ -52,22 +38,18 @@
   font-size: 0.7em;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
-
 .display-leaders .leader-box .tooltip-power {
   top: 0;
   right: 100%;
   width: 50%;
 }
-
 .display-leaders .leader-box .tooltip-bonuspoints {
   top: 0;
   left: 100%;
   width: 50%;
 }
-
 .display-leaders .leader-box .tooltip-conditions {
   top: 100%;
   left: 0;
@@ -81,70 +63,55 @@
 }
 
 .faded {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  -webkit-filter: brightness(70%);
-          filter: brightness(70%);
+  filter: grayscale(100%);
+  filter: brightness(70%);
 }
 
 .ready {
   border: 3px solid orange;
-  -webkit-filter: brightness(130%);
-          filter: brightness(130%);
+  filter: brightness(130%);
   -webkit-animation: pulse 10s ease-in-out infinite alternate;
           animation: pulse 10s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 100px blue;
-            box-shadow: 0 0 100px blue;
+    box-shadow: 0 0 100px blue;
   }
   25% {
-    -webkit-box-shadow: 0 0 100px red;
-            box-shadow: 0 0 100px red;
+    box-shadow: 0 0 100px red;
   }
   50% {
-    -webkit-box-shadow: 0 0 100px yellow;
-            box-shadow: 0 0 100px yellow;
+    box-shadow: 0 0 100px yellow;
   }
   75% {
-    -webkit-box-shadow: 0 0 100px green;
-            box-shadow: 0 0 100px green;
+    box-shadow: 0 0 100px green;
   }
   100% {
-    -webkit-box-shadow: 0 0 100px purple;
-            box-shadow: 0 0 100px purple;
+    box-shadow: 0 0 100px purple;
   }
 }
 
 @keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 100px blue;
-            box-shadow: 0 0 100px blue;
+    box-shadow: 0 0 100px blue;
   }
   25% {
-    -webkit-box-shadow: 0 0 100px red;
-            box-shadow: 0 0 100px red;
+    box-shadow: 0 0 100px red;
   }
   50% {
-    -webkit-box-shadow: 0 0 100px yellow;
-            box-shadow: 0 0 100px yellow;
+    box-shadow: 0 0 100px yellow;
   }
   75% {
-    -webkit-box-shadow: 0 0 100px green;
-            box-shadow: 0 0 100px green;
+    box-shadow: 0 0 100px green;
   }
   100% {
-    -webkit-box-shadow: 0 0 100px purple;
-            box-shadow: 0 0 100px purple;
+    box-shadow: 0 0 100px purple;
   }
 }
-
 @media screen and (min-width: 800px) {
   .leader-box:hover .tooltip {
     visibility: visible;
     opacity: 1;
   }
-}
-/*# sourceMappingURL=bg_conspiracy.css.map */
+}/*# sourceMappingURL=bg_conspiracy.css.map */

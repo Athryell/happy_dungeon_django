@@ -6,10 +6,52 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha512-6/gTF62BJ06BajySRzTm7i8N2ZZ6StspU9uVWDdoBiuuNu5rs1a8VwiJ7skCz2BcvhpipLKfFerXkuzs+npeKA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 {% endblock %}
 
-{% block title %}Regolamenti{% endblock %}
+{% block title %}
+    Regolamenti
+{% endblock %}
 
 {% block body %}
 
+     <div class="container rulebooks-container">
+        {% for r in rulebooks %}
+            <div class="rulebook">
+
+                <div class="rulebook__thumbnail">
+                {% if r.thumbnail %}
+                    <img src="{{ r.thumbnail.url }}" alt="{{ r.title }} thumbnail">
+                {% endif %}
+                </div>
+
+                <div class="rulebook__info">
+                    <a href="{% url 'rules' r.link_to_page_rules %}">
+                        <h2 class="rulebook__title">{{ r.title }}</h2>
+                        <p class="rulebook__description"> {{ r.description }} </p>
+                    </a>
+                </div>
+
+                <div class="rulebook__links">
+                    <ul>
+                        {% if r.link_original %}
+                            <li><a href="{{ r.link_original }}" target="_blank">Regolamento originale (eng)</a></li>
+                        {% endif %}
+                        {% if r.link_ita %}
+                            <li><a href="{{ r.link_ita }}" target="_blank">Regolamento su BGG (ita)</a></li>
+                        {% endif %}
+                        {% if r.file_PDF %}
+                            <li><a href="{{ r.file_PDF }}" target="_blank">Download PDF (ita)</a></li>
+                        {% endif %}
+                        {% if r.link_amazon %}
+                            <li><a href="{{ r.link_amazon }}" target="_blank">Qui puoi acquistare il gioco</a></li>
+                        {% endif %}
+
+                        {% for url in r.url.all %}
+                            <li><a href="{{ url.url }}" target="_blank">{{ url.url_name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
 

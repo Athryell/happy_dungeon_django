@@ -1,0 +1,227 @@
+{% extends 'automa/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'rulebooks/rules.css' %}">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha512-6/gTF62BJ06BajySRzTm7i8N2ZZ6StspU9uVWDdoBiuuNu5rs1a8VwiJ7skCz2BcvhpipLKfFerXkuzs+npeKA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+{% endblock %}
+
+{% block title %}
+    Regolamento Puerto Rico
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Regolamento solitario Puerto Rico</h1>
+        <small>
+            <p>(Concetto e design del gioco originali di Andreas Seyfarth &copy; 2001, Ravensburger Spieleverlag &copy; 2002)</p>
+            <p>Regole aggiuntive 2008 SoloPlay&trade;, tutti i diritti riservati (Utente BGG — GameRulesfotone)</p>
+            <p>Questo sito si è occupato solo della traduzione in italiano e di correzioni minori</p>
+        </small>
+
+
+        
+        <div class="content">
+            <p>
+                <strong>Introduzione</strong>: Il gioco Puerto Rico è stato progettato per 3-5 giocatori.
+                Le regole di SoloPlay&trade; sono state progettate per dare a un giocatore singolo l'opportunità di giocare con un livello di sfida simile senza modificare in modo significativo le regole multigiocatore. 
+            </p>
+            <p>        
+                Le seguenti regole sono state ampiamente testate per garantire che il gioco sia equilibrato e sia il più fedele possibile al concetto originale. Si presume che il giocatore abbia una buona conoscenza delle regole originali per poter giocare questa variante. Seguendo le regole per giocatore singolo ci sono le modifiche alle regole originali che consentiranno a 2 giocatori di giocare a un gioco "regolare" competitivo e leggermente più strategico.
+            </p>
+
+            <p>
+                Alcuni termini cambiano anche attraverso le diverse traduzioni italiane, qui verranno usati i più recenti:
+                <ul class="ul-disc">
+                    <li> <del>Nave dei Coloni</del> - Sala di Reclutamento  </li>
+                    <li><del>Emporio</del> - Casa di Commercio</li>
+                    <li><del>Colonizzatore</del> - Colono</li>
+                    <li><del>Sindaco</del> - Caposquadra</li>
+                    <li><del>Commerciante</del> - Mercante</li>
+                    <li><del>Granturco</del> - Mais</li>
+                    <li><del>Coloni</del> - Lavoratori</li>
+                    <li>I "possedimenti" includono piantagioni e cave.</li>
+                </ul>
+                
+            </p>
+        
+            <section class="setup">
+                <h2>Setup del gioco:</h2>
+                <ol>
+                    <li>Usare i seguenti componenti per il gioco: (posizionarli nella banca in modo da poter vedere la scorta)
+                        <ol type="A">
+                            <li><b>25</b> lavoratori</li>
+                            <li><b>30</b> gettoni PV (5 x 5, 5 x 1)</li>
+                            <li><b>3</b> cave</li>
+                            <li><b>5</b> barili per ogni tipo di merce</li>
+                        </ol>
+                    </li>
+                    <li>Posiziona vicino al tabellone in 2 file (ruoli e componenti, <mark>immagine in fondo alla pagina</mark>):
+                        <ol type="A">
+                            <li>Pesca casualmente <b>3 piantagioni</b> per il ruolo di Colono dalla riserva e posizionale vicino all'area di gioco.</li>
+                            <li>Sala di Reclutamento: posiziona <b>2</b> dei 25 lavoratori sulla Sala di Reclutamento</li>
+                            <li>Casa di commercio</li>
+                            <li>Navi da carico da <b>4, 5 e 6</b> spazi</li>
+                            <li>Segnalino del Governatore: posto vicino alla banca</li>
+                            <li><b>6 tessere con i ruoli</b> (Colono, Caposquadra, Mercante, Artigiano, Capitano e Costruttore), mescolali e posizionali casualmente da sinistra a destra a formare una loro riga.</li>
+                            <li>Scegli casualmente <b>una piantagione</b> di grano o indaco e posizionala sulla tua plancia giocatore</li>
+                            <li>Inizi con <b>2</b> dobloni</li>
+                            <li>Posiziona <b>1</b> edificio di produzione per tipo sul tabellone di gioco.</li>
+                            <li>Se si utilizza l'espansione: Riempire casualmente gli spazi edificio (uno per tipo), fino a quando rimangono 2 posizioni aperte nelle righe 1, 2 o 3. I 2 spazi aperti possono trovarsi nella stessa riga o in righe diverse. Giocando con gli edifici originali, rimuovi casualmente 2 edifici e posizionane uno di tutti gli altri.</li>
+                        </ol>
+                    </li>
+                </ol> 
+            </section>
+
+            <section class="rules">
+                <h2>Regole del gioco:</h2>
+                <ol>
+                    <li><b>Spiegazione dei ruoli:</b> (modifiche alle regole di gioco originali), gli edifici che influenzano i ruoli vengono eseguiti come indicato nelle regole normali, ad eccezione della Biblioteca come menzionato più avanti.
+                        <ol type="A">
+                            <li><b>Colono</b> - il giocatore deve scegliere una delle 3 piantagioni disponibili da posizionare sul tabellone del giocatore. Rimuovi le piantagioni non scelte e sostituiscile con piantagioni nuove. <b>Nota <mark>(cava)</mark></b>: se il giocatore ha scelto una piantagione di tabacco, caffè o la seconda piantagione di zucchero, allora una cava può essere posizionata al posto di una delle 3 piantagioni disponibili la prossima volta che viene scelto il colono.</li>
+                            <li><b>Commerciante</b> - eseguito come nel gioco normale</li>
+                            <li><b>Sindaco</b> — eseguito come nel gioco normale tranne:
+                                <ol type="i">
+                                    <li>Ogni volta che viene scelto il ruolo, un colono viene posizionato sul cartello del governatore dalla riserva principale. Il colono non tornerà in gioco.</li>
+                                    <li><mark>San Juan non verrà utilizzato</mark> in questa versione in solitaria, tutti i coloni devono essere subito collocati nelle piantagioni o negli edifici.</li>
+                                    <li>Rifornisci la nave dei coloni con un minimo di 2 coloni - se non puoi farlo dalla riserva, il gioco terminerà alla fine del round.</li>
+                                </ol>
+                            </li>
+                            <li><b>Capitano</b> - eseguito come nel gioco normale</li>
+                            <li><b>Artigiano</b> - eseguito come nel gioco normale</li>
+                            <li><b>Costruttore</b> — eseguito come nel gioco normale con la seguente aggiunta:
+                                <ol type="i">
+                                    <li>Dopo l'acquisto, il giocatore deve scegliere, tra gli edifici disponibili, una quantità di edifici di valore totale pari al costo di quello appena acquistato (non più di 2 edifici) oppure scegliere un solo edificio con un costo maggiore (fino a 3 in più) rispetto a quello acquistato. Metti da parte gli edifici. Non saranno disponibili per il resto del gioco.
+                                        <ol type="a">
+                                            <li>Se il giocatore non può soddisfare questi criteri, un edificio non può essere acquisito.</li>
+                                        </ol>
+                                    </li>          
+                                    <li><b>Condizione di fine gioco</b>: se la sezione dell'edificio del giocatore è piena, il gioco termina alla fine del round.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <hr>
+
+                    <li><b>Scelta del ruolo:</b> (<mark>nessun privilegio viene concesso</mark> a meno che il giocatore non abbia acquistato e attivato la Biblioteca) Verranno scelti 3 ruoli in ogni round.
+                        <ol type="A">
+                            <li><b>Solo nel round 1 </b>— Il giocatore selezionerà 3 ruoli da sinistra a destra ed eseguirà o passerà il ruolo nell'ordine in cui è stato selezionato.
+                                <ol type="i">
+                                    <li>In futuro i ruoli saranno divisi in 3 gruppi, un ruolo primario (1° ruolo - che deve essere eseguito), ruoli secondari (2° e 3° ruolo - uno di questi deve essere eseguito) e ruoli "di setup" (4°, 5° e 6° ruoli - uno di questi deve essere eseguito). Separare ogni gruppo di un piccolo spazio e mantenerlo fino alla fine del gioco.</li>
+                                    <li>Metti un doblone sul 1° e 2° ruolo.</li>
+                                </ol>
+                            </li>
+                            <li><b>Dal round 2 fino alla fine del gioco</b> — A partire dal ruolo nella posizione 1, il giocatore può svolgere il ruolo, se possibile; eseguendolo come indicato nella sezione ruoli di questo regolamento. È importante posizionare i ruoli giocati nell'ordine in cui sono stati messi da parte fino alla fine del round.
+                                <ol type="i">
+                                    <li><b>Fallimento del ruolo</b> - Se il giocatore non è in grado o non è disposto a eseguire l'azione, il giocatore deve scegliere di eseguire una delle seguenti azioni:
+                                        <ol type="a">
+                                            <li>Paga un minimo di <b>3</b> o fino a metà dei dobloni del giocatore, a seconda dell’importo maggiore, oppure (se il giocatore non ha 3 dobloni):</li>
+                                            <li>Metti 1 colono nella "riserva del governo" (sopra la tessera del Governatore) dalla riserva principale o dalla nave colono se la riserva principale è vuota. Il colono sarà fuori gioco per il resto della partita. <b>Condizione di fine gioco:</b> Se la nave colono viene svuotata con questa azione, il gioco terminerà alla fine del round.</li>
+                                            <li>Se il ruolo aveva dei dobloni, vengono consegnati alla banca.</li>
+                                            <li><mark><b>Nota speciale:</b></mark> durante il primo round non si verifica un fallimento del ruolo. Questo inizia dal secondo round.</li>
+                                        </ol>
+                                    </li>
+                                    <li>Ogni ruolo può fallire e richiedere il pagamento per il fallimento. È importante che il giocatore gestisca questa condizione.
+                                        <ol type="a">
+                                            <li><b>Mercante</b>: nessuna merce da scambiare</li>
+                                            <li><b>Caposquadra</b>: nessun posto dove giocare i lavoratori</li>
+                                            <li><b>Capitano</b>: nessuna merce da spedire</li>
+                                            <li><b>Artigiano</b>: non in grado di produrre beni o beni non disponibili nella riserva</li>
+                                            <li><b>Costruttore</b>: nessun doblone per poter acquistare un edificio o non essere in grado di soddisfare le restrizioni di gioco relative alla rimozione degli edifici</li>
+                                            <li><b>Colono</b>: non c'è spazio per posizionare una piantagione - (usa l'Hacienda con cautela)</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>Il giocatore ora deve scegliere il 2° o 3° ruolo e risolverlo come ha fatto con il primo</li>
+                            <li>Il giocatore sceglie infine di giocare il 4°, 5° o 6° ruolo come prima.</li>
+                        </ol>
+                    </li>
+                    <hr>
+
+                    <li><b>Terminare un round:</b>
+                        <ol type="A">
+                            <li>Far scorrere i restanti 3 ruoli da sinistra a sinistra fino alle posizioni 1, 2 e 3, mantenendo gli spazi</li>
+                            <li>Posiziona 1 doblone sul 1° e sul 2° ruolo</li>
+                            <li>Aggiungere i 3 ruoli in coda: il 1° giocato in posizione 4, il 2° in posizione 5 e il 3° in posizione 6.</li>
+                            <li>Finché nessuna delle normali condizioni di fine gioco è stata soddisfatta (nessun lavoratore rimanente, tutti gli spazi dell'edificio pieni o nessun punto vittoria rimanente) inizia un nuovo round, altrimenti vai al Punteggio.</li>
+                        </ol>
+                    </li>
+                    <hr>
+
+                    <li><b>Gli edifici:</b> (verranno coperte solo le modifiche/ulteriori opportunità di punteggio, gli edifici devono essere attivati per essere utilizzati nelle seguenti modalità)
+                        <ol type="A">
+                            <li> <b>Cambiamento:</b>
+                                <ul>
+                                    <li><b>Biblioteca</b>: consente al giocatore di utilizzare i privilegi delle tessere dei ruoli (nessun raddoppio). <b>Se attivato:</b> Deve essere utilizzato una volta per round, altrimenti si verificherà un fallimento del ruolo. <b>Suggerimento di gioco:</b> usa un segnalino per notare che la Biblioteca è stata utilizzata per il round corrente, recuperandolo al termine del round.</li>
+                                </ul>
+                            </li>
+
+                            <li><b>Ulteriori possibilità di punteggio, a fine partita:</b>
+                                <ul>
+                                    <li><b>Piccolo magazzino</b> - 1VP per tutte le merci di 1 tipo rimaste nella riserva del giocatore.</li>
+                                    <li><b>Grande magazzino</b> - 1VP per tutte le merci di 2 tipi rimaste nella riserva del giocatore.</li>
+                                    <li><b>Deposito</b> - 1VP per ogni merce nella scorta del giocatore fino ad un massimo di 3.</li>
+                                    <li><b>Casa nella foresta</b> - 1VP per ogni tessera foresta sulla plancia del giocatore.</li>
+                                    <li><b>Università</b> - 1VP per ogni 2 dobloni in possesso del giocatore (Trustee award).</li>
+                                    <li><b>Piccolo molo</b> - 1VP per ogni nave da carico con almeno 2 merci su di esse.</li>
+                                    <li><b>Molo</b> - 2 PV per ogni nave da carico con almeno 2 merci su di esse.</li>
+                                    <li><b>Casa delle Unioni</b> - 2 PV per ogni 2 merci dello stesso tipo sulle navi da carico.</li>
+                                    <li><b>Bonus per nessun edificio grande costruito</b> - 10 PV per non aver costruito alcun edificio della 4° fila (grande) durante la partita</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+        </section>
+
+        <section class="score">
+            <h2> Punteggio: </h2>
+            <p>(come nel gioco normale con l'eccezione di quanto indicato nella sezione edifici) </p>
+            <ul>
+                <li><b>Valutazione punteggio:</b>
+                    <ul class="ul-disc">
+                        <li>55-57 VP - Vittoria minore</li>
+                        <li>58-60 VP — Vittoria</li>
+                        <li>61-63 VP - Vittoria maggiore</li>
+                        <li>64+ VP: completa la vittoria</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="strategy">
+            <h2>Strategie/tattiche di gioco:</h2>
+            <ol type="A">
+                <li>La sequenza dei ruoli è importante per il successo e per massimizzare gli effetti. Impara a riconoscere gli schemi quando scegli i ruoli.</li>
+                <li>Bilanciare la produzione, gli acquisti degli edifici e il guadagno di punti vittoria è fondamentale per aumentare il potenziale del punteggio.</li>
+                <li>Tutti gli edifici possono far parte di una strategia di gioco / di fine gioco. Le ulteriori opportunità di punteggio dell'edificio sono state aggiunte per questo motivo.</li>
+                <li>È possibile ottenere solo 5 unità di ogni merce, il che significa che la nave mercantile da 6 spazi conterrà le merci depositate su di essa fino alla fine del gioco.</li>
+                <li>La gestione del fallimento di ruolo, che a volte può essere necessaria innescare intenzionalmente, è fondamentale per un gioco di successo.</li>
+                <li>Il ruolo di Caposquadra è un ruolo chiave e spesso è il fattore limitante nelle prime partite. Mettere più lavoratori sulla Sala di Reclutamento ne limiterà il numero che va al Governatore. Questo può essere importante.</li>
+                <li>L'uso e l'acquisto degli edifici richiederanno un po' più di pianificazione ora, visto che quando 1 verrà costruito 1 o 2 possibili acquisti futuri dovranno essere rimossi. Questo può alterare in modo significativo quali obiettivi sono possibili durante una partita.</li>
+            </ol>
+
+            <h3>Nota per il giocatore:</h3>
+            <p>Questa variante in solitaria è stata adattata per ottenere il massimo da tutti i componenti di gioco, edifici e ruoli e per migliorare gli elementi strategici del gioco per massimizzare le possibilità di gioco. Ciò ha lo scopo di aumentare la rigiocabilità di questa variante.</p>   
+        </section>
+
+        <section class="images">
+            <h2>Componenti aggiuntivi</h2>
+            <p>Plancia utile a chiarire la posizione dei componenti e delle tessere ruolo</p>
+
+            <img src="{% static 'media/Plancia_PuertoRico.jpg' %}" alt="Plancia per la versione in solitaria di Puerto Rico">
+        </section>
+
+        <section class="links">
+            
+        </section>
+        
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}
