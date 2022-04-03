@@ -97,6 +97,10 @@ footer {
 footer a {
   color: white;
 }
+footer a svg {
+  margin-bottom: -0.15em;
+  margin-right: 0.5em;
+}
 
 header {
   padding-right: 0.5em;

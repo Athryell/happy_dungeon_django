@@ -97,6 +97,10 @@ footer {
 footer a {
   color: white;
 }
+footer a svg {
+  margin-bottom: -0.15em;
+  margin-right: 0.5em;
+}
 
 header {
   padding-right: 0.5em;
@@ -153,6 +157,12 @@ header .active::before {
   background: #E2EDF3;
   color: #292929;
 }
+header li:nth-child(4) a::after,
+header li:nth-child(5) a::after {
+  background-color: red;
+  color: white;
+  content: "PRESTO!";
+}
 
 @media screen and (min-width: 800px) {
   nav ul {
@@ -168,7 +178,7 @@ a img {
 }
 
 .container {
-  margin: 3em;
+  margin: 3em 7vw;
   display: grid;
   grid-template-columns: repeat(auto-fill, 20px);
   grid-auto-rows: 20px;
@@ -308,10 +318,10 @@ a img {
 }
 .search-bar .bar input {
   height: 50%;
-  width: 80%;
+  width: 90%;
   border-radius: 10px;
-  margin-top: 12px;
-  padding-left: 0.5em;
+  margin-top: 7px;
+  padding: 0.8em;
   font-size: 1.5em;
   border: none;
 }
@@ -335,7 +345,4 @@ a img {
   background: #292929;
   border: 1px solid #292929;
   transform: rotateY(-90deg) translate3d(-22px, -1px, -21px);
-}
-.search-bar .bar .hover {
-  transform: rotateY(0);
 }/*# sourceMappingURL=home.css.map */

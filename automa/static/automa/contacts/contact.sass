@@ -8,6 +8,7 @@
     h2
         text-align: center
         font-size: 2rem
+        margin-bottom: 0
 
     p
         margin: 2em 0
@@ -26,25 +27,25 @@ form
         &__input
             width: 100%
             border: 2px solid black
-            border-radius: 15px
-            color: white
+            border-radius: 5px
+            color: black
             outline: none
             padding: 1em 1em
             background: none
 
             &:hover
-                border-color: #fbb32d //! Non funziona?
+                border-color: #fbb32d
 
             &:focus
-                border-color: #fbb32d
+                border-color: #21B4FF
 
         &__textarea
             width: min(35em, 100%)
 
         &__label
             position: absolute
-            left: 0.7em
-            top: 0.7em
+            left: 0.5em
+            top: 0.8em
             padding: 0 0.5rem
             font-weight: 700
             background-color: #E2EDF3
@@ -53,7 +54,24 @@ form
 
         .input-container__input:focus ~ .input-container__label,
         .input-container__input:not(:placeholder-shown).input-container__input:not(:focus) ~ .input-container__label
-            top: -0.5rem
+            top: -0.4rem
             font-size: 0.8rem
             left: 0.8rem
-            color: #fbb32d
+
+button
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 1em
+    padding: 0.7em 2em 0.7em 1.7em
+    
+    svg
+        font-size: 1.5em
+
+.alert-message
+    border: 3px solid green
+    max-width: 500px
+    margin-top: 5em
+    margin-inline: auto
+    border-radius: 5px
+    text-align: center

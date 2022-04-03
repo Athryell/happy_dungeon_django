@@ -1,0 +1,60 @@
+{% extends 'automa/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'automa/contacts/contact.css' %}">
+{% endblock %}
+
+
+{% block body %}
+{% if message_name %}
+    <div class="alert-message">
+        <h2>Grazie {{ message_name }}!</h2>
+        <p>Email ricevuta! La leggo il prima possibile :-)</p>
+    </div>
+{% else %}
+
+<section id="contact-form" class="block form-block">
+        <h2>Fammi sapere!</h2>
+        <p>Sentiti liber* di contattarmi. Sono sempre aperto ad ascoltare consigli, nuovi progetti o idee creative in generale!</p>
+        
+        <!-- <form onsubmit="sendEmail(); reset(); return false;"> -->
+        <form action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+            <div class="input-container">
+                <input type="text" id="name" name="message-name" class="input-container__input" autocomplete="off" placeholder=" " required>
+                <label for="name" class="input-container__label">
+                    <span class="content-name">Nome</span>
+                </label>
+            </div>
+
+            <div class="input-container">
+                <input type="email" id="email" name="message-email" class="input-container__input" autocomplete="off" placeholder=" " required>
+                <label for="email" class="input-container__label">
+                    <span class="content-email">Email</span>
+                </label>
+            </div>
+
+            <div class="input-container input-container__textarea">
+                <textarea type="text" cols="30" rows="1" id="message" name="message-text" class="input-container__input" autocomplete="off" placeholder=" " required></textarea>
+                <label for="message" class="input-container__label">
+                    <span class="content-text">Il tuo messaggio</span>
+                </label>
+            </div>
+
+            <button class="btn-big" type="submit">
+                <span class="iconify" data-icon="carbon:send-alt"></span>
+                Invia
+            </button>
+        </form>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block script %}
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="{% static 'automa/contacts/contact.js' %}"></script> -->
+
+{% endblock %}

@@ -9,14 +9,16 @@ bar.addEventListener('click', () => {
 })
 
 inputSearch.addEventListener('blur', () => {
-    bar.style.transform = 'rotateY(90deg) translateX(100px)'
+    if(inputSearch.value.trim() === ''){
+        bar.style.transform = 'rotateY(90deg) translateX(100px)'
+    }
 })
 
 inputSearch.addEventListener('keyup', () => {
     games.forEach(g => {
         const gameTags = g.dataset.tags.toLowerCase()
         const gameTitle = g.dataset.title.toLowerCase()
-        const userInput = inputSearch.value.toLowerCase()
+        const userInput = inputSearch.value.toLowerCase().trim()
 
         if ((gameTags.includes(userInput)) || (gameTitle.includes(userInput)))
         {
