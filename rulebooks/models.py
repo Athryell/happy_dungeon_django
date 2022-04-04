@@ -1,6 +1,7 @@
 from django.db import models
 
 class Rulebook(models.Model):
+    is_ready = models.BooleanField()
     title = models.CharField(max_length=32)
     thumbnail = models.ImageField(upload_to="rulebooks/thumbnails", null=True, blank=True)
     description = models.TextField()
@@ -11,7 +12,7 @@ class Rulebook(models.Model):
     # file_PDF = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        return f'Rulebook: {self.title}'
+        return f'Rulebook: {self.title} - ready: {self.is_ready}'
 
 class Rulebook_additional_url(models.Model):
     game = models.ForeignKey("Rulebook", on_delete=models.CASCADE, related_name="url")
