@@ -14,7 +14,7 @@ class Tags(models.Model):
 class Automa_boardgames(models.Model):
     is_ready = models.BooleanField()
     title = models.CharField(max_length=32)
-    short_title = models.CharField(max_length=16, default=title)
+    short_title = models.CharField(max_length=32, default=title)
     image = models.ImageField(upload_to="automa/games_cover", null=True, blank=True)
     tags = models.ManyToManyField('Tags', related_name='boardgames')
     size = models.CharField(max_length=8)
