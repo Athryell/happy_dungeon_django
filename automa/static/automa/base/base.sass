@@ -28,6 +28,13 @@ body
     margin: 2em
     text-align: center
 
+//? ------------------------
+//? ------ COMPONENTS -------
+//? ------------------------
+
+
+//? ------ BUTTONS ---------
+
 button
     padding: 0.5em 0.7em
     background: $black-navbar
@@ -65,7 +72,7 @@ a
 img
     height: 100%
 
-// - - - - - - - - - - - 
+//? ------ HEADER & FOOTER ---------
 
 #happy
     color: $primary-color
@@ -96,6 +103,7 @@ footer
 
 header
     padding-right: 0.5em
+    position: relative
 
     .logo
         font-weight: bold
@@ -109,7 +117,6 @@ header
         text-align: center
         display: inline-block
         text-transform: uppercase
-        border-left: 1px solid #444444
 
         &::after
             top: 0
@@ -159,9 +166,68 @@ header
                 color: white
                 content: 'PRESTO!'
 
-
-@media screen and ( min-width: 800px )
     nav
-        ul
-            display: flex
-    
+        position: absolute
+        z-index: 10
+        background-color: $black-navbar
+        top: 100%
+        right: 0
+        padding-inline: 3em
+        border-bottom-left-radius: 15px
+        clip-path: circle(0 at top right)
+        transition: clip-path ease-in-out 0.7s
+
+        &.nav-open
+            clip-path: circle(145% at top right)
+
+        li
+            padding-block: 2em
+            border-bottom: 1px solid #444444
+
+    .menu-toggle
+        position: absolute
+        right: 0
+        top: 0
+        padding: 0.6rem 2rem
+        cursor: pointer
+
+        &:before,
+        &:after,
+        & div
+            background: #E2EDF3
+            content: ''
+            display: block
+            height: 3px
+            width: 2em
+            border-radius: 3px
+            margin: 7px 0
+            transition: ease-in-out 0.5s
+
+        &.menu-toggle-open
+            &:before
+                transform: translateY(12px) rotate(135deg)
+            &:after
+                transform: translateY(-12px) rotate(-135deg)
+            & div
+                transform: scale(0)        
+
+    @media screen and ( min-width: 900px )
+        nav
+            position: relative
+            height: auto
+            float: right
+            clip-path: initial
+            padding: 0
+
+            ul
+                display: flex
+
+                li
+                    padding-block: 0
+                    border-bottom: none
+            
+                .btn-flip
+                    border-left: 1px solid #444444
+                    
+        .menu-toggle
+            display: none

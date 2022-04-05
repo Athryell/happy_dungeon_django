@@ -104,6 +104,7 @@ footer a svg {
 
 header {
   padding-right: 0.5em;
+  position: relative;
 }
 header .logo {
   font-weight: bold;
@@ -117,7 +118,6 @@ header .btn-flip {
   text-align: center;
   display: inline-block;
   text-transform: uppercase;
-  border-left: 1px solid #444444;
 }
 header .btn-flip::after {
   top: 0;
@@ -163,12 +163,75 @@ header li:nth-child(5) a::after {
   color: white;
   content: "PRESTO!";
 }
-
-@media screen and (min-width: 800px) {
-  nav ul {
+header nav {
+  position: absolute;
+  z-index: 10;
+  background-color: #292929;
+  top: 100%;
+  right: 0;
+  padding-inline: 3em;
+  border-bottom-left-radius: 15px;
+  -webkit-clip-path: circle(0 at top right);
+          clip-path: circle(0 at top right);
+  transition: -webkit-clip-path ease-in-out 0.7s;
+  transition: clip-path ease-in-out 0.7s;
+  transition: clip-path ease-in-out 0.7s, -webkit-clip-path ease-in-out 0.7s;
+}
+header nav.nav-open {
+  -webkit-clip-path: circle(145% at top right);
+          clip-path: circle(145% at top right);
+}
+header nav li {
+  padding-block: 2em;
+  border-bottom: 1px solid #444444;
+}
+header .menu-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.6rem 2rem;
+  cursor: pointer;
+}
+header .menu-toggle:before, header .menu-toggle:after, header .menu-toggle div {
+  background: #E2EDF3;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 2em;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: ease-in-out 0.5s;
+}
+header .menu-toggle.menu-toggle-open:before {
+  transform: translateY(12px) rotate(135deg);
+}
+header .menu-toggle.menu-toggle-open:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+header .menu-toggle.menu-toggle-open div {
+  transform: scale(0);
+}
+@media screen and (min-width: 900px) {
+  header nav {
+    position: relative;
+    height: auto;
+    float: right;
+    -webkit-clip-path: initial;
+            clip-path: initial;
+    padding: 0;
+  }
+  header nav ul {
     display: flex;
   }
+  header nav ul li {
+    padding-block: 0;
+    border-bottom: none;
+  }
+  header .menu-toggle {
+    display: none;
+  }
 }
+
 a img {
   border-right: 1px solid black;
   border-bottom: 1px solid black;

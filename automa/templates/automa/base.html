@@ -24,6 +24,11 @@
                     <li><a class="btn-flip" href="#" data-text="Altro"></a></li>
                 </ul>
             </nav>
+
+            <div class="menu-toggle">
+                <div></div>
+            </div>
+            
         </header>
         
         {% block body %}{% endblock %}
@@ -41,7 +46,7 @@
         </footer>
 
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-        <!-- <script src="{% static 'automa/base.js' %}"></script> -->
+        <script src="{% static 'automa/base/base.js' %}"></script>
         {% block script %}{% endblock %}
     </body>
 </html>
