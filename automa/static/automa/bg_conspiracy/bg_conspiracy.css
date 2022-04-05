@@ -29,30 +29,43 @@
 .display-leaders .leader-box .flip-card-back {
   transform: rotateY(180deg);
 }
-.display-leaders .leader-box .tooltip {
-  z-index: 1;
+
+.tooltip {
   position: absolute;
   padding: 0.5em;
   border-radius: 5px;
-  background: #ababab;
   font-size: 0.7em;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: opacity 0.5s ease;
 }
-.display-leaders .leader-box .tooltip-power {
+
+.tooltip-name {
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.tooltip-bonuspoints {
   top: 0;
   right: 100%;
   width: 50%;
+  background-color: #ababab;
 }
-.display-leaders .leader-box .tooltip-bonuspoints {
+
+.tooltip-power {
   top: 0;
   left: 100%;
   width: 50%;
+  background-color: #ababab;
 }
-.display-leaders .leader-box .tooltip-conditions {
+
+.tooltip-conditions {
   top: 100%;
-  left: 0;
+  left: -50%;
+  width: 200%;
+  background-color: #ababab;
 }
 
 #replay-token {
@@ -60,18 +73,62 @@
   border-radius: 100px;
   cursor: pointer;
   margin-left: 6em;
+  display: none;
 }
 
-.faded {
-  filter: grayscale(100%);
-  filter: brightness(70%);
-}
-
-.ready {
+.active {
   border: 3px solid orange;
-  filter: brightness(130%);
+  filter: brightness(150%);
   -webkit-animation: pulse 10s ease-in-out infinite alternate;
           animation: pulse 10s ease-in-out infinite alternate;
+}
+
+.score-btn {
+  margin-block: 3em;
+}
+
+.score-box {
+  max-width: 600px;
+  height: 309px;
+  margin: 3em auto;
+  background-image: url("../media/bg_conspiracy/scoresheet.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.score-box table {
+  table-layout: auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+  height: 100%;
+}
+.score-box table tr {
+  height: 33%;
+}
+.score-box table th {
+  vertical-align: bottom;
+  opacity: 0.5;
+}
+.score-box table td {
+  width: 14%;
+}
+.score-box input {
+  width: 90%;
+  font-size: 1.4rem;
+  padding-block: 0.5em;
+  text-align: center;
+}
+.score-box span {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+}
+.score-box input::-webkit-outer-spin-button,
+.score-box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.score-box input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @-webkit-keyframes pulse {
@@ -107,11 +164,5 @@
   }
   100% {
     box-shadow: 0 0 100px purple;
-  }
-}
-@media screen and (min-width: 800px) {
-  .leader-box:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
   }
 }/*# sourceMappingURL=bg_conspiracy.css.map */

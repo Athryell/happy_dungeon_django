@@ -238,8 +238,7 @@ a img {
   content: "";
   -ms-writing-mode: tb-rl;
       writing-mode: vertical-rl;
-  -webkit-text-orientation: upright;
-          text-orientation: upright;
+  text-orientation: upright;
   text-align: center;
   letter-spacing: 0.3em;
   font-size: 0.7em;

@@ -11,13 +11,14 @@
 {% block body %}
     <div class='container'>
 
-        <h2>Scegli un avversario leggendario</h2>
+        <h2 class="headline">Scegli un avversario leggendario</h2>
         <button type="button">O scegli a caso</button>
         
         <div class="display-leaders">
-            <div class="leader-box" data-faction="military">
+            <div class="leader-box" data-faction="Militare">
                 <img class="flip-card-front" src="{% static 'automa/media/bg_conspiracy/leader-military.jpg' %}" alt="Leader militare">
                 <img class="flip-card-back" src="{% static 'automa/media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+                <span class="tooltip tooltip-name">Leader Militare</span>
                 <span class="tooltip tooltip-power">
                     Quando il tuo Avversario aggiunge un Lord di tipo Militare (rosso) alla propria camera del senato, <strong>ti costringe</strong>, durante il tuo prossimo turno, a estendere il tuo senato pescando solo <strong> la prima carta dal mazzo</strong> dei Lord
                 </span>
@@ -31,10 +32,12 @@
                     <p>4 - La pila degli scarti deve contenere almeno <strong>2 Lord</strong></p>
                 </span>
             </div>
-            <div class="leader-box" data-faction="magic">
+
+            <div class="leader-box" data-faction="Magico">
                 <img class="flip-card-front" src="{% static 'automa/media/bg_conspiracy/leader-magic.jpg' %}" alt="Leader magico">
                 <img class="flip-card-back" src="{% static 'automa/media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
                 
+                <span class="tooltip tooltip-name">Leader Magico</span>
                 <span class="tooltip tooltip-power">
                     Questo Avversario ha bisogno di <strong>due chiavi qualsiasi</strong> per prendere il controllo di un Luogo
                 </span>
@@ -46,26 +49,101 @@
                     <p>2 - La pila degli scarti deve permettere all'avversario di <strong>estendere una coalizione</strong></p>
                     <p>4 - La pila degli scarti deve contenere almeno <strong>2 Lord</strong></p>
                 </span>
+
             </div>
-            <div class="leader-box" data-faction="politic">
+
+            <div class="leader-box" data-faction="Politico">
                 <img class="flip-card-front" src="{% static 'automa/media/bg_conspiracy/leader-politic.jpg' %}" alt="Leader politico">
                 <img class="flip-card-back" src="{% static 'automa/media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+
+                <span class="tooltip tooltip-name">Leader Politico</span>
+                <span class="tooltip tooltip-bonuspoints">
+                    Alla fine del gioco, questo Avversario guadagna <strong>PI aggiuntivi</strong> pari al Lord di maggior valore sotto il proprio controllo
+                </span>
+                <span class="tooltip tooltip-conditions">
+                    <p>1 - La pila degli scarti deve contenere 1 Lord con <strong>6 PI</strong></p>
+                    <p>2 - La pila degli scarti deve contenere almeno 1 Lord con <strong>una chiave</strong></p>
+                    <p>3 - La pila degli scarti deve permettere all'avversario di <strong>estendere una coalizione</strong></p>
+                    <p>4 - La pila degli scarti deve contenere almeno <strong>2 Lord</strong></p>
+                </span>
             </div>
-            <div class="leader-box" data-faction="grower">
+
+            <div class="leader-box" data-faction="Coltivatore">
                 <img class="flip-card-front" src="{% static 'automa/media/bg_conspiracy/leader-grower.jpg' %}" alt="Leader coltivatori">
                 <img class="flip-card-back" src="{% static 'automa/media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+
+                <span class="tooltip tooltip-name">Leader Coltivatore</span>
+                <span class="tooltip tooltip-conditions">
+                    <p>1 - La pila degli scarti deve contenere almeno <strong>2 Lord</strong></p>
+                    <p>2 - La pila degli scarti deve contenere almeno 1 Lord con <strong>una chiave</strong></p>
+                    <p>3 - La pila degli scarti deve permettere all'avversario di <strong>estendere una coalizione</strong></p>
+                </span>
             </div>
-            <div class="leader-box" data-faction="merchant">
+
+            <div class="leader-box" data-faction="Mercante">
                 <img class="flip-card-front" src="{% static 'automa/media/bg_conspiracy/leader-merchant.jpg' %}" alt="Leader mercante">
                 <img class="flip-card-back" src="{% static 'automa/media/bg_conspiracy/leader-back.jpg' %}" alt="Dorso">
+
+                <span class="tooltip tooltip-name">Leader Mercante</span>
+                <span class="tooltip tooltip-bonuspoints">
+                    Alla fine del gioco, questo Avversario guadagna <strong>1 PI aggiuntivo</strong> per ogni coppia di perle in suo possesso
+                </span>
+                <span class="tooltip tooltip-conditions">
+                    <p>1 - La pila degli scarti deve contenere 1 Lord con <strong>una perla</strong></p>
+                    <p>2 - La pila degli scarti deve permettere all'avversario di <strong>estendere una coalizione</strong></p>
+                    <p>3 - La pila degli scarti deve contenere almeno <strong>2 Lord</strong></p>
+                </span>
             </div>
-            <img hidden id="replay-token" class="faded" src="{% static 'automa/media/bg_conspiracy/replay-token.png'%}" alt="Replay token">
+            
+            <div class="token">
+                <span class="tooltip tooltip-token">
+                    Quando crei una nuova area di almeno 3 carte dello stesso colore questo token diventa attivo.
+                    Puoi consumarlo alla fine di questo turno o dei prossimi per svolgere un turno aggiuntivo (dopo aver terminato il tuo turno corrente)
+                    Una volta utilizzato può essere guadagnato nuovamente quando la condizione viene soddisfatta.
+                </span>
+                <img id="replay-token" src="{% static 'automa/media/bg_conspiracy/replay-token.png' %}" alt="Replay token">
+            </div>
         </div>
+
+        <button type="button" class="score-btn" hidden>Calcola il punteggio</button>
 
         <div id="confirmation-box" hidden>
             <h3>Vuoi sfidare questo Avversario Leggendario?</h3>
             <button id="yes" class="btn-secondary" type="button">Certamente!</button>
             <button id="no" class="btn-primary" type="button">Mmm... no</button>
+        </div>
+
+        <div class="score-box" hidden>
+            <table>
+                <tr>
+                    <th>Giocatore</th>
+                    <th>Leader</th>
+                    <th>Nobili</th>
+                    <th>Luoghi</th>
+                    <th>Coalizione</th>
+                    <th>Perle</th>
+                    <th>Punteggio</th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Leader"></td>
+                    <td><input type="number" class="leader-points"></td>
+                    <td><input type="number" class="leader-points"></td>
+                    <td><input type="number" class="leader-points"></td>
+                    <td><input type="number" class="leader-points"></td>
+                    <td><input type="number" class="leader-points"></td>
+                    <td><span class="leader-score">0</span></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Io"></td>
+                    <td></td>
+                    <td><input type="number" class="player-points"></td>
+                    <td><input type="number" class="player-points"></td>
+                    <td><input type="number" class="player-points"></td>
+                    <td><input type="number" class="player-points"></td>
+                    <td><span class="player-score">0</span></td>
+                </tr>
+            </table>
+
         </div>
 
     </div>
