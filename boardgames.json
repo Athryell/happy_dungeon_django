@@ -7,7 +7,8 @@
             "short_title": "nearandfar",
             "image": "games_cover/NearAndFar.jpg",
             "tags": ["3"],
-            "size": "L"
+            "size": "L",
+            "is_ready": "False"
         }
     },
     {
@@ -18,7 +19,8 @@
             "short_title": "conspiracy",
             "image": "games_cover/Conspiracy.jpg",
             "tags": ["3", "1"],
-            "size": "S"
+            "size": "S",
+            "is_ready": "False"
         }
     },
     {
@@ -29,7 +31,8 @@
             "short_title": "7wondersduel",
             "image": "games_cover/7WondersDuel.jpg",
             "tags": ["3"],
-            "size": "S"
+            "size": "S",
+            "is_ready": "False"
         }
     },
     {
@@ -40,7 +43,8 @@
             "short_title": "galaxytrucker",
             "image": "games_cover/Galaxy_Trucker.jpg",
             "tags": ["2", "4"],
-            "size": "M"
+            "size": "M",
+            "is_ready": "False"
         }
     },
     {
@@ -51,7 +55,8 @@
             "short_title": "unmatched",
             "image": "games_cover/Unmatched.jpg",
             "tags": ["2", "3"],
-            "size": "M"
+            "size": "M",
+            "is_ready": "False"
         }
     }
 ]

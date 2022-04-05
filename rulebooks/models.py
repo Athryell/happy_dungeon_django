@@ -1,7 +1,7 @@
 from django.db import models
 
 class Rulebook(models.Model):
-    is_ready = models.BooleanField()
+    is_ready = models.BooleanField(default=False)
     title = models.CharField(max_length=32)
     thumbnail = models.ImageField(upload_to="rulebooks/thumbnails", null=True, blank=True)
     description = models.TextField()

@@ -4,8 +4,6 @@ from .models import Rulebook
 def rulebooks(request):
     rulebooks = Rulebook.objects.all()
 
-    print('>>>>>>>', type(rulebooks[0].thumbnail))
-
     return render(request, 'rulebooks/rulebooks.html', {
         "rulebooks": rulebooks  
     })
