@@ -34,12 +34,14 @@
         {% block body %}{% endblock %}
         
         <footer>
-            <span>Website made by Alessandro Provvisionato</span>
+            <span>Made by Alessandro Provvisionato</span>
             
             <ul>
-                <li><a href="{% url 'contact' %}">
-                    <span class="iconify" data-icon="fluent:mail-24-regular"></span>
-                    Contattami!</a>
+                <li>
+                    <a href="{% url 'contact' %}">
+                        <span class="iconify" data-icon="fluent:mail-24-regular"></span>
+                        <span class="contact_cta">Contattami!</span>
+                    </a>
                 </li>
             </ul>
             

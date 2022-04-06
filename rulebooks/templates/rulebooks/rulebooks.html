@@ -15,19 +15,19 @@
         {% for r in rulebooks %}
             {% if r.is_ready == True %}
                 <div class="rulebook">
-
-                    <div class="rulebook__thumbnail">
-                    {% if r.thumbnail %}
-                        <img src="{{ r.thumbnail.url }}" alt="{{ r.title }} thumbnail">
-                    {% endif %}
-                    </div>
-
-                    <div class="rulebook__info">
-                        <a href="{% url 'rules' r.link_to_page_rules %}">
+                    
+                    <a href="{% url 'rules' r.link_to_page_rules %}">
+                        <div class="rulebook__info">
+                            <div class="rulebook__thumbnail">
+                            {% if r.thumbnail %}
+                                <img src="{{ r.thumbnail.url }}" alt="{{ r.title }} thumbnail">
+                            {% endif %}
+                            </div>
+                            
                             <h2 class="rulebook__title">{{ r.title }}</h2>
                             <p class="rulebook__description"> {{ r.description }} </p>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
 
                     <div class="rulebook__links">
                         <ul>

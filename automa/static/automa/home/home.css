@@ -101,6 +101,11 @@ footer a svg {
   margin-bottom: -0.15em;
   margin-right: 0.5em;
 }
+@media screen and (max-width: 400px) {
+  footer .contact_cta {
+    display: hidden;
+  }
+}
 
 header {
   padding-right: 0.5em;
@@ -226,6 +231,9 @@ header .menu-toggle.menu-toggle-open div {
   header nav ul li {
     padding-block: 0;
     border-bottom: none;
+  }
+  header nav ul .btn-flip {
+    border-left: 1px solid #444444;
   }
   header .menu-toggle {
     display: none;

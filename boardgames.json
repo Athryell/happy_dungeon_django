@@ -5,7 +5,7 @@
         "fields": {
             "title": "Near and Far",
             "short_title": "nearandfar",
-            "image": "games_cover/NearAndFar.jpg",
+            "image": "automa/games_cover/NearAndFar.jpg",
             "tags": ["3"],
             "size": "L",
             "is_ready": "False"
@@ -17,7 +17,7 @@
         "fields": {
             "title": "Conspiracy: abyss universe",
             "short_title": "conspiracy",
-            "image": "games_cover/Conspiracy.jpg",
+            "image": "automa/games_cover/Conspiracy.jpg",
             "tags": ["3", "1"],
             "size": "S",
             "is_ready": "False"
@@ -29,7 +29,7 @@
         "fields": {
             "title": "7 Wonders Duel",
             "short_title": "7wondersduel",
-            "image": "games_cover/7WondersDuel.jpg",
+            "image": "automa/games_cover/7WondersDuel.jpg",
             "tags": ["3"],
             "size": "S",
             "is_ready": "False"
@@ -41,7 +41,7 @@
         "fields": {
             "title": "Galaxy Trucker",
             "short_title": "galaxytrucker",
-            "image": "games_cover/Galaxy_Trucker.jpg",
+            "image": "automa/games_cover/Galaxy_Trucker.jpg",
             "tags": ["2", "4"],
             "size": "M",
             "is_ready": "False"
@@ -53,7 +53,7 @@
         "fields": {
             "title": "Unmatched",
             "short_title": "unmatched",
-            "image": "games_cover/Unmatched.jpg",
+            "image": "automa/games_cover/Unmatched.jpg",
             "tags": ["2", "3"],
             "size": "M",
             "is_ready": "False"

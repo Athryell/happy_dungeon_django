@@ -18,36 +18,53 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
+.rulebook a {
+  margin-inline: auto;
+}
+
+.rulebook__info {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+  gap: 0 1em;
+}
+.rulebook__info h2 {
+  margin: 0;
+}
+@media screen and (max-width: 400px) {
+  .rulebook__info p {
+    grid-column: span 2;
+  }
+}
 
 .rulebook__thumbnail {
-  width: 6em;
-  height: 6em;
+  width: 10vw;
+  height: 10vw;
+  max-width: 6em;
+  max-height: 6em;
   border-radius: 50%;
   background-color: steelblue;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .rulebook__thumbnail img {
   border-radius: 50%;
 }
-
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 340px) {
   .rulebook__thumbnail {
-    display: none;
+    grid-row-end: 2;
   }
 }
+
 .rulebook__title {
   font-size: 2rem;
-  margin-top: 0;
-}
-
-.rulebook__description {
-  margin-bottom: 0;
 }
 
 .rulebook__links {
   background-color: lightblue;
   padding: 1em;
   border-radius: 15px;
-  margin-left: auto;
+  margin-inline: auto;
 }
 .rulebook__links li:not(:last-child) {
   margin-bottom: 0.4em;

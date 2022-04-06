@@ -11,14 +11,20 @@ picture {
   display: block;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0;
   background: #E2EDF3;
   font-family: "Bitter", arial;
   box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -89,17 +95,17 @@ footer {
 }
 
 footer {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 100%;
-  width: 100%;
+  margin-top: auto;
 }
 footer a {
   color: white;
+  display: inline-block;
+  height: 100%;
 }
-footer a svg {
-  margin-bottom: -0.15em;
-  margin-right: 0.5em;
+@media screen and (max-width: 400px) {
+  footer .contact_cta {
+    display: none;
+  }
 }
 
 header {
