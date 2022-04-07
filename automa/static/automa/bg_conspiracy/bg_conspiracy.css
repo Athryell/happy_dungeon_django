@@ -10,6 +10,7 @@ button {
 }
 .display-leaders .leader-box {
   position: relative;
+  z-index: 1;
   min-height: 230px;
   max-width: 15%;
   min-width: 170px;
@@ -40,6 +41,7 @@ button {
   display: none;
   transition: opacity 0.5s ease;
   background-color: #ababab;
+  pointer-events: none;
 }
 
 .tooltip-name {
@@ -96,54 +98,6 @@ button {
           animation: pulse 10s ease-in-out infinite alternate;
 }
 
-.score-btn {
-  margin-block: 3em;
-}
-
-.score-box {
-  max-width: 600px;
-  height: 309px;
-  margin: 3em auto;
-  background-image: url("/static/automa/media/bg_conspiracy/scoresheet.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.score-box table {
-  table-layout: auto;
-  border-collapse: collapse;
-  border: 1px solid black;
-  height: 100%;
-}
-.score-box table tr {
-  height: 33%;
-}
-.score-box table th {
-  vertical-align: bottom;
-  opacity: 0.5;
-}
-.score-box table td {
-  width: 14%;
-}
-.score-box input {
-  width: 90%;
-  font-size: 1.4rem;
-  padding-block: 0.5em;
-  text-align: center;
-}
-.score-box span {
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-}
-.score-box input::-webkit-outer-spin-button,
-.score-box input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.score-box input[type=number] {
-  -moz-appearance: textfield;
-}
-
 @-webkit-keyframes pulse {
   0% {
     box-shadow: 0 0 100px blue;
@@ -179,6 +133,56 @@ button {
     box-shadow: 0 0 100px purple;
   }
 }
+.score-btn {
+  margin-block: 3em;
+}
+
+.score-grid {
+  position: relative;
+  display: none;
+  margin-top: 3em;
+  margin-inline: auto;
+  grid-template-columns: repeat(7, 1fr);
+  max-width: 500px;
+}
+.score-grid > span {
+  min-width: 20%;
+  height: 33%;
+  font-size: min(0.7em, 2.8vw);
+  margin-block: min(1em, 2vw);
+}
+.score-grid .score-title {
+  margin-top: min(5em, 15vw);
+}
+.score-grid .player-score,
+.score-grid .leader-score {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+}
+.score-grid input {
+  width: 90%;
+  font-size: 1.2rem;
+  padding-block: 0.5em;
+  text-align: center;
+}
+.score-grid input::-webkit-outer-spin-button,
+.score-grid input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.score-grid input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#bg-score {
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .switch {
   position: relative;
   display: none;

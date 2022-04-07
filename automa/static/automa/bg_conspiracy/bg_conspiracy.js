@@ -3,16 +3,18 @@ const leaders = document.querySelectorAll('.leader-box')
 const confirmationBox = document.getElementById('confirmation-box')
 const confirmBtn = document.getElementById('yes')
 const goBackBtn = document.getElementById('no')
+const headline = document.querySelector('.headline')
 const randomBtn = document.getElementById('rand-btn')
 const token = document.getElementById('token')
 const tokenImg = document.getElementById('replay-token')
-const headline = document.querySelector('.headline')
+
+const scoreTable = document.querySelector('.score-grid')
 const scoreBtn = document.querySelector('.score-btn')
 const leaderPoints = document.querySelectorAll('.leader-points')
 const playerPoints = document.querySelectorAll('.player-points')
 const leaderScore = document.querySelector('.leader-score')
 const playerScore = document.querySelector('.player-score')
-const scoreTable = document.querySelector('.score-box')
+
 var checkbox = document.getElementById('checkbox-tooltip')
 let totalLeaderScore = 0
 let leaderFaction
@@ -31,7 +33,7 @@ confirmBtn.addEventListener('click', () => {
 })
 
 scoreBtn.addEventListener('click', () => {
-    scoreTable.style.display = 'block'
+    scoreTable.style.display = 'grid'
     scoreBtn.style.display = 'none'
     resetCheckbox()
     // Reset inputs
@@ -124,7 +126,7 @@ randomBtn.addEventListener('click', () => {
 })
 
 // Token
-tokenImg.addEventListener('click', () => {
+token.addEventListener('click', () => {
     tokenImg.classList.toggle('active-token')
 })
 

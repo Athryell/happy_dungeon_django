@@ -120,7 +120,8 @@
             <button id="no" class="btn-primary" type="button">Mmm... no</button>
         </div>
 
-        <div class="score-box" hidden>
+        <!-- <div class="score-box" hidden> -->
+        <!-- <div class="score-box">
             <table>
                 <tr>
                     <th>Giocatore</th>
@@ -149,8 +150,34 @@
                     <td><input type="number" class="player-points"></td>
                     <td><span class="player-score">0</span></td>
                 </tr>
-            </table>
+            </table> -->
 
+            <div class="score-grid">
+                <img id="bg-score" src="{% static 'automa/media/bg_conspiracy/scoresheet.jpg' %}" alt="bg">
+
+                <span class="score-title">Nome</span>
+                <span class="score-title">Bonus Leader</span>
+                <span class="score-title">Nobili</span>
+                <span class="score-title">Luoghi</span>
+                <span class="score-title">Coalizione</span>
+                <span class="score-title">Perle</span>
+                <span class="score-title">Punteggio</span>
+
+                <span><input class="leader-name" type="text" placeholder="Leader"></span>
+                <span><input type="number" class="leader-points"></span>
+                <span><input type="number" class="leader-points"></span>
+                <span><input type="number" class="leader-points"></span>
+                <span><input type="number" class="leader-points"></span>
+                <span><input type="number" class="leader-points"></span>
+                <span><span class="leader-score">0</span></span>
+
+                <span><input class="player-name" type="text" placeholder="Io"></span>
+                <span></span>
+                <span><input type="number" class="player-points"></span>
+                <span><input type="number" class="player-points"></span>
+                <span><input type="number" class="player-points"></span>
+                <span><input type="number" class="player-points"></span>
+                <span><span class="player-score">0</span></span>
         </div>
 
     </div>
