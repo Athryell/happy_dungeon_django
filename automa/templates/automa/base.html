@@ -13,12 +13,12 @@
 </head>
 <body>
         <header>
-            <a class="logo" href="{% url 'home' %}"><span id="happy">Happy</span> <span id="dungeon">Dungeon</span></a>
+            <a class="logo" href="{% url 'automa_home' %}"><span id="happy">Happy</span> <span id="dungeon">Dungeon</span></a>
             
             <nav>
                 <ul>
-                    <li><a class="btn-flip{% if request.path == '/' %} active{% endif %}" href="{% url 'home' %}" data-text="Automa"></a></li>
-                    <li><a class="btn-flip{% if '/rulebooks/' in request.path %} active{% endif %}" href="{% url 'rulebooks' %}" data-text="Regolamenti"></a></li>
+                    <li><a class="btn-flip{% if request.path == '/' or '/rules/' in request.path %} active{% endif %}" href="{% url 'rulebooks' %}" data-text="Regolamenti"></a></li>
+                    <li><a class="btn-flip{% if '/automa/' in request.path %} active{% endif %}" href="{% url 'automa_home' %}" data-text="Automa"></a></li>
                     <li><a class="btn-flip{% if '/tutorials/' in request.path %} active{% endif %}" href="{% url 'tutorials' %}" data-text="Video tutorial"></a></li>
                     <li><a class="btn-flip" href="#" data-text="Game design"></a></li>
                     <li><a class="btn-flip" href="#" data-text="Altro"></a></li>
@@ -30,17 +30,24 @@
             </div>
             
         </header>
+
+        <h1 id="page-title">
+            {% if request.path == '/' or '/rules/' in request.path %} Regolamenti
+            {% elif '/automa/' in request.path %} Automa companion
+            {% elif '/tutorials/' in request.path %} Tutorial
+            {% endif %}
+        </h1>
         
         {% block body %}{% endblock %}
         
         <footer>
-            <span>Made by Alessandro Provvisionato</span>
+            <span class="creator">Made by Alessandro Provvisionato</span>
             
             <ul>
                 <li>
                     <a href="{% url 'contact' %}">
                         <span class="iconify" data-icon="fluent:mail-24-regular"></span>
-                        <span class="contact_cta">Contattami!</span>
+                        <span class="contact_cta">Contattami</span>
                     </a>
                 </li>
             </ul>

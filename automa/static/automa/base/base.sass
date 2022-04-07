@@ -29,6 +29,7 @@ body
 
     display: flex
     flex-direction: column
+    justify-content: flex-start
 
 .container
     margin: 2em
@@ -66,6 +67,7 @@ button
 .btn-secondary
     background: $secondary-color
     color: $black-navbar
+
 ul
     list-style-type: none
     margin: 0
@@ -98,14 +100,27 @@ footer
 footer
     margin-top: auto
 
+    .creator
+        color: rgba(255,255,255,0.5)
+
     a
         color: white
         display: inline-block
         height: 100%
 
+        svg
+            display: none
+            font-size: 1.2rem
+            margin-right: .5em
+            margin-bottom: -0.2em
+
     @media screen and ( max-width: 400px )
         .contact_cta
             display: none
+
+        a
+            svg
+                display: block
 
 header
     padding-right: 0.5em
@@ -237,3 +252,11 @@ header
                     
         .menu-toggle
             display: none
+
+
+//? ------ PAGE ---------
+
+#page-title
+    font-size: min(2em, 8vw)
+    margin-inline: auto
+    color: rgba(0,0,0,0.5)

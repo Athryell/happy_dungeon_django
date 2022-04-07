@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'automa',
     'rulebooks',
     'tutorials',
+    'contacts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

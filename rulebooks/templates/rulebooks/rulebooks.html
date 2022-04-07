@@ -25,23 +25,38 @@
                             </div>
                             
                             <h2 class="rulebook__title">{{ r.title }}</h2>
-                            <p class="rulebook__description"> {{ r.description }} </p>
+                            <p class="rulebook__description">
+                                <span class="iconify" data-icon="carbon:document"></span>
+                                {{ r.description }}
+                            </p>
                         </div>
                     </a>
 
                     <div class="rulebook__links">
                         <ul>
                             {% if r.link_original %}
-                                <li><a href="{{ r.link_original }}" target="_blank">Regolamento originale (eng)</a></li>
+                                <li><a href="{{ r.link_original }}" target="_blank">
+                                    <span class="iconify" data-icon="akar-icons:link-out"></span>
+                                    Regolamento originale (eng)
+                                </a></li>
                             {% endif %}
                             {% if r.link_ita %}
-                                <li><a href="{{ r.link_ita }}" target="_blank">Regolamento su BGG (ita)</a></li>
+                                <li><a href="{{ r.link_ita }}" target="_blank">
+                                    <span class="iconify" data-icon="akar-icons:link-out"></span>
+                                    Regolamento su BGG (ita)
+                                </a></li>
                             {% endif %}
                             {% if r.file_PDF %}
-                                <li><a href="{{ r.file_PDF }}" target="_blank">Download PDF (ita)</a></li>
+                                <li><a href="{{ r.file_PDF }}" target="_blank">
+                                    <span class="iconify" data-icon="carbon:document-pdf"></span>
+                                    Download PDF (ita)
+                                </a></li>
                             {% endif %}
                             {% if r.link_amazon %}
-                                <li><a href="{{ r.link_amazon }}" target="_blank">Qui puoi acquistare il gioco</a></li>
+                                <li><a href="{{ r.link_amazon }}" target="_blank">
+                                    <span class="iconify" data-icon="icon-park-outline:buy"></span>
+                                    Qui puoi acquistare il gioco
+                                </a></li>
                             {% endif %}
 
                             {% for url in r.url.all %}

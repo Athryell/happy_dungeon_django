@@ -1,17 +1,18 @@
+button
+    margin-bottom: 1em
+    
 .display-leaders
     display: flex
     align-items: center
     justify-content: center
     flex-wrap: wrap
-    width: 100%
-    margin-top: 2em
 
     .leader-box
         position: relative
         min-height: 230px
         max-width: 15%
         min-width: 170px
-        margin: 0.5rem
+        margin: 0.5rem auto
         cursor: pointer
         perspective: 500px
         transform-style: preserve-3d
@@ -41,40 +42,51 @@
     font-size: 0.7em
     display: none
     transition: opacity 0.5s ease
+    background-color: #ababab
 
 .tooltip-name
     bottom: 100%
-    left: 0
-    width: 100%
+    left: -50%
+    width: 200%
+    padding: 0
+    margin: 0
     font-size: 1.3rem
     font-weight: 700
+    background-color: #E2EDF3
 
 .tooltip-bonuspoints
     top: 0
     right: 100%
     width: 50%
-    background-color: #ababab
-
+    
 .tooltip-power
     top: 0
     left: 100%
     width: 50%
-    background-color: #ababab
 
 .tooltip-conditions
     top: 100%
     left: -50%
     width: 200%
-    background-color: #ababab
+
+#token
+    position: relative
+    display: none
+    margin-inline: auto
+    margin: 3em 3em 0
+
+.tooltip-token
+    top: 100%
+    left: -25%
+    width: 150%
+
 
 #replay-token
     max-width: 120px
     border-radius: 100px
     cursor: pointer
-    margin-left: 6em
-    display: none
 
-.active
+.active-token
     border: 3px solid orange
     filter: brightness(150%)
     animation: pulse 10s ease-in-out infinite alternate
@@ -146,4 +158,62 @@
 //             .tooltip
 //                 visibility: visible
 //                 opacity: 1
-            
+
+ /* The switch - the box around the slider */
+.switch
+    position: relative
+    display: none
+    width: 60px
+    height: 34px
+    margin: auto
+    margin-bottom: 3em
+
+    /* Hide default HTML checkbox */
+    input
+        opacity: 0
+        width: 0
+        height: 0
+
+    .switch-text
+        position: absolute
+        left: 100%
+        top: 25%
+        width: 100px
+        text-align: left
+        padding-left: 0.5em
+
+/* The slider */
+.slider
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #ccc
+    border-radius: 3px
+    -webkit-transition: .4s
+    transition: .4s
+
+.slider:before
+    position: absolute
+    content: ""
+    height: 26px
+    width: 26px
+    left: 4px
+    bottom: 4px
+    background-color: #292929
+    border-radius: 3px
+    -webkit-transition: .4s
+    transition: .4s
+
+input:checked + .slider 
+    background-color: #FE9A1F
+
+input:focus + .slider 
+    box-shadow: 0 0 1px #FE9A1F
+
+input:checked + .slider:before
+    -webkit-transform: translateX(26px)
+    -ms-transform: translateX(26px)
+    transform: translateX(26px)

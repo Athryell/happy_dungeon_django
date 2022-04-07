@@ -25,6 +25,7 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 .container {
@@ -97,14 +98,26 @@ footer {
 footer {
   margin-top: auto;
 }
+footer .creator {
+  color: rgba(255, 255, 255, 0.5);
+}
 footer a {
   color: white;
   display: inline-block;
   height: 100%;
 }
+footer a svg {
+  display: none;
+  font-size: 1.2rem;
+  margin-right: 0.5em;
+  margin-bottom: -0.2em;
+}
 @media screen and (max-width: 400px) {
   footer .contact_cta {
     display: none;
+  }
+  footer a svg {
+    display: block;
   }
 }
 
@@ -239,4 +252,10 @@ header .menu-toggle.menu-toggle-open div {
   header .menu-toggle {
     display: none;
   }
+}
+
+#page-title {
+  font-size: min(2em, 8vw);
+  margin-inline: auto;
+  color: rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=base.css.map */

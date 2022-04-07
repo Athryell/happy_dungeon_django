@@ -3,8 +3,9 @@ const leaders = document.querySelectorAll('.leader-box')
 const confirmationBox = document.getElementById('confirmation-box')
 const confirmBtn = document.getElementById('yes')
 const goBackBtn = document.getElementById('no')
-const randomBtn = document.querySelector('button')
-const token = document.getElementById('replay-token')
+const randomBtn = document.getElementById('rand-btn')
+const token = document.getElementById('token')
+const tokenImg = document.getElementById('replay-token')
 const headline = document.querySelector('.headline')
 const scoreBtn = document.querySelector('.score-btn')
 const leaderPoints = document.querySelectorAll('.leader-points')
@@ -12,20 +13,27 @@ const playerPoints = document.querySelectorAll('.player-points')
 const leaderScore = document.querySelector('.leader-score')
 const playerScore = document.querySelector('.player-score')
 const scoreTable = document.querySelector('.score-box')
+var checkbox = document.getElementById('checkbox-tooltip')
 let totalLeaderScore = 0
 let leaderFaction
 let activeTooltip
+
+document.addEventListener('load', () => {
+    resetCheckbox()
+})
 
 confirmBtn.addEventListener('click', () => {
     token.style.display = 'block'
     scoreBtn.style.display = 'inline'
     confirmationBox.hidden = true
     headline.innerHTML = `Leader ${leaderFaction}`
+    resetCheckbox()
 })
 
 scoreBtn.addEventListener('click', () => {
     scoreTable.style.display = 'block'
     scoreBtn.style.display = 'none'
+    resetCheckbox()
     // Reset inputs
     leaderPoints.forEach(lp => {
         lp.value = ''  
@@ -40,72 +48,84 @@ goBackBtn.addEventListener('click', () => {
     gsap.set(leaders, { clearProps: "all" })
     leaders.forEach(l => {
         l.hidden = false
-        l.removeEventListener('mouseenter', activateTooltip)
-        l.removeEventListener('mouseleave', inactivateTooltip)
     })
 
     confirmationBox.hidden = true
-    randomBtn.style.visibility = 'visible'
+    randomBtn.style.display = 'inline-block'
+    resetCheckbox()
+    checkbox.parentElement.style.display = 'none'
+
 })
 
 // TOOLTIP
-leaders.forEach(leader => {
-    leader.addEventListener('click', () => {
-        hideCards(leader)
-        leaderFaction = leader.dataset.faction
-        activeTooltip = leader.querySelectorAll('.tooltip')
-        leader.addEventListener('mouseenter', activateTooltip)
-        leader.addEventListener('mouseleave', inactivateTooltip)
-    })
+checkbox.addEventListener('change', () => {
+    const tt = document.querySelectorAll('.tooltip')
+
+    if (checkbox.checked) {
+        tt.forEach(t => {
+            t.style.display = 'block'
+        })
+    } else {
+        tt.forEach(t => {
+            t.style.display = 'none'
+        })
+    }
 })
 
-function activateTooltip(){
-    activeTooltip.forEach(t => {
-        t.style.display = 'block'
-    })
-}
+function resetCheckbox(){
+    checkbox.checked = false
 
-function inactivateTooltip(){
-    activeTooltip.forEach(t => {
+    const tt = document.querySelectorAll('.tooltip')
+
+    tt.forEach(t => {
         t.style.display = 'none'
     })
 }
 
+leaders.forEach(leader => {
+    leader.addEventListener('click', () => {
+        hideCards(leader)
+        leaderFaction = leader.dataset.faction
+        checkbox.parentElement.style.display = 'block'
+        randomBtn.style.display = 'none'
+    })
+})
+
 // HIDE CARDS ON SELECTION
 function hideCards(leader){
     const cardsToHide = []
-        const tl = gsap.timeline()
+    const tl = gsap.timeline()
 
-        leaders.forEach(l => {
-            if (l.dataset.faction !== leader.dataset.faction){
-                cardsToHide.push(l)
-            }
-        })
-        randomBtn.style.visibility = 'hidden'
+    leaders.forEach(l => {
+        if (l.dataset.faction !== leader.dataset.faction){
+            cardsToHide.push(l)
+        }
+    })
 
-        tl.to(cardsToHide, {duration: 0.5, opacity: 0})
-        tl.to(cardsToHide, {duration: 0.5, minWidth: 0, minHeight: 0}, "shrink")
-        tl.to(leaders, {duration: 0.5, margin:0 }, "shrink")
-        tl.to(cardsToHide, {hidden: true}, "end")
-        tl.to(confirmationBox, {hidden: false}, "end")
+    tl.to(cardsToHide, {duration: 0.5, opacity: 0})
+    tl.to(cardsToHide, {hidden: true}, "end")
+    tl.to(confirmationBox, {hidden: false}, "end")
         
 }
 
 // Choose random card
 randomBtn.addEventListener('click', () => {
-    randomBtn.style.visibility = 'hidden'
     const randInt = Math.floor(Math.random() * leaders.length)
+
+    randomBtn.style.display = 'none'
 
     const tlRand = gsap.timeline()
     tlRand.to(leaders, {duration: 1, rotationY: 180, stagger: 0.2, ease: "back.out(2)"})
     tlRand.to(leaders[randInt], {duration: 1, rotationY: 0, ease: "back.out(2)"})
     tlRand.call(hideCards, [leaders[randInt]])
+    tlRand.to(checkbox.parentElement, {display: 'block'})
+
     leaderFaction = leaders[randInt].dataset.faction
 })
 
 // Token
-token.addEventListener('click', () => {
-    token.classList.toggle('active')
+tokenImg.addEventListener('click', () => {
+    tokenImg.classList.toggle('active-token')
 })
 
 // Score
