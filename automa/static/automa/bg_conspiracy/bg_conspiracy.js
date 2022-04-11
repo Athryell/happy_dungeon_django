@@ -27,6 +27,7 @@ document.addEventListener('load', () => {
 confirmBtn.addEventListener('click', () => {
     token.style.display = 'block'
     scoreBtn.style.display = 'inline'
+    randomBtn.style.display = 'none'
     confirmationBox.hidden = true
     headline.innerHTML = `Leader ${leaderFaction}`
     resetCheckbox()
@@ -36,6 +37,7 @@ scoreBtn.addEventListener('click', () => {
     scoreTable.style.display = 'grid'
     scoreBtn.style.display = 'none'
     resetCheckbox()
+    
     // Reset inputs
     leaderPoints.forEach(lp => {
         lp.value = ''  
@@ -114,12 +116,13 @@ function hideCards(leader){
 randomBtn.addEventListener('click', () => {
     const randInt = Math.floor(Math.random() * leaders.length)
 
-    randomBtn.style.display = 'none'
+    randomBtn.style.visibility = 'hidden'
 
     const tlRand = gsap.timeline()
     tlRand.to(leaders, {duration: 1, rotationY: 180, stagger: 0.2, ease: "back.out(2)"})
     tlRand.to(leaders[randInt], {duration: 1, rotationY: 0, ease: "back.out(2)"})
     tlRand.call(hideCards, [leaders[randInt]])
+    tlRand.to(randomBtn, {display: 'none'})
     tlRand.to(checkbox.parentElement, {display: 'block'})
 
     leaderFaction = leaders[randInt].dataset.faction
