@@ -49,15 +49,9 @@ a
         height: 95%
         width: 95%
 
-        &::before
+        &::before       // BOX BELOW bottom
             position: absolute
             content: ''
-            text-align: center
-            color: white
-            letter-spacing: 0.3em
-            font-size: 1em
-            font-weight: bold
-            
             border-bottom-right-radius: 3px
             bottom: -20px
             height: 21px
@@ -67,16 +61,9 @@ a
             background-color: $black-navbar
             transition: all .5s
 
-        &::after
+        &::after        // BOX BELOW right
             position: absolute
             content: ''
-            writing-mode: vertical-rl
-            text-orientation: upright
-            text-align: center
-            letter-spacing: 0.3em
-            font-size: 0.7em
-            color: white
-            transition: all .5s
             right: -11px
             height: 100%
             width: 13px
@@ -85,99 +72,156 @@ a
             border-bottom-right-radius: 4px
             background-color: black
 
+        &-small
+            &::before       // Small - BOX BELOW bottom
+                left: 5px
+                bottom: -14px
+                height: 15px
+                width: 98%
+                border-bottom-right-radius: 2px
+                transform: skewX(30deg)
+
+            &::after        // Small - BOX BELOW right
+                height: 99%
+                right: -7px
+                bottom: -6px
+                width: 8px
+                transform: skewY(60deg)
+                border-top-left-radius: 1px
+                border-bottom-right-radius: 0
+
     .game-top
         position: absolute
         top: 0
         left: 0
         height: 100%
         width: 100%
-        box-shadow: 15px 25px 5px rgba(0,0,0,0.1), 20px 30px 10px rgba(0,0,0,0.1), 30px 40px 10px rgba(0,0,0,0.1)
+        // box-shadow: 15px 25px 5px rgba(0,0,0,0.1), 20px 30px 10px rgba(0,0,0,0.1), 30px 40px 10px rgba(0,0,0,0.1)
 
         transition: all .5s
 
         img
             border-bottom-right-radius: 0
 
-        &::before
-            position: absolute
-            content: attr(data-label)
-            text-align: center
-            color: white
-            letter-spacing: 0.3em
-            font-size: 1em
-            font-weight: bold
-            
-            left: 6px
-            bottom: -20px
-            height: 20px
-            width: 100%
-            border-bottom-right-radius: 2px
-            transform: skewX(30deg)
-            background-color: darken(#db8b0b, 20%)
-            transition: all .5s
-
-        &::after
+        &::before       // BOX ABOVE bottom
             position: absolute
             content: ''
-            right: -11px
-            height: 100%
+            left: 6px
+            bottom: -19px
+            height: 20px
+            width: 100%
+            border-bottom-right-radius: 4px
+            border-bottom-left-radius: 1px
+            transform: skewX(30deg)
+            background: linear-gradient( to right, #696969, #a1a1a1)
+            transition: all .5s
+
+        &::after        // BOX ABOVE right
+            position: absolute
+            content: ''
+            right: -10px
+            height: 99%
             width: 11px
-            bottom: -9px
+            bottom: -8px
             transform: skewY(60deg)
             border-top-left-radius: 1px
-            box-shadow: 0 1px 0 #452205
-            background-color: #452205
+            border-top-right-radius: 1px
+            border-bottom-right-radius: 1px
+            box-shadow: 0 1px 0 #7a7a7a
+            background: linear-gradient( #353535, #7a7a7a)
             transition: all .5s
+
+        &-small
+            &::before       // Small - BOX ABOVE bottom
+                left: 4px
+                bottom: -14px
+                height: 15px
+                width: 99%
+                border-bottom-right-radius: 1px
+                border-top-left-radius: 1px
+                transform: skewX(30deg)
+                
+
+            &::after        // Small - BOX ABOVE right
+                height: 99%
+                right: -7px
+                bottom: -6px
+                width: 8px
+                transform: skewY(60deg)
+                border-top-left-radius: 1px
+                border-bottom-right-radius: 1px
+                
 
         &:hover
             margin-left: -6px
             margin-top: -10px
-            box-shadow: 20px 30px 5px rgba(0,0,0,0.1), 25px 35px 15px rgba(0,0,0,0.1), 40px 50px 15px rgba(0,0,0,0.1)
+            // box-shadow: 20px 30px 5px rgba(0,0,0,0.1), 25px 35px 15px rgba(0,0,0,0.1), 40px 50px 15px rgba(0,0,0,0.1)
+
+        
+
 
 .search-bar
     margin-block: 1em
-    margin-left: 3em
+    margin-inline: 3em
     perspective: 400px
     text-align: center
 
     .bar
         cursor: pointer
+        position: relative
         background: $white-blue
         border: 1px solid $black-navbar
         height: 50px
         display: inline-block
         transform-style: preserve-3d
-        transform: rotateY(90deg) translateX(100px)
+        transform: rotateY(90deg) translateX(100px) translateZ(25px)
         transition: transform 0.5s
 
         input
-            height: 50%
+            height: 34px
             width: 90%
             border-radius: 10px
             margin-top: 7px
-            padding: 0.8em 
             font-size: 1.5em
             border: none
 
             &:focus
                 outline: none
 
-        &::before
+        .search-icon
             position: absolute
             top: 0
             right: 100%
-            height: 100%
-
-            display: inline-block
-            text-rendering: auto
-            -webkit-font-smoothing: antialiased
-            font: var(--fa-font-solid)
-            content: "\f002"
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 50px
+            width: 50px
             color: $white-blue
-            font-size: 1.5em
-            line-height: 240%
-            padding: 0 0.5em
             background: $black-navbar
-            border: 1px solid $black-navbar
-            transform: rotateY(-90deg) translate3d(-22px, -1px, -21px)
+            transform: rotateY(-90deg) translate3d(-25px, -1px, -24px)
+
+            svg
+                width: 50%
+                height: 50%
+            
+
+        // &::before
+            // position: absolute
+            // top: 0
+            // right: 100%
+            // height: 100%
+
+            // display: inline-block
+            // text-rendering: auto
+            // -webkit-font-smoothing: antialiased
+            // font: var(--fa-font-solid)
+            // content: "\f002"
+            // color: $white-blue
+            // font-size: 1.5em
+            // line-height: 240%
+            // padding: 0 0.5em
+            // background: $black-navbar
+            // border: 1px solid $black-navbar
+            // transform: rotateY(-90deg) translate3d(-22px, -1px, -21px)
             

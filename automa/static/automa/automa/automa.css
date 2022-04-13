@@ -30,6 +30,7 @@ body {
 
 .container {
   margin: 2em;
+  margin-top: 0;
   text-align: center;
 }
 
@@ -310,11 +311,6 @@ a img {
 .container .game-bottom::before {
   position: absolute;
   content: "";
-  text-align: center;
-  color: white;
-  letter-spacing: 0.3em;
-  font-size: 1em;
-  font-weight: bold;
   border-bottom-right-radius: 3px;
   bottom: -20px;
   height: 21px;
@@ -327,14 +323,6 @@ a img {
 .container .game-bottom::after {
   position: absolute;
   content: "";
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
-  text-orientation: upright;
-  text-align: center;
-  letter-spacing: 0.3em;
-  font-size: 0.7em;
-  color: white;
-  transition: all 0.5s;
   right: -11px;
   height: 100%;
   width: 13px;
@@ -343,13 +331,29 @@ a img {
   border-bottom-right-radius: 4px;
   background-color: black;
 }
+.container .game-bottom-small::before {
+  left: 5px;
+  bottom: -14px;
+  height: 15px;
+  width: 98%;
+  border-bottom-right-radius: 2px;
+  transform: skewX(30deg);
+}
+.container .game-bottom-small::after {
+  height: 99%;
+  right: -7px;
+  bottom: -6px;
+  width: 8px;
+  transform: skewY(60deg);
+  border-top-left-radius: 1px;
+  border-bottom-right-radius: 0;
+}
 .container .game-top {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  box-shadow: 15px 25px 5px rgba(0, 0, 0, 0.1), 20px 30px 10px rgba(0, 0, 0, 0.1), 30px 40px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
 }
 .container .game-top img {
@@ -357,83 +361,97 @@ a img {
 }
 .container .game-top::before {
   position: absolute;
-  content: attr(data-label);
-  text-align: center;
-  color: white;
-  letter-spacing: 0.3em;
-  font-size: 1em;
-  font-weight: bold;
+  content: "";
   left: 6px;
-  bottom: -20px;
+  bottom: -19px;
   height: 20px;
   width: 100%;
-  border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 1px;
   transform: skewX(30deg);
-  background-color: #7a4d06;
+  background: linear-gradient(to right, #696969, #a1a1a1);
   transition: all 0.5s;
 }
 .container .game-top::after {
   position: absolute;
   content: "";
-  right: -11px;
-  height: 100%;
+  right: -10px;
+  height: 99%;
   width: 11px;
-  bottom: -9px;
+  bottom: -8px;
   transform: skewY(60deg);
   border-top-left-radius: 1px;
-  box-shadow: 0 1px 0 #452205;
-  background-color: #452205;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  box-shadow: 0 1px 0 #7a7a7a;
+  background: linear-gradient(#353535, #7a7a7a);
   transition: all 0.5s;
+}
+.container .game-top-small::before {
+  left: 4px;
+  bottom: -14px;
+  height: 15px;
+  width: 99%;
+  border-bottom-right-radius: 1px;
+  border-top-left-radius: 1px;
+  transform: skewX(30deg);
+}
+.container .game-top-small::after {
+  height: 99%;
+  right: -7px;
+  bottom: -6px;
+  width: 8px;
+  transform: skewY(60deg);
+  border-top-left-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 .container .game-top:hover {
   margin-left: -6px;
   margin-top: -10px;
-  box-shadow: 20px 30px 5px rgba(0, 0, 0, 0.1), 25px 35px 15px rgba(0, 0, 0, 0.1), 40px 50px 15px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar {
   margin-block: 1em;
-  margin-left: 3em;
+  margin-inline: 3em;
   perspective: 400px;
   text-align: center;
 }
 .search-bar .bar {
   cursor: pointer;
+  position: relative;
   background: #E2EDF3;
   border: 1px solid #292929;
   height: 50px;
   display: inline-block;
   transform-style: preserve-3d;
-  transform: rotateY(90deg) translateX(100px);
+  transform: rotateY(90deg) translateX(100px) translateZ(25px);
   transition: transform 0.5s;
 }
 .search-bar .bar input {
-  height: 50%;
+  height: 34px;
   width: 90%;
   border-radius: 10px;
   margin-top: 7px;
-  padding: 0.8em;
   font-size: 1.5em;
   border: none;
 }
 .search-bar .bar input:focus {
   outline: none;
 }
-.search-bar .bar::before {
+.search-bar .bar .search-icon {
   position: absolute;
   top: 0;
   right: 100%;
-  height: 100%;
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font: var(--fa-font-solid);
-  content: "\f002";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
   color: #E2EDF3;
-  font-size: 1.5em;
-  line-height: 240%;
-  padding: 0 0.5em;
   background: #292929;
-  border: 1px solid #292929;
-  transform: rotateY(-90deg) translate3d(-22px, -1px, -21px);
+  transform: rotateY(-90deg) translate3d(-25px, -1px, -24px);
+}
+.search-bar .bar .search-icon svg {
+  width: 50%;
+  height: 50%;
 }/*# sourceMappingURL=automa.css.map */

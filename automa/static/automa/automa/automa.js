@@ -10,7 +10,7 @@ bar.addEventListener('click', () => {
 
 inputSearch.addEventListener('blur', () => {
     if(inputSearch.value.trim() === ''){
-        bar.style.transform = 'rotateY(90deg) translateX(100px)'
+        bar.style.transform = 'rotateY(90deg) translateX(100px) translateZ(25px)'
     }
 })
 
