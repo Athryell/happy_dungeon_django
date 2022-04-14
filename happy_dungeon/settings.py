@@ -27,7 +27,10 @@ SECRET_KEY = os.environ.get('HD_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['happydungeon.herokuapp.com']
+ALLOWED_HOSTS = [
+    'happydungeon.herokuapp.com',
+    'happydungeon.quest'
+]
 
 # Application definition
 
