@@ -16,19 +16,19 @@
             {% if r.is_ready == True %}
                 <div class="rulebook">
                     
-                    <a href="{% url 'rules' r.link_to_page_rules %}">
+                    <a href="{% url 'rules' r.link_to_page_rules%}">
                         <div class="rulebook__info">
                             <div class="rulebook__thumbnail">
                             {% if r.thumbnail %}
-                                <img src="{{ r.thumbnail.url }}" alt="{{ r.title }} thumbnail">
+                                <img src="{{ r.thumbnail.url }}" alt="tn {{ r.title }}">
                             {% endif %}
                             </div>
                             
                             <h2 class="rulebook__title">{{ r.title }}</h2>
-                            <p class="rulebook__description">
+                            <div class="rulebook__description">
                                 <span class="iconify" data-icon="carbon:document"></span>
-                                {{ r.description }}
-                            </p>
+                                <span>{{ r.description }}</span>
+                            </div>
                         </div>
                     </a>
 
@@ -60,7 +60,20 @@
                             {% endif %}
 
                             {% for url in r.url.all %}
-                                <li><a href="{{ url.url }}" target="_blank">{{ url.url_name }}</a></li>
+                                <li><a href="{{ url.url }}" target="_blank">
+                                    
+                                    {% if url.link_type == 'VID' %}
+                                        <span class="iconify" data-icon="akar-icons:video"></span>
+                                    {% elif url.link_type == 'FIL' %}
+                                        <span class="iconify" data-icon="akar-icons:file"></span>
+                                    {% elif url.link_type == 'PDF' %} 
+                                        <span class="iconify" data-icon="bi:filetype-pdf"></span>
+                                    {% else %}
+                                        <span class="iconify" data-icon="akar-icons:link-out"></span>
+                                    {% endif %}
+
+                                    {{ url.url_name }}
+                                </a></li>
                             {% endfor %}
                         </ul>
                     </div>

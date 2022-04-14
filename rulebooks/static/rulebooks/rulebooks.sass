@@ -1,3 +1,5 @@
+@import ../../../automa/static/automa/base/base
+
 svg
     font-size: 1.3em
     margin-bottom: -0.2em
@@ -8,7 +10,7 @@ svg
     width: 90vw
     margin-inline: auto
     text-align: left
-    margin-top: 10vw
+    margin-top: 3em
 
 .rulebook
     display: flex
@@ -25,6 +27,13 @@ svg
     a
         margin-inline: auto
 
+        &:hover,
+        &:focus
+            .rulebook__description
+                outline: 1px solid $secondary-color
+                border-radius: 5px
+                outline-offset: 0.2em
+
 .rulebook__info
     display: grid
     grid-template-columns: 1fr 4fr
@@ -33,6 +42,14 @@ svg
 
     h2
         margin: 0
+
+    .rulebook__description
+        max-width: 340px
+        display: flex
+
+        .iconify
+            min-width: 20px
+
 
     @media screen and ( max-width: 425px)
         p
@@ -66,4 +83,11 @@ svg
 
     li:not(:last-child)
         margin-bottom: 0.4em
+
+    li
+        &:hover,
+        &:focus
+            outline: 1px solid $primary-color
+            outline-offset: 0.2em
+            border-radius: 5px 
 

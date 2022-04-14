@@ -15,6 +15,19 @@ class Rulebook(models.Model):
         return f'Rulebook: {self.title} - ready: {self.is_ready}'
 
 class Rulebook_additional_url(models.Model):
+
+    class LinkType(models.TextChoices):
+        GENERAL = 'GEN'
+        VIDEO = 'VID'
+        FILE = 'FIL'
+        PDF = 'PDF'
+
+    link_type = models.CharField(
+        max_length=3,
+        choices=LinkType.choices,
+        default=LinkType.GENERAL
+    )
+
     game = models.ForeignKey("Rulebook", on_delete=models.CASCADE, related_name="url")
     url_name = models.CharField(max_length=32)
     url = models.CharField(max_length=128, null=True, blank=True)

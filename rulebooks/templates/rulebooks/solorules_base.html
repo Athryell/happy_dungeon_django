@@ -1,0 +1,24 @@
+{% extends 'automa/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'rulebooks/rules.css' %}">
+{% endblock %}
+
+{% block title %}
+    Regolamento {{ title }}
+{% endblock %}
+
+{% block body %}
+    <button id="topBtn" title="Go to top"><span class="iconify" data-icon="bytesize:chevron-top"></span></button>
+
+    {% include rulebook_to_display %}
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'rulebooks/rules.js' %}"></script>
+{% endblock %}
+
+
+

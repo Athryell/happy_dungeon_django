@@ -8,5 +8,24 @@ def rulebooks(request):
         "rulebooks": rulebooks  
     })
 
+# def rules(request, html_filename):
+#     return render(request, f'rulebooks/{html_filename}.html', {
+#         "html_filename": html_filename
+#     })
+
 def rules(request, html_filename):
-    return render(request, f'rulebooks/{html_filename}.html')
+    title = ''
+    for r in Rulebook.objects.all():
+        if r.link_to_page_rules == html_filename:
+            title = r.title
+            break
+
+    print(r.title)
+    print(html_filename)
+
+    rulebook_to_display = f'rulebooks/{html_filename}.html'
+
+    return render(request, f'rulebooks/solorules_base.html', {
+        "rulebook_to_display": rulebook_to_display,
+        "title": title
+    })

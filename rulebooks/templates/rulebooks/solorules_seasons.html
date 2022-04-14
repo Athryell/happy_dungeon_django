@@ -1,224 +1,471 @@
-{% extends 'automa/base.html' %}
-{% load static %}
+<div class="container">
+    <h1>Regolamento solitario Seasons</h1>
+    <small>
+        <p>Una variante in solitaria di Thomas Lajeunesse, A cura di Adam Sequoyah</p>
+        <p>Seasons è un gioco di Régis Bonnessée pubblicato da Libellud</p>
+        <p>Questo sito si occupa solo della traduzione in italiano</p>
 
-{% block link %}
-    <link rel="stylesheet" href="{% static 'rulebooks/rules.css' %}">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha512-6/gTF62BJ06BajySRzTm7i8N2ZZ6StspU9uVWDdoBiuuNu5rs1a8VwiJ7skCz2BcvhpipLKfFerXkuzs+npeKA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-{% endblock %}
-
-{% block title %}
-    Regolamento Puerto Rico
-{% endblock %}
-
-{% block body %}
-
-    <div class="container">
-        <h1>Regolamento solitario Puerto Rico</h1>
-        <small>
-            <p>(Concetto e design del gioco originali di Andreas Seyfarth &copy; 2001, Ravensburger Spieleverlag &copy; 2002)</p>
-            <p>Regole aggiuntive 2008 SoloPlay&trade;, tutti i diritti riservati (Utente BGG — GameRulesfotone)</p>
-            <p>Questo sito si è occupato solo della traduzione in italiano e di correzioni minori</p>
-        </small>
+        <p><strong>Per includere le espansioni vedi sotto
+            <a href="#first-expansion">la prima espansione Enchanted Kingdoms</a>
+            o
+            <a href="#second-expansion">la seconda espansione Path of Destiny</a></strong>.</p>
+        <p><a href="#">Video tutorial</a></p>
+    </small>
 
 
-        
-        <div class="content">
+    
+    <div class="content">
+        <section class="intro">
             <p>
-                <strong>Introduzione</strong>: Il gioco Puerto Rico è stato progettato per 3-5 giocatori.
-                Le regole di SoloPlay&trade; sono state progettate per dare a un giocatore singolo l'opportunità di giocare con un livello di sfida simile senza modificare in modo significativo le regole multigiocatore. 
+                <p>Negli ultimi anni, il malvagio stregone Dummbot (StupidoBot, NdT) ha pianificato di eliminare tutta l'opposizione che potrebbe avere nel torneo delle 12 stagioni... ma si è dimenticato di te.</p>
+                <p>Eri via, all'estero in una scuola di magia, quando il mostro infame ha eliminato tutti gli altri rivali. Ma ora pensi di essere pronto e stai tornando giusto in tempo per il torneo. Solo tu puoi impedire a Dummbot di diventare il nuovo Arcimago di Xidit e di gettare il regno nell'ombra eterna.</p>
+                <p>Come tutti i buoni Servitori delle Tenebre, Dummbot ha poteri che non puoi raggiungere. Ma hai un vantaggio: Dummbot sembra essere tanto stupido quanto potente...</p>
+                <p>Il destino del regno di Xidit è nelle tue mani! Riuscirai a proteggerlo dal subdolo dominio di Dummbot?</p>
             </p>
-            <p>        
-                Le seguenti regole sono state ampiamente testate per garantire che il gioco sia equilibrato e sia il più fedele possibile al concetto originale. Si presume che il giocatore abbia una buona conoscenza delle regole originali per poter giocare questa variante. Seguendo le regole per giocatore singolo ci sono le modifiche alle regole originali che consentiranno a 2 giocatori di giocare a un gioco "regolare" competitivo e leggermente più strategico.
-            </p>
-
-            <p>
-                Alcuni termini cambiano anche attraverso le diverse traduzioni italiane, qui verranno usati i più recenti:
-                <ul class="ul-disc">
-                    <li> <del>Nave dei Coloni</del> - Sala di Reclutamento  </li>
-                    <li><del>Emporio</del> - Casa di Commercio</li>
-                    <li><del>Colonizzatore</del> - Colono</li>
-                    <li><del>Sindaco</del> - Caposquadra</li>
-                    <li><del>Commerciante</del> - Mercante</li>
-                    <li><del>Granturco</del> - Mais</li>
-                    <li><del>Coloni</del> - Lavoratori</li>
-                    <li>I "possedimenti" includono piantagioni e cave.</li>
-                </ul>
-                
-            </p>
-        
-            <section class="setup">
-                <h2>Setup del gioco:</h2>
-                <ol>
-                    <li>Usare i seguenti componenti per il gioco: (posizionarli nella banca in modo da poter vedere la scorta)
-                        <ol type="A">
-                            <li><b>25</b> lavoratori</li>
-                            <li><b>30</b> gettoni PV (5 x 5, 5 x 1)</li>
-                            <li><b>3</b> cave</li>
-                            <li><b>5</b> barili per ogni tipo di merce</li>
-                        </ol>
-                    </li>
-                    <li>Posiziona vicino al tabellone in 2 file (ruoli e componenti, <mark>immagine in fondo alla pagina</mark>):
-                        <ol type="A">
-                            <li>Pesca casualmente <b>3 piantagioni</b> per il ruolo di Colono dalla riserva e posizionale vicino all'area di gioco.</li>
-                            <li>Sala di Reclutamento: posiziona <b>2</b> dei 25 lavoratori sulla Sala di Reclutamento</li>
-                            <li>Casa di commercio</li>
-                            <li>Navi da carico da <b>4, 5 e 6</b> spazi</li>
-                            <li>Segnalino del Governatore: posto vicino alla banca</li>
-                            <li><b>6 tessere con i ruoli</b> (Colono, Caposquadra, Mercante, Artigiano, Capitano e Costruttore), mescolali e posizionali casualmente da sinistra a destra a formare una loro riga.</li>
-                            <li>Scegli casualmente <b>una piantagione</b> di grano o indaco e posizionala sulla tua plancia giocatore</li>
-                            <li>Inizi con <b>2</b> dobloni</li>
-                            <li>Posiziona <b>1</b> edificio di produzione per tipo sul tabellone di gioco.</li>
-                            <li>Se si utilizza l'espansione: Riempire casualmente gli spazi edificio (uno per tipo), fino a quando rimangono 2 posizioni aperte nelle righe 1, 2 o 3. I 2 spazi aperti possono trovarsi nella stessa riga o in righe diverse. Giocando con gli edifici originali, rimuovi casualmente 2 edifici e posizionane uno di tutti gli altri.</li>
-                        </ol>
-                    </li>
-                </ol> 
-            </section>
-
-            <section class="rules">
-                <h2>Regole del gioco:</h2>
-                <ol>
-                    <li><b>Spiegazione dei ruoli:</b> (modifiche alle regole di gioco originali), gli edifici che influenzano i ruoli vengono eseguiti come indicato nelle regole normali, ad eccezione della Biblioteca come menzionato più avanti.
-                        <ol type="A">
-                            <li><b>Colono</b> - il giocatore deve scegliere una delle 3 piantagioni disponibili da posizionare sul tabellone del giocatore. Rimuovi le piantagioni non scelte e sostituiscile con piantagioni nuove. <b>Nota <mark>(cava)</mark></b>: se il giocatore ha scelto una piantagione di tabacco, caffè o la seconda piantagione di zucchero, allora una cava può essere posizionata al posto di una delle 3 piantagioni disponibili la prossima volta che viene scelto il colono.</li>
-                            <li><b>Commerciante</b> - eseguito come nel gioco normale</li>
-                            <li><b>Sindaco</b> — eseguito come nel gioco normale tranne:
-                                <ol type="i">
-                                    <li>Ogni volta che viene scelto il ruolo, un colono viene posizionato sul cartello del governatore dalla riserva principale. Il colono non tornerà in gioco.</li>
-                                    <li><mark>San Juan non verrà utilizzato</mark> in questa versione in solitaria, tutti i coloni devono essere subito collocati nelle piantagioni o negli edifici.</li>
-                                    <li>Rifornisci la nave dei coloni con un minimo di 2 coloni - se non puoi farlo dalla riserva, il gioco terminerà alla fine del round.</li>
-                                </ol>
-                            </li>
-                            <li><b>Capitano</b> - eseguito come nel gioco normale</li>
-                            <li><b>Artigiano</b> - eseguito come nel gioco normale</li>
-                            <li><b>Costruttore</b> — eseguito come nel gioco normale con la seguente aggiunta:
-                                <ol type="i">
-                                    <li>Dopo l'acquisto, il giocatore deve scegliere, tra gli edifici disponibili, una quantità di edifici di valore totale pari al costo di quello appena acquistato (non più di 2 edifici) oppure scegliere un solo edificio con un costo maggiore (fino a 3 in più) rispetto a quello acquistato. Metti da parte gli edifici. Non saranno disponibili per il resto del gioco.
-                                        <ol type="a">
-                                            <li>Se il giocatore non può soddisfare questi criteri, un edificio non può essere acquisito.</li>
-                                        </ol>
-                                    </li>          
-                                    <li><b>Condizione di fine gioco</b>: se la sezione dell'edificio del giocatore è piena, il gioco termina alla fine del round.</li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-                    <hr>
-
-                    <li><b>Scelta del ruolo:</b> (<mark>nessun privilegio viene concesso</mark> a meno che il giocatore non abbia acquistato e attivato la Biblioteca) Verranno scelti 3 ruoli in ogni round.
-                        <ol type="A">
-                            <li><b>Solo nel round 1 </b>— Il giocatore selezionerà 3 ruoli da sinistra a destra ed eseguirà o passerà il ruolo nell'ordine in cui è stato selezionato.
-                                <ol type="i">
-                                    <li>In futuro i ruoli saranno divisi in 3 gruppi, un ruolo primario (1° ruolo - che deve essere eseguito), ruoli secondari (2° e 3° ruolo - uno di questi deve essere eseguito) e ruoli "di setup" (4°, 5° e 6° ruoli - uno di questi deve essere eseguito). Separare ogni gruppo di un piccolo spazio e mantenerlo fino alla fine del gioco.</li>
-                                    <li>Metti un doblone sul 1° e 2° ruolo.</li>
-                                </ol>
-                            </li>
-                            <li><b>Dal round 2 fino alla fine del gioco</b> — A partire dal ruolo nella posizione 1, il giocatore può svolgere il ruolo, se possibile; eseguendolo come indicato nella sezione ruoli di questo regolamento. È importante posizionare i ruoli giocati nell'ordine in cui sono stati messi da parte fino alla fine del round.
-                                <ol type="i">
-                                    <li><b>Fallimento del ruolo</b> - Se il giocatore non è in grado o non è disposto a eseguire l'azione, il giocatore deve scegliere di eseguire una delle seguenti azioni:
-                                        <ol type="a">
-                                            <li>Paga un minimo di <b>3</b> o fino a metà dei dobloni del giocatore, a seconda dell’importo maggiore, oppure (se il giocatore non ha 3 dobloni):</li>
-                                            <li>Metti 1 colono nella "riserva del governo" (sopra la tessera del Governatore) dalla riserva principale o dalla nave colono se la riserva principale è vuota. Il colono sarà fuori gioco per il resto della partita. <b>Condizione di fine gioco:</b> Se la nave colono viene svuotata con questa azione, il gioco terminerà alla fine del round.</li>
-                                            <li>Se il ruolo aveva dei dobloni, vengono consegnati alla banca.</li>
-                                            <li><mark><b>Nota speciale:</b></mark> durante il primo round non si verifica un fallimento del ruolo. Questo inizia dal secondo round.</li>
-                                        </ol>
-                                    </li>
-                                    <li>Ogni ruolo può fallire e richiedere il pagamento per il fallimento. È importante che il giocatore gestisca questa condizione.
-                                        <ol type="a">
-                                            <li><b>Mercante</b>: nessuna merce da scambiare</li>
-                                            <li><b>Caposquadra</b>: nessun posto dove giocare i lavoratori</li>
-                                            <li><b>Capitano</b>: nessuna merce da spedire</li>
-                                            <li><b>Artigiano</b>: non in grado di produrre beni o beni non disponibili nella riserva</li>
-                                            <li><b>Costruttore</b>: nessun doblone per poter acquistare un edificio o non essere in grado di soddisfare le restrizioni di gioco relative alla rimozione degli edifici</li>
-                                            <li><b>Colono</b>: non c'è spazio per posizionare una piantagione - (usa l'Hacienda con cautela)</li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>Il giocatore ora deve scegliere il 2° o 3° ruolo e risolverlo come ha fatto con il primo</li>
-                            <li>Il giocatore sceglie infine di giocare il 4°, 5° o 6° ruolo come prima.</li>
-                        </ol>
-                    </li>
-                    <hr>
-
-                    <li><b>Terminare un round:</b>
-                        <ol type="A">
-                            <li>Far scorrere i restanti 3 ruoli da sinistra a sinistra fino alle posizioni 1, 2 e 3, mantenendo gli spazi</li>
-                            <li>Posiziona 1 doblone sul 1° e sul 2° ruolo</li>
-                            <li>Aggiungere i 3 ruoli in coda: il 1° giocato in posizione 4, il 2° in posizione 5 e il 3° in posizione 6.</li>
-                            <li>Finché nessuna delle normali condizioni di fine gioco è stata soddisfatta (nessun lavoratore rimanente, tutti gli spazi dell'edificio pieni o nessun punto vittoria rimanente) inizia un nuovo round, altrimenti vai al Punteggio.</li>
-                        </ol>
-                    </li>
-                    <hr>
-
-                    <li><b>Gli edifici:</b> (verranno coperte solo le modifiche/ulteriori opportunità di punteggio, gli edifici devono essere attivati per essere utilizzati nelle seguenti modalità)
-                        <ol type="A">
-                            <li> <b>Cambiamento:</b>
-                                <ul>
-                                    <li><b>Biblioteca</b>: consente al giocatore di utilizzare i privilegi delle tessere dei ruoli (nessun raddoppio). <b>Se attivato:</b> Deve essere utilizzato una volta per round, altrimenti si verificherà un fallimento del ruolo. <b>Suggerimento di gioco:</b> usa un segnalino per notare che la Biblioteca è stata utilizzata per il round corrente, recuperandolo al termine del round.</li>
-                                </ul>
-                            </li>
-
-                            <li><b>Ulteriori possibilità di punteggio, a fine partita:</b>
-                                <ul>
-                                    <li><b>Piccolo magazzino</b> - 1VP per tutte le merci di 1 tipo rimaste nella riserva del giocatore.</li>
-                                    <li><b>Grande magazzino</b> - 1VP per tutte le merci di 2 tipi rimaste nella riserva del giocatore.</li>
-                                    <li><b>Deposito</b> - 1VP per ogni merce nella scorta del giocatore fino ad un massimo di 3.</li>
-                                    <li><b>Casa nella foresta</b> - 1VP per ogni tessera foresta sulla plancia del giocatore.</li>
-                                    <li><b>Università</b> - 1VP per ogni 2 dobloni in possesso del giocatore (Trustee award).</li>
-                                    <li><b>Piccolo molo</b> - 1VP per ogni nave da carico con almeno 2 merci su di esse.</li>
-                                    <li><b>Molo</b> - 2 PV per ogni nave da carico con almeno 2 merci su di esse.</li>
-                                    <li><b>Casa delle Unioni</b> - 2 PV per ogni 2 merci dello stesso tipo sulle navi da carico.</li>
-                                    <li><b>Bonus per nessun edificio grande costruito</b> - 10 PV per non aver costruito alcun edificio della 4° fila (grande) durante la partita</li>
-                                </ul>
-                            </li>
-                        </ol>
-                    </li>
-                </ol>
         </section>
 
-        <section class="score">
-            <h2> Punteggio: </h2>
-            <p>(come nel gioco normale con l'eccezione di quanto indicato nella sezione edifici) </p>
+        <section class="overview">
+            <h2>Panoramica della variante in solitaria</h2>
+            <p>
+                <p>Dummbot è, ovviamente, un "robot" che guadagnerà solo cristalli ed evocherà carte potere, il più delle volte senza applicarne gli effetti. Alla fine del gioco, otterrà il suo punteggio semplicemente sommando i suoi cristalli ei punti prestigio delle sue carte evocate. Tu, d'altra parte, seguirai le stesse regole di un gioco normale e conterai il tuo punteggio in modo normale. Il tuo obiettivo è, senza sorpresa, battere il punteggio di Dummbot.</p>
+                <p>Oltre a tenere d'occhio l'accumulo di cristalli di Dummbot, una strategia chiave è impedire al tuo avversario di evocare carte potere di alto valore. Il modo migliore per farlo è tenerle lontane da Dummbot, poiché può evocarli fin troppo facilmente dalla sua mano.</p>
+                <p>Separata dai livelli di difficoltà originali del gioco, questa variante ha 3 personali livelli di difficoltà: Apprendista, Mago e Arcimago. Il livello Apprendista non dovrebbe essere una vera sfida e serve principalmente a farti familiarizzare con queste regole. Il livello Mago è il livello standard di difficoltà. Per l'Arcimago, avrai bisogno di un po' di fortuna insieme alle tue migliori abilità magiche per vincere.</p>
+            </p>
+        </section>
+        
+        <section class="setup">
+            <h2>Setup</h2>
+                <p>Preparati come al solito per te stesso.</p>
+
+                <p>
+                    Scegli un colore per Dummbot e piazza i suoi 2 gettoni stregone sul tracciato dei cristalli come per un normale giocatore umano. Dummbot non ha bisogno di nient'altro (nessun gettone libreria, nessuna scheda individuale).
+                    Prepara un po' di spazio per un mazzo di carte, che sarà la mano di Dummbot, e per le carte potere che evocherà, che saranno chiamate la sua "schiera".
+                </p>
+
+                <p>Metti tutti i dadi attorno alla ruota delle stagioni, ordinati per colore, e sei pronto.</p>
+        </section>
+
+        <section class="rules">
+            <h2>1a fase di gioco: il preludio</h2>
             <ul>
-                <li><b>Valutazione punteggio:</b>
+                <li>Pesca 5 carte potere. Metti da parte una carta per la tua mano iniziale, un'altra carta sotto la tua pedina Biblioteca II e una terza carta sotto la tua pedina Biblioteca III. Le 2 carte rimanenti vanno alla mano di Dummbot. La sua mano sarà sempre un’unica pila di carte coperte.</li>
+                <li>Fallo di nuovo altre due volte. Mentre lo fai, puoi guardare tutte le carte sotto le tue pedine biblioteca, ma non puoi riorganizzarle.</li>
+                <li>Ora avrai i tuoi 3 set di carte, per gli anni I, II e III. Dummbot inizierà con 6 carte in mano, le 6 carte che non hai tenuto per te.</li>
+            </ul>
+            <p>Nota: sebbene tu abbia visto tutte le carte che iniziano nella mano di Dummbot all'inizio del gioco, quando pescherai altre carte per Dummbot durante il torneo, lo farai senza guardarle.</p>
+            
+            
+            <h2>2a Fase di Gioco — Il Torneo</h2>
+            <h3>Ecco la sequenza di un round del torneo:</h3>
+            <ol>
+                <li>Scegli a caso 2 dadi della stagione in corso e lanciali.</li>
+                <li>Inizia sempre per primo. Scegli uno dei due dadi lanciati e gioca il tuo turno come faresti in una partita standard. Se evochi una carta potere a costo variabile, paga il costo per una partita con 2 giocatori.</li>
+                <li>Quindi Dummbot eseguirò il suo turno usando il dado che non hai scelto (vedi la prossima sezione di seguito).</li>
+                <li>Infine, il gettone stagione aumenterà il numero di pallini sul dado di Dummbot (il dado che non hai usato). Quindi applica tutti gli effetti di fine turno, gli effetti di cambio stagione e/o gli effetti di cambio anno. Rimetti i 2 dadi di questo round con gli altri, in modo che le coppie di dadi lanciate per ogni round cambino continuamente durante il gioco.</li>
+            </ol>
+            
+            <p>Puoi anche tenere i dadi in linee di ogni colore, selezionando la coppia su un lato e riposizionandola sull'altro lato, per far cambiare costantemente le coppie di dadi ogni volta.</p>
+            
+            <h3>Le azioni dado di Dummbot</h3>
+            <ol>
+                <li><p><b>Guadagna gettoni energia:</b> Dummbot trasmuta immediatamente tutti i gettoni energia mostrati sul suo dado. Se il dado non ha un simbolo Trasmuta, guadagna cristalli usando il tasso per la stagione in corso. Se il dado ha un simbolo Trasmuta, il numero di cristalli che ottiene dipende dal livello di difficoltà scelto:</p>
                     <ul class="ul-disc">
-                        <li>55-57 VP - Vittoria minore</li>
-                        <li>58-60 VP — Vittoria</li>
-                        <li>61-63 VP - Vittoria maggiore</li>
-                        <li>64+ VP: completa la vittoria</li>
+                        <li><b>Apprendista:</b> 4 cristalli</li>
+                        <li><b>Mago:</b> 6 cristalli</li>
+                        <li><b>Arcimago:</b> 8 cristalli</li>
                     </ul>
                 </li>
+                <li><p></p><b>Guadagna cristalli (numeri):</b> Dummbot ottiene i cristalli indicati, come farebbe un normale giocatore umano.</p></li>
+                <li><p><b>Aumenta il livello di invocazione (stella):</b> se il dado non ha il simbolo di Trasmutazione, pesca 1 carta potere dal mazzo nella mano di Dummbot senza guardarla. Se il dado ha un simbolo Trasmutazione, pesca 2 carte per Dummbot invece di 1.</p></li>
+                <li><p><b>Pesca una carta:</b> Dummbot evoca una carta direttamente dal mazzo di pesca (non dalla sua mano). Prendi la prima carta dal mazzo e mettila direttamente in gioco nella schiera di Dummbot.</p></li>
+            </ol>
+                            
+            <p>Dummbot evoca sempre le sue carte gratuitamente e ha una barra di invocazione illimitata. D'altra parte di solito non beneficia degli effetti delle sue carte. Solo alcuni famigli attivano effetti (vedi elenco sotto).</p>
+            
+            <h2>Cambio di stagione</h2>
+            <p>Ogni volta che la stagione cambia, Dummbot evoca una carta dalla sua mano, se ne ha.</p>
+            <ul class="ul-disc">
+                <li><b>Apprendista:</b> mescola le carte in mano a Dummbot e pescane 1 a caso. Giocala nella sua schiera.</li>
+                <li><b>Mago:</b> mescola le carte in mano a Dummbot e pescane 4 a caso. Gioca nella sua schiera la carta con il valore di prestigio più alto e rimetti le altre nella sua mano.</li>
+                <li><b>Arcimago:</b> Procedi come nel livello di difficoltà Mago, ma scarta anche la carta con il valore di prestigio più basso. Se c'è solo 1 carta nella mano di Dummbot, giocala per lui se il suo valore di prestigio è 0 o più, o scartala se è negativo. Infine, prendi la carta successiva dal mazzo e aggiungila alla mano di Dummbot.</li>
+            </ul>
+            
+            <p>Se ci sono pareggi per i valori di prestigio, scegli una delle carte in parità a caso, senza guardarle.</p>
+            
+            <h2>Cambia di anno</h2>
+            <p>Procedi come al solito raccogliendo il tuo set di carte riservato, quindi pesca alcune nuove carte dal mazzo che aggiungerai alla mano di Dummbot. Questo va fatto dopo l'evocazione che avviene al cambio di stagione, e il numero di carte da pescare dipende dal livello di difficoltà che hai scelto di giocare:</p>
+            <ul class="ul-disc">
+                <li><b>Apprendista:</b> 1 carte</li>
+                <li><b>Mago:</b> 2 carte</li>
+                <li><b>Arcimago:</b> 4 carte</li>
             </ul>
         </section>
 
-        <section class="strategy">
-            <h2>Strategie/tattiche di gioco:</h2>
-            <ol type="A">
-                <li>La sequenza dei ruoli è importante per il successo e per massimizzare gli effetti. Impara a riconoscere gli schemi quando scegli i ruoli.</li>
-                <li>Bilanciare la produzione, gli acquisti degli edifici e il guadagno di punti vittoria è fondamentale per aumentare il potenziale del punteggio.</li>
-                <li>Tutti gli edifici possono far parte di una strategia di gioco / di fine gioco. Le ulteriori opportunità di punteggio dell'edificio sono state aggiunte per questo motivo.</li>
-                <li>È possibile ottenere solo 5 unità di ogni merce, il che significa che la nave mercantile da 6 spazi conterrà le merci depositate su di essa fino alla fine del gioco.</li>
-                <li>La gestione del fallimento di ruolo, che a volte può essere necessaria innescare intenzionalmente, è fondamentale per un gioco di successo.</li>
-                <li>Il ruolo di Caposquadra è un ruolo chiave e spesso è il fattore limitante nelle prime partite. Mettere più lavoratori sulla Sala di Reclutamento ne limiterà il numero che va al Governatore. Questo può essere importante.</li>
-                <li>L'uso e l'acquisto degli edifici richiederanno un po' più di pianificazione ora, visto che quando 1 verrà costruito 1 o 2 possibili acquisti futuri dovranno essere rimossi. Questo può alterare in modo significativo quali obiettivi sono possibili durante una partita.</li>
-            </ol>
-
-            <h3>Nota per il giocatore:</h3>
-            <p>Questa variante in solitaria è stata adattata per ottenere il massimo da tutti i componenti di gioco, edifici e ruoli e per migliorare gli elementi strategici del gioco per massimizzare le possibilità di gioco. Ciò ha lo scopo di aumentare la rigiocabilità di questa variante.</p>   
+        <section class="score">
+            <h2>Punteggio finale</h2>
+            <p>Alla fine del terzo anno (non dimenticare l'ultima invocazione del cambio di stagione), il punteggio di Dummbot viene sommato aggiungendo:</p>
+            <ul>
+                <li>I punti prestigio di tutte le carte evocate nella schiera di Dummbot</li>
+                <li>Il totale dei cristalli che ha guadagnato durante il gioco.</li>
+            </ul>
+            <p>Dummbot non guadagna cristalli o punti aggiuntivi dagli effetti delle carte, né perde punti per le carte potere rimaste nella sua mano.</p>
+            <p>Il punteggio del giocatore viene sommato nel solito modo, con tutti i parametri, gli effetti delle carte e le penalità delle carte rimanenti incluse.</p>
+            <p>Per vincere, il giocatore deve battere il punteggio di Dummbot. Un pareggio non basterà, qualunque sia il numero di carte evocate.</p>
         </section>
 
-        <section class="images">
-            <h2>Componenti aggiuntivi</h2>
-            <p>Plancia utile a chiarire la posizione dei componenti e delle tessere ruolo</p>
+        <section class="cards-effects">
+            <h2>Effetti delle carte</h2>
+            <p>Gli oggetti magici che giochi producono i loro normali effetti, ma non producono effetti quando vengono evocati da Dummbot.</p>
 
-            <img src="{% static 'media/Plancia_PuertoRico.jpg' %}" alt="Plancia per la versione in solitaria di Puerto Rico">
+            <p>I famigli hanno effetti specifici a seconda di chi li ha giocati, se il giocatore (tu) o Dummbot. Controlla l'elenco di seguito per gli effetti dei famigli. A meno che non sia indicato diversamente sulla carta, l'effetto per Dummbot si verifica solo una volta, quando evoca il famiglio. Se questa lista specifica che si applica l'effetto normale e la carta ha un effetto di cambio di stagione, quell'effetto si applica immediatamente quando Dummbot evoca per la prima volta il famiglio e ad ogni cambio di stagione successivo.</p>
+
+            <h3><b>Syllas il fedele</b> (#10)</h3>
+            <ul class="ul-disc">        
+                <li><b>Giocato dal giocatore:</b> Sacrifica la carta con il valore in punti prestigio più basso nella schiera di Dummbot. In caso di parità, scegline una a caso dalle carte in parità.</li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Figrim l'Avaro</b> (#11)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.</li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Naria la profetessa</b> (#12)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> pesca 2 carte, aggiungi 1 carta alla tua mano e metti direttamente in gioco l'altra carta nella schiera di Dummbot come se l'avesse evocata.</li>
+                <li><b>Giocato da Dummbot:</b> nessun effetto.</li>
+            </ul>
+
+            <h3><b>Kairn il Distruttore</b> (#16)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.</li>
+                <li><b>Giocato da Dummbot:</b> il giocatore perde un certo numero di cristalli in base al livello di difficoltà scelto:
+                    <ul>
+                        <li>Apprendista: 4</li>
+                        <li>Mago: 8</li>
+                        <li>Arcimago: 16</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3><b>Amsug Lungocollo</b> (#17)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> Dummbot riprende in mano l'oggetto magico con il minor valore di punti prestigio. In caso di parità, scegline una a caso dalle carte in parità.</li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Lewis Grisemine</b> (#21)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> prendi 1 dado di ogni colore e tirali tutti e 4. Scegli se otterrai i gettoni energia che appaiono su tutti i dadi con un cerchio di Trasmutazione o quelli su tutti i dadi senza un cerchio di Trasmutazione.b> </li>
+                <li><b>Giocato da Dummbot:</b> nessun effetto.</li>
+            </ul>
+
+            <h3><b>Sanguisuga Arcana</b> (#33)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.b> </li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Demone di Argo</b> (#38)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> pesca 5 carte a caso dalla mano di Dummbot. Scegline una da scartare e rimetti le altre nella sua mano.b> </li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Titus Bellosguardo</b> (#39)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.b> </li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Elementale dell'Aria</b> (#40)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> pesca 3 carte a caso dalla mano di Dummbot. Scegline due da scartare e rimetti la carta rimanente nella sua manob> </li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Fate Ladruncole</b> (#41)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> ogni volta che Dummbot ottiene una stella dell'indicatore di evocazione sul suo dado, ti dà 1 cristallo e tu guadagni 1 cristallo in più. (Dummbot: -1 cristallo, tu: +2 cristalli)</li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Sid Ombra Notturna</b> (#49)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.b> </li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale.</li>
+            </ul>
+
+            <h3><b>Anima Dannata di Onys</b> (#50)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.b> </li>
+                <li><b>Giocato da Dummbot:</b> la carta viene evocata direttamente nella schiera del giocatore. Se la carta è nella schiera di Dummbot dopo essere stata inviata dal giocatore, Dummbot la rimanda al suo turno non appena ottiene un dado con un'energia acqua, o 2 gettoni energia qualsiasi. Ottiene anche come al solito i cristalli corrispondenti ai gettoni energia usati per rimandare indietro Onys.</li>
+            </ul>
+
         </section>
 
-        <section class="links">
+        <section class="videos">
+            <iframe src="https://www.youtube.com/embed/4W1aQ5Ozc78"></iframe> 
+        </section>
+
+        <section id="first-expansion">
+            <h1>- Enchanted Kingdom -</h1>
             
-        </section>
-        
-    </div>
-    </div>
+            <p>"Dummbot's Challenge" con la prima espansione di Seasons</p>
 
-{% endblock %}
+            <h2>Effetti delle carte</h2>
+            <p>Ecco i 4 nuovi effetti dei famigli:</p>
+
+            <h3><b>Falco Argo</b> (#17)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> l'effetto normale si applica durante l'evocazione. Quando sacrifichi il Falco Argo, pesca 2 carte a caso dalla mano di Dummbot. Scegline una da scartare e riprendi in mano l'altra carta.</li>
+                <li><b>Giocato da Dummbot:</b> l'effetto normale si applica mentre viene evocato e Dummbot sacrifica immediatamente il famiglio.</li>
+            </ul>
+
+            <h3><b>Raven l'Usurpatore</b> (#18)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.</li>
+                <li><b>Giocato da Dummbot:</b> nessun effetto.</li>
+            </ul>
+
+            <h3><b>Guardiano di Argo</b> (#19)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> scegli: o Dummbot perde 8 cristalli, oppure peschi 4 carte a caso dalla sua mano. Scegli 1 carta da scartare e rimetti le altre carte nella sua mano.</li>
+                <li><b>Giocato da Dummbot:</b> seleziona casualmente quale dei due effetti si applica.</li>
+            </ul>
+
+            <h3><b>Belladonna Ratty</b> (#20)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> ottieni 2 gettoni energia a tua scelta dalla riserva.</li>
+                <li><b>Giocato da Dummbot:</b> nessun effetto.</li>
+            </ul>
+
+            <h2>Abilità Speciali</h2>
+            <p>Se giochi con abilità speciali, procedi come al solito per te stesso e dai alcuni cristalli bonus iniziali a Dummbot in base al livello di difficoltà scelto:</p>
+            <ul class="ul-disc">
+                <li><strong>Apprendista:</strong> 4 cristalli</li>
+                <li><strong>Mago:</strong> 8 cristalli</li>
+                <li><strong>Arcimago:</strong> 12 cristalli</li>
+            </ul>
+
+            <h2>Carte Incantesimo</h2>
+            <p>Se vuoi giocare con gli incantesimi, scegline uno a caso nel preludio. Non puoi scegliere un incantesimo particolare.</p>
+            
+            <h3><b>Costruzione Elementale</b> (#1)</h3>
+            <ul class="ul-disc">
+                <li>Durante il preludio, procedi come descritto per le tue carte.</li>
+                <li>Per Dummbot, scegli 12 carte e prendi le 6 carte con il valore più alto per costruire la sua mano iniziale.</li>
+            </ul>
+
+            <h3><b>Esperienza estesa</b> (#2)</h3>
+            <ul class="ul-disc">
+                <li>Durante il preludio, procedi con l'estrazione delle 5 carte 4 volte invece di sole 3. Inizierai quindi con 3 set da 4 carte e Dummbot avrà una mano iniziale di 8 carte.</li>
+            </ul>
+
+            <h3><b>Radici aggrovigliate</b> (#4)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso e inizia con un numero di cristalli in base al livello di difficoltà scelto:
+                    <ul type="i">
+                        <li><strong>Apprendista:</strong> 15 cristalli</li>
+                        <li><strong>Mago:</strong> 10 cristalli</li>
+                        <li><strong>Arcimago:</strong> 5 cristalli</li>
+                    </ul>
+                </li>
+                <li>Questo incantesimo non ha effetto su Dummbot.</li>
+            </ul>
+
+            <h3><b>Spirito della natura</b> (#5)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso e inizia con un numero di cristalli in base al livello di difficoltà scelto:
+                    <ul class="ul-disc">
+                        <li><strong>Apprendista:</strong> 15 cristalli</li>
+                        <li><strong>Mago:</strong> 10 cristalli</li>
+                        <li><strong>Arcimago:</strong> 5 cristalli</li>
+                    </ul>
+                </li>
+                <li>Questo incantesimo non ha effetto su Dummbot.</li>
+            </ul>
+
+            <h3><b>L'abbraccio di Argo</b> (#6)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso e inizia con un numero di cristalli in base al livello di difficoltà scelto:
+                    <ul class="ul-disc">
+                        <li><strong>Apprendista:</strong> 15 cristalli</li>
+                        <li><strong>Mago:</strong> 10 cristalli</li>
+                        <li><strong>Arcimago:</strong> 5 cristalli</li>
+                    </ul>
+                </li>
+                <li>Questo incantesimo non ha effetto su Dummbot.</li>
+            </ul>
+
+            <h3><b>Bottino di Io</b> (#7)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso. <br>
+                    Dummbot beneficia solo se il suo dado ha il simbolo Trasmuta. Quando lo fa, Dummbot ottiene cristalli per ogni energia in base al livello di difficoltà scelto:
+                    <ul class="ul-disc">
+                        <li><strong>Apprendista:</strong> 15 cristalli</li>
+                        <li><strong>Mago:</strong> 10 cristalli</li>
+                        <li><strong>Arcimago:</strong> 5 cristalli</li>
+                    </ul>
+                </li>
+                <li>Questo incantesimo non ha effetto su Dummbot.</li>
+            </ul>
+
+            <h3><b>La conoscenza di Olaf</b> (#8)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Dummbot semplicemente ignorerà questo incantesimo.</li>
+            </ul>
+
+            <h3><b>Siccità</b> (#9)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Se Dummbot è il giocatore in testa, pesca 2 carte a caso dalla sua mano. Scegli 1 carta da scartare e riprendi in mano l'altra carta.</li>
+            </ul>
+
+            <h3><b>Visione del destino</b> (#10)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Alla fine del suo turno, e se sta per aver luogo un cambio di stagione, Dummbot paga 5 cristalli (se li ha) e scarta la prima carta dal pescato se ha un valore inferiore alla seconda carta.</li>
+            </ul>
+        </section>
+
+        <section id="second-expansion">
+
+            <h1>- Path of Destiny -</h1>
+            
+            <p>"Dummbot's Challenge" con la seconda espansione di Seasons</p>
+
+            <h2>Effetti delle carte</h2>
+            <p>Questa espansione aggiunge 2 oggetti magici specifici:</p>
+
+            <h3><b>Twist of Fate</b> (#3)</h3>
+            <ul class="ul-disc">
+                <li>Durante il gioco, tratta normalmente questo oggetto magico.</li>
+                <li>Se peschi Twist of Fate durante il preludio, decidi se tenerlo con le tue carte o se darlo a Dummbot.</li>
+                <ul>
+                    <li><b>Tenuto dal giocatore:</b> se scegli di tenere Twist of Fate per te, scegli le 2 carte che non vuoi e mettile nella mano di Dummbot come di consueto. Quindi scarta Twist of Fate e pesca 2 carte. Conservane uno e scarta l'altro. Puoi quindi scegliere in quale libreria posizionare quale carta. (La carta che hai pescato dall'effetto di Twist of Fate non può essere data a Dummbot.)</li>
+                    <li><b>Dato a Dummbot:</b> se non tieni Twist of Fate ma lo passi a Dummbot, scarta Twist of Fate e aggiungi 1 carta dal mazzo alla mano iniziale di Dummbot.</li>
+                </ul>
+            </ul>
+
+            <h3><b>Gabbia psichica di Urmiano</b> (#15)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> se Dummbot è il primo a giocare una carta potere, la scarta se il suo valore di prestigio è negativo. Se prima gioca una carta potere e il suo valore di prestigio è positivo, Dummbot la gioca normalmente e il segnalino trappola viene rimosso come se fosse stato attivato.</li>
+                <li><b>Giocato da Dummbot:</b> (Questo è un oggetto magico e gli oggetti magici non producono effetti quando vengono giocati da Dummbot.)</li>
+            </ul>
+
+            <h2>Ecco i 6 nuovi effetti dei famigli:</h2>
+
+            <h3><b>Servo di Ragfield</b> (#16)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> l'effetto normale si applica al giocatore e metti in gioco la prima carta dal mazzo direttamente nella matrice di Dummbot.</li>
+                <li><b>Giocato da Dummbot:</b> l'effetto normale si applica al giocatore e metti la prima carta dal mazzo nella mano di Dummbot.</li>
+            </ul>
+
+            <h3><b>Groviglio Argosiano</b> (#17)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.</li>
+                <li><b>Giocato da Dummbot:</b> Dummbot coinvolge un tuo famiglio casuale.</li>
+            </ul>
+
+            <h3><b>Il servitore di Io</b> (#18)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.</li>
+                <li><b>Giocato da Dummbot:</b> la carta viene evocata direttamente nell'array del giocatore. Se la carta è nella schiera di Dummbot dopo essere stata inviata dal giocatore, Dummbot la rimanda indietro nel suo turno non appena ottiene un dado con un'energia aria, o 2 gettoni energia qualsiasi. Non ottiene i soliti cristalli corrispondenti ai gettoni energia usati per rimandare indietro il servitore di Io.</li>
+            </ul>
+
+            <h3><b>Otus l'Oracolo</b> (#19)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.</li>
+                <li><b>Giocato da Dummbot:</b> si applica l'effetto normale. Se Dummbot può evocare una delle carte con i gettoni energia che guadagna in un turno, lo fa e non guadagna i cristalli per questi gettoni energia spesi. Se non può evocare una carta con gettoni energia ma c'è una carta da evocare solo con cristalli (e li ha), lo fa.</li>
+            </ul>
+
+            <h3><b>Nightshade dannoso</b> (#20)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> si applica l'effetto normale.</li>
+                <li><b>Giocato da Dummbot:</b> aggiungi 2 carte dal mazzo alla mano di Dummbot. Quindi mescola la sua mano, pesca 5 carte a caso da essa e prendi in mano la carta con il valore di prestigio più basso.</li>
+            </ul>
+
+            <h3><b>Igramul the Banisher</b> (bonus prima edizione)</h3>
+            <ul class="ul-disc">
+                <li><b>Giocato dal giocatore:</b> pesca 4 carte a caso dalla mano di Dummbot. Scegline una da scartare e riprendi in mano le altre carte. Ottieni dalla riserva i gettoni energia corrispondenti al costo di evocazione della carta scartata.</li>
+                <li><b>Giocato da Dummbot:</b> scarta a caso una carta dalla tua mano.</li>
+            </ul>
+
+            <h2>Abilità speciali</h2>
+            <p>Se giochi con abilità speciali, procedi come al solito per te stesso e dai a Dummbot alcuni cristalli bonus iniziali in base al livello di difficoltà scelto:</p>
+            <ul class="ul-disc">
+                <li><strong>Apprendista:</strong> 4 cristalli</li>
+                <li><strong>Mago:</strong> 8 cristalli</li>
+                <li><strong>Arcimago:</strong> 12 cristalli</li>
+            </ul>
+            <p>Se giochi con Path of Destiny e non Enchanted Kingdom, dai solo la metà del bonus specificato. {Enchanted Kingdom porta 12 abilità speciali, da cui ne peschi 3 all'inizio del gioco. Solo uno di essi viene conservato dopo il preludio, il che ti consente di ottimizzare i benefici che ne trarrai.)</p>
+
+            <h2>Carte Incantesimo</h2>
+            <p>Se vuoi giocare con gli incantesimi, scegline uno a caso nel preludio. Non puoi scegliere un incantesimo particolare.</p>
+
+            <h3><b>Destino Divino</b> (#1)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Dummbot utilizzerà l'incantesimo se il suo dado non ha una stella dell'indicatore di evocazione, non ha pescato carte e gli porta meno di 4 cristalli in totale.</li>
+            </ul>
+
+            <h3><b>Gli schemi astuti di Ams</b> (#2)</h3>
+            <ul class="ul-disc">
+                <li>Al cambio dell'anno e dopo aver raccolto le carte dal gettone della tua Libreria, scegli prima la carta che consegnerai a Dummbot. Poi pesca 2 carte a caso dalla sua mano. Tieni 1 carta e rimetti l'altra carta nella mano di Dummbot, insieme alla carta che gli stai dando.</li>
+            </ul>
+
+            <h3><b>La maestria di Io</b> (#3)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Se il dado di Dummbot ha un simbolo Trasmutazione e 2 diversi gettoni energia, pesca una carta.</li>
+            </ul>
+
+            <h3><b>Turno di stagione</b> (#4)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Se il dado di Dummbot ha 2 gettoni energia diversi e nessun simbolo Trasmutazione, ottiene 4 cristalli (oltre a quelli che ottiene dai gettoni energia).</li>
+            </ul>
+
+            <h3><b>Nel vuoto</b> (#5)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso</li>
+                <li>Dummbot sacrifica la carta con il valore di prestigio più basso.</li>
+            </ul>
+
+            <h3><b>Forza del Destino</b> (#6)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Dummbot utilizzerà l'incantesimo se il suo dado non ha una stella dell'indicatore di evocazione, non ha pescato carte e gli porta meno di 7 cristalli in totale.</li>
+            </ul>
+
+            <h3><b>Tomba fertile</b> (#7)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Alla fine del gioco, Dummbot aggiungerà una carta casuale dalla pila degli scarti alla sua matrice.</li>
+            </ul>
+
+            <h3><b>Vento in coda</b> (#8)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Se il dado di Dummbot ha almeno 1 energia aria e nessun simbolo Trasmutazione, ottiene 4 cristalli (oltre a quelli che ottiene dai gettoni energia).</li>
+            </ul>
+
+            <h3><b>Equilibrio naturale</b> (#9)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Dummbot usa questo guadagno universale di 2 cristalli solo quando non c'è alcun simbolo di Trasmutazione sul suo dado. Quando c'è un cerchio Trasmutazione sul suo dado, la quantità di cristalli rimane 4/6/8 come normale per il livello di difficoltà scelto.</li>
+            </ul>
+
+            <h3><b>Percorsi incrociati</b> (#10)</h3>
+            <ul class="ul-disc">
+                <li>Procedi come descritto per te stesso.</li>
+                <li>Durante il preludio, pesca 1 carta che devi tenere. Quindi pesca 4 carte da cui scegli 2 carte, per completare la tua prima scelta. Dai le restanti 2 carte a Dummbot. Le altre 2 scelte vengono effettuate come al solito con 5 carte ciascuna.</li>
+            </ul>
+
+        </section>
+    
+    </div>
+</div>

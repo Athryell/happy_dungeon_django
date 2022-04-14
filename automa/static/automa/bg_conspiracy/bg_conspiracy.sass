@@ -8,15 +8,15 @@ button
     align-items: center
     justify-content: center
     flex-wrap: wrap
-    margin-bottom: 2em
+    margin-bottom: 1em
 
     .leader-box
         position: relative
         z-index: 1
-        min-height: 230px
-        max-width: 15%
-        min-width: 170px
-        margin: 0.5rem
+        min-height: 277px
+        // max-width: 15%
+        min-width: 200px
+        margin: 1rem
         cursor: pointer
         perspective: 500px
         transform-style: preserve-3d
@@ -37,7 +37,7 @@ button
     position: absolute
     padding: 0.5em
     border-radius: 5px
-    font-size: 0.7em
+    font-size: 1rem
     display: none
     transition: opacity 0.5s ease
     background-color: #ababab
@@ -56,17 +56,22 @@ button
 .tooltip-bonuspoints
     top: 0
     right: 100%
-    width: 50%
+    width: min(70%, 18vw)
     
 .tooltip-power
-    top: 0
-    left: 100%
-    width: 50%
+    top: 18%
+    left: 45%
+    width: min(100%, 33vw)
 
 .tooltip-conditions
     top: 100%
-    left: -50%
-    width: 200%
+    left: 50%
+    transform: translateX(-50%)
+    width: min(200%, 80vw)
+
+@media screen and ( max-width: 600px)
+    .tooltip
+        font-size: 0.7rem
 
 #token
     position: relative
