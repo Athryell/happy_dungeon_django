@@ -1,5 +1,28 @@
 {% load static %}
 
+<header id='header-scrollspy'>
+    <div class="scrollspy-toggle">
+        <button>Indice</button>
+    </div>
+    <nav class="nav-scrollspy content">
+        <ol>
+            <a href="#intro"><li class="section-nav">Introduzione</li></a>
+            <a href="#setup"><li class="section-nav">Setup</li></a>
+            <a href="#rules"><li class="section-nav">Regole</li></a>
+            <ul class="ul-disc">
+                <a href="#role-explanation"><li class="section-nav">Spiegazione ruoli</li></a>
+                <a href="#role-choice"><li class="section-nav">Scelta ruoli</li></a>
+                <a href="#end-round"><li class="section-nav">Termine round</li></a>
+                <a href="#buildings"><li class="section-nav">Edifici</li></a>
+            </ul>
+            <a href="#score"><li class="section-nav">Punteggio</li></a>
+            <a href="#strategy"><li class="section-nav">Strategie</li></a>
+            <a href="#images"><li class="section-nav">Plancia</li></a>
+        </ol>
+    </nav>
+
+</header>
+
 <div class="container">
     <h1>Regolamento solitario Puerto Rico</h1>
     <small>
@@ -9,30 +32,32 @@
     </small>
     
     <div class="content">
-        <p>
-            <strong>Introduzione</strong>: Il gioco Puerto Rico è stato progettato per 3-5 giocatori.
-            Le regole di SoloPlay&trade; sono state progettate per dare a un giocatore singolo l'opportunità di giocare con un livello di sfida simile senza modificare in modo significativo le regole multigiocatore. 
-        </p>
-        <p>        
-            Le seguenti regole sono state ampiamente testate per garantire che il gioco sia equilibrato e sia il più fedele possibile al concetto originale. Si presume che il giocatore abbia una buona conoscenza delle regole originali per poter giocare questa variante. Seguendo le regole per giocatore singolo ci sono le modifiche alle regole originali che consentiranno a 2 giocatori di giocare a un gioco "regolare" competitivo e leggermente più strategico.
-        </p>
+        <section id="intro" class="scroll-margin">
 
-        <p>
-            Alcuni termini cambiano anche attraverso le diverse traduzioni italiane, qui verranno usati i più recenti:
-            <ul class="ul-disc">
-                <li> <del>Nave dei Coloni</del> - Sala di Reclutamento  </li>
-                <li><del>Emporio</del> - Casa di Commercio</li>
-                <li><del>Colonizzatore</del> - Colono</li>
-                <li><del>Sindaco</del> - Caposquadra</li>
-                <li><del>Commerciante</del> - Mercante</li>
-                <li><del>Granturco</del> - Mais</li>
-                <li><del>Coloni</del> - Lavoratori</li>
-                <li>I "possedimenti" includono piantagioni e cave.</li>
-            </ul>
+            <p>
+                <strong>Introduzione</strong>: Il gioco Puerto Rico è stato progettato per 3-5 giocatori.
+                Le regole di SoloPlay&trade; sono state progettate per dare a un giocatore singolo l'opportunità di giocare con un livello di sfida simile senza modificare in modo significativo le regole multigiocatore. 
+            </p>
+            <p>        
+                Le seguenti regole sono state ampiamente testate per garantire che il gioco sia equilibrato e sia il più fedele possibile al concetto originale. Si presume che il giocatore abbia una buona conoscenza delle regole originali per poter giocare questa variante. Seguendo le regole per giocatore singolo ci sono le modifiche alle regole originali che consentiranno a 2 giocatori di giocare a un gioco "regolare" competitivo e leggermente più strategico.
+            </p>
             
-        </p>
-    
-        <section class="setup">
+            <p>
+                Alcuni termini cambiano anche attraverso le diverse traduzioni italiane, qui verranno usati i più recenti:
+                <ul class="ul-disc">
+                    <li> <del>Nave dei Coloni</del> - Sala di Reclutamento  </li>
+                    <li><del>Emporio</del> - Casa di Commercio</li>
+                    <li><del>Colonizzatore</del> - Colono</li>
+                    <li><del>Sindaco</del> - Caposquadra</li>
+                    <li><del>Commerciante</del> - Mercante</li>
+                    <li><del>Granturco</del> - Mais</li>
+                    <li><del>Coloni</del> - Lavoratori</li>
+                    <li>I "possedimenti" includono piantagioni e cave.</li>
+                </ul>
+            </p>
+        </section>
+            
+        <section id="setup" class="scroll-margin">
             <h2>Setup del gioco:</h2>
             <ol>
                 <li>Usare i seguenti componenti per il gioco: (posizionarli nella banca in modo da poter vedere la scorta)
@@ -60,10 +85,10 @@
             </ol> 
         </section>
 
-        <section class="rules">
+        <section id="rules" class="scroll-margin">
             <h2>Regole del gioco:</h2>
             <ol>
-                <li><b>Spiegazione dei ruoli:</b> (modifiche alle regole di gioco originali), gli edifici che influenzano i ruoli vengono eseguiti come indicato nelle regole normali, ad eccezione della Biblioteca come menzionato più avanti.
+                <li id="role-explanation" class="scroll-margin"><b>Spiegazione dei ruoli:</b> (modifiche alle regole di gioco originali), gli edifici che influenzano i ruoli vengono eseguiti come indicato nelle regole normali, ad eccezione della Biblioteca come menzionato più avanti.
                     <ol type="A">
                         <li><b>Colono</b> - il giocatore deve scegliere una delle 3 piantagioni disponibili da posizionare sul tabellone del giocatore. Rimuovi le piantagioni non scelte e sostituiscile con piantagioni nuove. <b>Nota <mark>(cava)</mark></b>: se il giocatore ha scelto una piantagione di tabacco, caffè o la seconda piantagione di zucchero, allora una cava può essere posizionata al posto di una delle 3 piantagioni disponibili la prossima volta che viene scelto il colono.</li>
                         <li><b>Commerciante</b> - eseguito come nel gioco normale</li>
@@ -90,7 +115,7 @@
                 </li>
                 <hr>
 
-                <li><b>Scelta del ruolo:</b> (<mark>nessun privilegio viene concesso</mark> a meno che il giocatore non abbia acquistato e attivato la Biblioteca) Verranno scelti 3 ruoli in ogni round.
+                <li id="role-choice" class="scroll-margin"><b>Scelta del ruolo:</b> (<mark>nessun privilegio viene concesso</mark> a meno che il giocatore non abbia acquistato e attivato la Biblioteca) Verranno scelti 3 ruoli in ogni round.
                     <ol type="A">
                         <li><b>Solo nel round 1 </b>— Il giocatore selezionerà 3 ruoli da sinistra a destra ed eseguirà o passerà il ruolo nell'ordine in cui è stato selezionato.
                             <ol type="i">
@@ -126,7 +151,7 @@
                 </li>
                 <hr>
 
-                <li><b>Terminare un round:</b>
+                <li id="end-round" class="scroll-margin"><b>Terminare un round:</b>
                     <ol type="A">
                         <li>Far scorrere i restanti 3 ruoli da sinistra a sinistra fino alle posizioni 1, 2 e 3, mantenendo gli spazi</li>
                         <li>Posiziona 1 doblone sul 1° e sul 2° ruolo</li>
@@ -136,7 +161,7 @@
                 </li>
                 <hr>
 
-                <li><b>Gli edifici:</b> (verranno coperte solo le modifiche/ulteriori opportunità di punteggio, gli edifici devono essere attivati per essere utilizzati nelle seguenti modalità)
+                <li id='buildings' class="scroll-margin" ><b>Gli edifici:</b> (verranno coperte solo le modifiche/ulteriori opportunità di punteggio, gli edifici devono essere attivati per essere utilizzati nelle seguenti modalità)
                     <ol type="A">
                         <li> <b>Cambiamento:</b>
                             <ul>
@@ -160,45 +185,45 @@
                     </ol>
                 </li>
             </ol>
-    </section>
+        </section>
 
-    <section class="score">
-        <h2> Punteggio: </h2>
-        <p>(come nel gioco normale con l'eccezione di quanto indicato nella sezione edifici) </p>
-        <ul>
-            <li><b>Valutazione punteggio:</b>
-                <ul class="ul-disc">
-                    <li>55-57 VP - Vittoria minore</li>
-                    <li>58-60 VP — Vittoria</li>
-                    <li>61-63 VP - Vittoria maggiore</li>
-                    <li>64+ VP: completa la vittoria</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
+        <section id="score" class="scroll-margin">
+            <h2> Punteggio: </h2>
+            <p>(come nel gioco normale con l'eccezione di quanto indicato nella sezione edifici) </p>
+            <ul>
+                <li><b>Valutazione punteggio:</b>
+                    <ul class="ul-disc">
+                        <li>55-57 VP - Vittoria minore</li>
+                        <li>58-60 VP — Vittoria</li>
+                        <li>61-63 VP - Vittoria maggiore</li>
+                        <li>64+ VP: completa la vittoria</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-    <section class="strategy">
-        <h2>Strategie/tattiche di gioco:</h2>
-        <ol type="A">
-            <li>La sequenza dei ruoli è importante per il successo e per massimizzare gli effetti. Impara a riconoscere gli schemi quando scegli i ruoli.</li>
-            <li>Bilanciare la produzione, gli acquisti degli edifici e il guadagno di punti vittoria è fondamentale per aumentare il potenziale del punteggio.</li>
-            <li>Tutti gli edifici possono far parte di una strategia di gioco / di fine gioco. Le ulteriori opportunità di punteggio dell'edificio sono state aggiunte per questo motivo.</li>
-            <li>È possibile ottenere solo 5 unità di ogni merce, il che significa che la nave mercantile da 6 spazi conterrà le merci depositate su di essa fino alla fine del gioco.</li>
-            <li>La gestione del fallimento di ruolo, che a volte può essere necessaria innescare intenzionalmente, è fondamentale per un gioco di successo.</li>
-            <li>Il ruolo di Caposquadra è un ruolo chiave e spesso è il fattore limitante nelle prime partite. Mettere più lavoratori sulla Sala di Reclutamento ne limiterà il numero che va al Governatore. Questo può essere importante.</li>
-            <li>L'uso e l'acquisto degli edifici richiederanno un po' più di pianificazione ora, visto che quando 1 verrà costruito 1 o 2 possibili acquisti futuri dovranno essere rimossi. Questo può alterare in modo significativo quali obiettivi sono possibili durante una partita.</li>
-        </ol>
+        <section id="strategy" class="scroll-margin">
+            <h2>Strategie/tattiche di gioco:</h2>
+            <ol type="A">
+                <li>La sequenza dei ruoli è importante per il successo e per massimizzare gli effetti. Impara a riconoscere gli schemi quando scegli i ruoli.</li>
+                <li>Bilanciare la produzione, gli acquisti degli edifici e il guadagno di punti vittoria è fondamentale per aumentare il potenziale del punteggio.</li>
+                <li>Tutti gli edifici possono far parte di una strategia di gioco / di fine gioco. Le ulteriori opportunità di punteggio dell'edificio sono state aggiunte per questo motivo.</li>
+                <li>È possibile ottenere solo 5 unità di ogni merce, il che significa che la nave mercantile da 6 spazi conterrà le merci depositate su di essa fino alla fine del gioco.</li>
+                <li>La gestione del fallimento di ruolo, che a volte può essere necessaria innescare intenzionalmente, è fondamentale per un gioco di successo.</li>
+                <li>Il ruolo di Caposquadra è un ruolo chiave e spesso è il fattore limitante nelle prime partite. Mettere più lavoratori sulla Sala di Reclutamento ne limiterà il numero che va al Governatore. Questo può essere importante.</li>
+                <li>L'uso e l'acquisto degli edifici richiederanno un po' più di pianificazione ora, visto che quando 1 verrà costruito 1 o 2 possibili acquisti futuri dovranno essere rimossi. Questo può alterare in modo significativo quali obiettivi sono possibili durante una partita.</li>
+            </ol>
 
-        <h3>Nota per il giocatore:</h3>
-        <p>Questa variante in solitaria è stata adattata per ottenere il massimo da tutti i componenti di gioco, edifici e ruoli e per migliorare gli elementi strategici del gioco per massimizzare le possibilità di gioco. Ciò ha lo scopo di aumentare la rigiocabilità di questa variante.</p>   
-    </section>
+            <h3>Nota per il giocatore:</h3>
+            <p>Questa variante in solitaria è stata adattata per ottenere il massimo da tutti i componenti di gioco, edifici e ruoli e per migliorare gli elementi strategici del gioco per massimizzare le possibilità di gioco. Ciò ha lo scopo di aumentare la rigiocabilità di questa variante.</p>   
+        </section>
 
-    <section class="images">
-        <h2>Componenti aggiuntivi</h2>
-        <p>Plancia utile a chiarire la posizione dei componenti e delle tessere ruolo</p>
+        <section id="images" class="scroll-margin">
+            <h2>Componenti aggiuntivi</h2>
+            <p>Plancia utile a chiarire la posizione dei componenti e delle tessere ruolo</p>
 
-        <img src="{% static 'media/Plancia_PuertoRico.jpg' %}" alt="Plancia per la versione in solitaria di Puerto Rico">
-    </section>
+            <img src="{% static 'media/Plancia_PuertoRico.jpg' %}" alt="Plancia per la versione in solitaria di Puerto Rico">
+        </section>
     
 </div>
 </div>

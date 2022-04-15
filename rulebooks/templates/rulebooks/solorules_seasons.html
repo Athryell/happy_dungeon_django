@@ -1,3 +1,29 @@
+<header id='header-scrollspy'>
+    <div class="scrollspy-toggle">
+        <button>Indice</button>
+    </div>
+    <nav class="nav-scrollspy content">
+        <ol>
+            <a href="#intro"><li class="section-nav">Introduzione</li></a>
+            <a href="#overview"><li class="section-nav">Panoramica</li></a>
+            <a href="#setup"><li class="section-nav">Setup</li></a>
+            <a href="#rules"><li class="section-nav">Regole</li></a>
+            <ul class="ul-disc">
+                <a href="#first-phase"><li class="section-nav">Prima fase</li></a>
+                <a href="#second-phase"><li class="section-nav">Seconda fase</li></a>
+                <a href="#change-season"><li class="section-nav">Cambio stagione</li></a>
+                <a href="#change-year"><li class="section-nav">Cambio anno</li></a>
+            </ul>
+            <a href="#score"><li class="section-nav">Punteggio</li></a>
+            <a href="#cards-effects"><li class="section-nav">Effetti delle carte</li></a>
+            <a href="#videos"><li class="section-nav">Video tutorial</li></a>
+            <a href="#first-expansion"><li class="section-nav">Prima espansione</li></a>
+            <a href="#second-expansion"><li class="section-nav">Seconda espansione</li></a>
+        </ol>
+    </nav>
+
+</header>
+
 <div class="container">
     <h1>Regolamento solitario Seasons</h1>
     <small>
@@ -9,13 +35,13 @@
             <a href="#first-expansion">la prima espansione Enchanted Kingdoms</a>
             o
             <a href="#second-expansion">la seconda espansione Path of Destiny</a></strong>.</p>
-        <p><a href="#">Video tutorial</a></p>
-    </small>
-
+            <a href="#videos"><button>Video tutorial</button></a>
+        </small>
 
     
+
     <div class="content">
-        <section class="intro">
+        <section id="intro" class="scroll-margin">
             <p>
                 <p>Negli ultimi anni, il malvagio stregone Dummbot (StupidoBot, NdT) ha pianificato di eliminare tutta l'opposizione che potrebbe avere nel torneo delle 12 stagioni... ma si è dimenticato di te.</p>
                 <p>Eri via, all'estero in una scuola di magia, quando il mostro infame ha eliminato tutti gli altri rivali. Ma ora pensi di essere pronto e stai tornando giusto in tempo per il torneo. Solo tu puoi impedire a Dummbot di diventare il nuovo Arcimago di Xidit e di gettare il regno nell'ombra eterna.</p>
@@ -24,7 +50,7 @@
             </p>
         </section>
 
-        <section class="overview">
+        <section id="overview" class="scroll-margin">
             <h2>Panoramica della variante in solitaria</h2>
             <p>
                 <p>Dummbot è, ovviamente, un "robot" che guadagnerà solo cristalli ed evocherà carte potere, il più delle volte senza applicarne gli effetti. Alla fine del gioco, otterrà il suo punteggio semplicemente sommando i suoi cristalli ei punti prestigio delle sue carte evocate. Tu, d'altra parte, seguirai le stesse regole di un gioco normale e conterai il tuo punteggio in modo normale. Il tuo obiettivo è, senza sorpresa, battere il punteggio di Dummbot.</p>
@@ -33,7 +59,7 @@
             </p>
         </section>
         
-        <section class="setup">
+        <section id="setup" class="scroll-margin">
             <h2>Setup</h2>
                 <p>Preparati come al solito per te stesso.</p>
 
@@ -45,8 +71,8 @@
                 <p>Metti tutti i dadi attorno alla ruota delle stagioni, ordinati per colore, e sei pronto.</p>
         </section>
 
-        <section class="rules">
-            <h2>1a fase di gioco: il preludio</h2>
+        <section id="rules" class="scroll-margin">
+            <h2 id="first-phase" class="scroll-margin">1a fase di gioco: il preludio</h2>
             <ul>
                 <li>Pesca 5 carte potere. Metti da parte una carta per la tua mano iniziale, un'altra carta sotto la tua pedina Biblioteca II e una terza carta sotto la tua pedina Biblioteca III. Le 2 carte rimanenti vanno alla mano di Dummbot. La sua mano sarà sempre un’unica pila di carte coperte.</li>
                 <li>Fallo di nuovo altre due volte. Mentre lo fai, puoi guardare tutte le carte sotto le tue pedine biblioteca, ma non puoi riorganizzarle.</li>
@@ -55,7 +81,7 @@
             <p>Nota: sebbene tu abbia visto tutte le carte che iniziano nella mano di Dummbot all'inizio del gioco, quando pescherai altre carte per Dummbot durante il torneo, lo farai senza guardarle.</p>
             
             
-            <h2>2a Fase di Gioco — Il Torneo</h2>
+            <h2 id="second-phase" class="scroll-margin">2a Fase di Gioco — Il Torneo</h2>
             <h3>Ecco la sequenza di un round del torneo:</h3>
             <ol>
                 <li>Scegli a caso 2 dadi della stagione in corso e lanciali.</li>
@@ -82,7 +108,7 @@
                             
             <p>Dummbot evoca sempre le sue carte gratuitamente e ha una barra di invocazione illimitata. D'altra parte di solito non beneficia degli effetti delle sue carte. Solo alcuni famigli attivano effetti (vedi elenco sotto).</p>
             
-            <h2>Cambio di stagione</h2>
+            <h2 id="change-season" class="scroll-margin">Cambio di stagione</h2>
             <p>Ogni volta che la stagione cambia, Dummbot evoca una carta dalla sua mano, se ne ha.</p>
             <ul class="ul-disc">
                 <li><b>Apprendista:</b> mescola le carte in mano a Dummbot e pescane 1 a caso. Giocala nella sua schiera.</li>
@@ -92,7 +118,7 @@
             
             <p>Se ci sono pareggi per i valori di prestigio, scegli una delle carte in parità a caso, senza guardarle.</p>
             
-            <h2>Cambia di anno</h2>
+            <h2 id="change-year" class="scroll-margin">Cambio di anno</h2>
             <p>Procedi come al solito raccogliendo il tuo set di carte riservato, quindi pesca alcune nuove carte dal mazzo che aggiungerai alla mano di Dummbot. Questo va fatto dopo l'evocazione che avviene al cambio di stagione, e il numero di carte da pescare dipende dal livello di difficoltà che hai scelto di giocare:</p>
             <ul class="ul-disc">
                 <li><b>Apprendista:</b> 1 carte</li>
@@ -101,7 +127,7 @@
             </ul>
         </section>
 
-        <section class="score">
+        <section id="score" class="scroll-margin">
             <h2>Punteggio finale</h2>
             <p>Alla fine del terzo anno (non dimenticare l'ultima invocazione del cambio di stagione), il punteggio di Dummbot viene sommato aggiungendo:</p>
             <ul>
@@ -113,7 +139,7 @@
             <p>Per vincere, il giocatore deve battere il punteggio di Dummbot. Un pareggio non basterà, qualunque sia il numero di carte evocate.</p>
         </section>
 
-        <section class="cards-effects">
+        <section id="cards-effects" class="scroll-margin">
             <h2>Effetti delle carte</h2>
             <p>Gli oggetti magici che giochi producono i loro normali effetti, ma non producono effetti quando vengono evocati da Dummbot.</p>
 
@@ -205,11 +231,11 @@
 
         </section>
 
-        <section class="videos">
+        <section id="videos" class="scroll-margin">
             <iframe src="https://www.youtube.com/embed/4W1aQ5Ozc78"></iframe> 
         </section>
 
-        <section id="first-expansion">
+        <section id="first-expansion" class="scroll-margin">
             <h1>- Enchanted Kingdom -</h1>
             
             <p>"Dummbot's Challenge" con la prima espansione di Seasons</p>
@@ -331,7 +357,7 @@
             </ul>
         </section>
 
-        <section id="second-expansion">
+        <section id="second-expansion" class="scroll-margin">
 
             <h1>- Path of Destiny -</h1>
             

@@ -13,10 +13,10 @@
     <link rel="icon" type="image/x-icon" href="{% static 'automa/media/favicon/favicon.ico' %}">
 </head>
 <body>
-        <header>
+        <header id='header'>
             <a class="logo" href="{% url 'rulebooks' %}"><span id="happy">Happy</span> <span id="dungeon">Dungeon</span></a>
             
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a class="btn-flip{% if request.path == '/' or '/rules/' in request.path %} active{% endif %}" href="{% url 'rulebooks' %}" data-text="Regolamenti"></a></li>
                     <li><a class="btn-flip{% if '/automa/' in request.path %} active{% endif %}" href="{% url 'automa_home' %}" data-text="Automa"></a></li>

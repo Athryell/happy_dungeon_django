@@ -35,6 +35,10 @@ body {
   text-align: center;
 }
 
+.scroll-margin {
+  scroll-margin: 50px;
+}
+
 button {
   padding: 0.5em 0.7em;
   background: #292929;
@@ -87,7 +91,7 @@ img {
   color: #21B4FF;
 }
 
-header,
+#header,
 footer {
   display: flex;
   justify-content: space-between;
@@ -123,16 +127,16 @@ footer a svg {
   }
 }
 
-header {
+#header {
   padding-right: 0.5em;
   position: relative;
 }
-header .logo {
+#header .logo {
   font-weight: bold;
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
 }
-header .btn-flip {
+#header .btn-flip {
   opacity: 1;
   line-height: 30px;
   position: relative;
@@ -140,7 +144,7 @@ header .btn-flip {
   display: inline-block;
   text-transform: uppercase;
 }
-header .btn-flip::after {
+#header .btn-flip::after {
   top: 0;
   left: 0;
   opacity: 0;
@@ -153,7 +157,7 @@ header .btn-flip::after {
   content: attr(data-text);
   transform: translateY(-50%) rotateX(90deg);
 }
-header .btn-flip::before {
+#header .btn-flip::before {
   top: 0;
   left: 0;
   opacity: 1;
@@ -166,25 +170,25 @@ header .btn-flip::before {
   content: attr(data-text);
   transform: translateY(0) rotateX(0);
 }
-header .btn-flip:hover::after {
+#header .btn-flip:hover::after {
   opacity: 1;
   transform: translateY(0) rotateX(0);
 }
-header .btn-flip:hover::before {
+#header .btn-flip:hover::before {
   opacity: 0;
   transform: translateY(50%) rotateX(90deg);
 }
-header .active::before {
+#header .active::before {
   background: #E2EDF3;
   color: #292929;
 }
-header li:nth-child(4) a::after,
-header li:nth-child(5) a::after {
+#header li:nth-child(4) a::after,
+#header li:nth-child(5) a::after {
   background-color: red;
   color: white;
   content: "PRESTO!";
 }
-header nav {
+#header nav {
   position: absolute;
   z-index: 10;
   background-color: #292929;
@@ -198,22 +202,22 @@ header nav {
   transition: clip-path ease-in-out 0.7s;
   transition: clip-path ease-in-out 0.7s, -webkit-clip-path ease-in-out 0.7s;
 }
-header nav.nav-open {
+#header nav.nav-open {
   -webkit-clip-path: circle(145% at top right);
           clip-path: circle(145% at top right);
 }
-header nav li {
+#header nav li {
   padding-block: 2em;
   border-bottom: 1px solid #444444;
 }
-header .menu-toggle {
+#header .menu-toggle {
   position: absolute;
   right: 0;
   top: 0;
   padding: 0.6rem 2rem;
   cursor: pointer;
 }
-header .menu-toggle:before, header .menu-toggle:after, header .menu-toggle div {
+#header .menu-toggle:before, #header .menu-toggle:after, #header .menu-toggle div {
   background: #E2EDF3;
   content: "";
   display: block;
@@ -223,17 +227,17 @@ header .menu-toggle:before, header .menu-toggle:after, header .menu-toggle div {
   margin: 7px 0;
   transition: ease-in-out 0.5s;
 }
-header .menu-toggle.menu-toggle-open:before {
+#header .menu-toggle.menu-toggle-open:before {
   transform: translateY(12px) rotate(135deg);
 }
-header .menu-toggle.menu-toggle-open:after {
+#header .menu-toggle.menu-toggle-open:after {
   transform: translateY(-12px) rotate(-135deg);
 }
-header .menu-toggle.menu-toggle-open div {
+#header .menu-toggle.menu-toggle-open div {
   transform: scale(0);
 }
 @media screen and (min-width: 900px) {
-  header nav {
+  #header nav {
     position: relative;
     height: auto;
     float: right;
@@ -241,17 +245,17 @@ header .menu-toggle.menu-toggle-open div {
             clip-path: initial;
     padding: 0;
   }
-  header nav ul {
+  #header nav ul {
     display: flex;
   }
-  header nav ul li {
+  #header nav ul li {
     padding-block: 0;
     border-bottom: none;
   }
-  header nav ul .btn-flip {
+  #header nav ul .btn-flip {
     border-left: 1px solid #444444;
   }
-  header .menu-toggle {
+  #header .menu-toggle {
     display: none;
   }
 }

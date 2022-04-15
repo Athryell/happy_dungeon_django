@@ -20,9 +20,6 @@ def rules(request, html_filename):
             title = r.title
             break
 
-    print(r.title)
-    print(html_filename)
-
     rulebook_to_display = f'rulebooks/{html_filename}.html'
 
     return render(request, f'rulebooks/solorules_base.html', {
