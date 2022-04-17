@@ -32,7 +32,12 @@ body {
 .container {
   margin: 2em;
   margin-top: 0;
+  margin-bottom: 7em;
   text-align: center;
+}
+
+.scroll-margin {
+  scroll-margin: 50px;
 }
 
 button {
@@ -87,6 +92,10 @@ img {
   color: #21B4FF;
 }
 
+footer {
+  margin-top: auto;
+}
+
 #header,
 footer {
   display: flex;
@@ -96,18 +105,17 @@ footer {
   background: #292929;
   color: white;
 }
-
-footer {
-  margin-top: auto;
-}
+#header .creator,
 footer .creator {
   color: rgba(255, 255, 255, 0.5);
 }
+#header a,
 footer a {
   color: white;
   display: inline-block;
   height: 100%;
 }
+#header a svg,
 footer a svg {
   display: none;
   font-size: 1.2rem;
@@ -115,10 +123,12 @@ footer a svg {
   margin-bottom: -0.2em;
 }
 @media screen and (max-width: 400px) {
-  footer .contact_cta {
+  #header .contact_cta,
+footer .contact_cta {
     display: none;
   }
-  footer a svg {
+  #header a svg,
+footer a svg {
     display: block;
   }
 }
