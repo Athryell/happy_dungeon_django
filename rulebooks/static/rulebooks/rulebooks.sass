@@ -1,9 +1,5 @@
-@import ../../../automa/static/automa/base/base
-
-svg
-    font-size: 1.3em
-    margin-bottom: -0.2em
-    margin-right: 0.3em
+@use "../../../main/static/main/utils/colors" as *
+@use "../../../main/static/main/utils/mixins" as *
     
 .rulebooks-container
     max-width: 800px
@@ -27,12 +23,6 @@ svg
     a
         margin-inline: auto
 
-        &:hover,
-        &:focus
-            .rulebook__description
-                outline: 1px solid $secondary-color
-                border-radius: 5px
-                outline-offset: 0.2em
 
 .rulebook__info
     display: grid
@@ -40,39 +30,53 @@ svg
     width: 100%
     gap: 0 1em
 
-    h2
-        margin: 0
+    .rulebook__header
+        .rulebook__header__title
+            margin: 0
+
+        .rulebook__header__tag
+            background-color: $color-orange-400
+            border-radius: 100px
+            text-transform: uppercase
+            letter-spacing: 0.1em
+            font-weight: 700
+            font-size: 0.5rem
+            padding: 0.4em 1em 0.4em 1em
 
     .rulebook__description
-        max-width: 340px
+        margin-top: 0.5em
         display: flex
+        align-items: center
 
         .iconify
-            min-width: 20px
+            margin-right: 0.3em
+            flex-shrink: 0
+        
+    &:hover,
+    &:focus
+        .rulebook__description
+            outline: 1px solid $color-blue-400
+            border-radius: 5px
+            outline-offset: 0.2em
 
-
-    @media screen and ( max-width: 425px)
-        p
-            grid-column: span 2
+    @include for-phone-only
+        .rulebook__description
+            grid-column: span 3
 
 .rulebook__thumbnail
-    width: 10vw
-    height: 10vw
-    max-width: 6em
-    max-height: 6em
-    border-radius: 50%
-    background-color: steelblue
-    grid-row-start: 1
-    grid-row-end: 3
+    width: 3em
+    height: 3em
+    margin-top: 0.4em
+    grid-row: span 2
     
     img
         border-radius: 50%
 
-    @media screen and ( max-width: 340px)
-        grid-row-end: 2
-        
-    
-.rulebook__title
+    @include for-tablet-portrait-up
+        width: 6em
+        height: 6em
+
+.rulebook__header__title
     font-size: 2rem
 
 .rulebook__links
@@ -84,10 +88,19 @@ svg
     li:not(:last-child)
         margin-bottom: 0.4em
 
-    li
+    li  
+        a
+            display: flex
+            align-items: center
+
+            .iconify
+                margin-right: 0.3em
+
         &:hover,
         &:focus
-            outline: 1px solid $primary-color
+            outline: 1px solid $color-orange-400
             outline-offset: 0.2em
             border-radius: 5px 
+
+    @include for-phone-only
 

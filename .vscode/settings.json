@@ -7,7 +7,9 @@
         "mercante",
         "militare",
         "multigiocatore",
-        "regolamenti"
+        "regolamenti",
+        "rgba",
+        "rulebook"
     ],
     "python.linting.pylintEnabled": false,
     "python.linting.banditEnabled": true,

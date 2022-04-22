@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Luckiest+Guy&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #E2EDF3;
+  font-family: "Bitter", arial;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container {
+  margin: 2em;
+  margin-top: 0;
+  margin-bottom: 7em;
+  text-align: center;
+}
+
+.scroll-margin {
+  scroll-margin: 50px;
+}
+
+button {
+  padding: 0.5em 0.7em;
+  background: #292929;
+  border: 1px solid #292929;
+  color: #E2EDF3;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1em;
+}
+button:hover {
+  background: #E2EDF3;
+  color: #292929;
+}
+button:active {
+  background: #a7a7a7;
+}
+
+.btn-primary {
+  background: #FE9A1F;
+  color: #292929;
+}
+
+.btn-secondary {
+  background: #21B4FF;
+  color: #292929;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  height: 100%;
+}
+
+#happy {
+  color: #FE9A1F;
+}
+
+#dungeon {
+  color: #21B4FF;
+}
+
+footer {
+  margin-top: auto;
+}
+
+#header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background: #292929;
+  color: white;
+}
+#header .creator,
+footer .creator {
+  color: rgba(255, 255, 255, 0.5);
+}
+#header a,
+footer a {
+  color: white;
+  display: inline-block;
+  height: 100%;
+}
+#header a svg,
+footer a svg {
+  display: none;
+  font-size: 1.2rem;
+  margin-right: 0.5em;
+  margin-bottom: -0.2em;
+}
+#header {
+  padding-right: 0.5em;
+  position: relative;
+}
+#header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+#header .btn-flip {
+  opacity: 1;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+}
+#header .btn-flip::after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #292929;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  background: #E2EDF3;
+  content: attr(data-text);
+  transform: translateY(-50%) rotateX(90deg);
+}
+#header .btn-flip::before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #E2EDF3;
+  display: block;
+  padding: 0 1.5rem;
+  transition: 0.5s;
+  position: relative;
+  background: #292929;
+  content: attr(data-text);
+  transform: translateY(0) rotateX(0);
+}
+#header .btn-flip:hover::after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+#header .btn-flip:hover::before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+#header .active::before {
+  background: #E2EDF3;
+  color: #292929;
+}
+#header li:nth-child(5) a::after,
+#header li:nth-child(6) a::after {
+  background-color: red;
+  color: white;
+  content: "PRESTO!";
+}
+#header nav {
+  position: absolute;
+  z-index: 10;
+  background-color: #292929;
+  top: 100%;
+  right: 0;
+  padding-inline: 3em;
+  border-bottom-left-radius: 15px;
+  -webkit-clip-path: circle(0 at top right);
+          clip-path: circle(0 at top right);
+  transition: -webkit-clip-path ease-in-out 0.7s;
+  transition: clip-path ease-in-out 0.7s;
+  transition: clip-path ease-in-out 0.7s, -webkit-clip-path ease-in-out 0.7s;
+}
+#header nav.nav-open {
+  -webkit-clip-path: circle(145% at top right);
+          clip-path: circle(145% at top right);
+}
+#header nav li {
+  padding-block: 2em;
+  border-bottom: 1px solid #444444;
+}
+#header .menu-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.6rem 2rem;
+  cursor: pointer;
+}
+#header .menu-toggle:before, #header .menu-toggle:after, #header .menu-toggle div {
+  background: #E2EDF3;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 2em;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: ease-in-out 0.5s;
+}
+#header .menu-toggle.menu-toggle-open:before {
+  transform: translateY(12px) rotate(135deg);
+}
+#header .menu-toggle.menu-toggle-open:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+#header .menu-toggle.menu-toggle-open div {
+  transform: scale(0);
+}
+@media (min-width: 1200px) {
+  #header nav {
+    position: relative;
+    height: auto;
+    float: right;
+    -webkit-clip-path: initial;
+            clip-path: initial;
+    padding: 0;
+  }
+  #header nav ul {
+    display: flex;
+  }
+  #header nav ul li {
+    padding-block: 0;
+    border-bottom: none;
+  }
+  #header nav ul .btn-flip {
+    border-left: 1px solid #444444;
+  }
+  #header .menu-toggle {
+    display: none;
+  }
+}
+
+#page-title {
+  font-size: min(2em, 8vw);
+  margin-inline: auto;
+  color: rgba(0, 0, 0, 0.5);
+}/*# sourceMappingURL=base.css.map */

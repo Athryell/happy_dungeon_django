@@ -1,4 +1,4 @@
-{% extends 'automa/base.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% block link %}
@@ -11,76 +11,86 @@
 
 {% block body %}
 
-     <div class="container rulebooks-container">
-        {% for r in rulebooks %}
-            {% if r.is_ready == True %}
-                <div class="rulebook">
-                    
-                    <a href="{% url 'rules' r.link_to_page_rules%}">
-                        <div class="rulebook__info">
-                            <div class="rulebook__thumbnail">
-                            {% if r.thumbnail %}
-                                <img src="{{ r.thumbnail.url }}" alt="tn {{ r.title }}">
-                            {% endif %}
-                            </div>
-                            
-                            <h2 class="rulebook__title">{{ r.title }}</h2>
-                            <div class="rulebook__description">
-                                <span class="iconify" data-icon="carbon:document"></span>
-                                <span>{{ r.description }}</span>
-                            </div>
+<div class="container rulebooks-container">
+    {% for r in rulebooks %}
+        {% if r.is_ready == True %}
+            <div class="rulebook">
+                
+                <a href="{% url 'rules' r.link_to_page_rules%}">
+                    <div class="rulebook__info">
+                        <div class="rulebook__thumbnail">
+                        {% if r.thumbnail %}
+                            <img src="{{ r.thumbnail.url }}" alt="tn {{ r.title }}">
+                        {% endif %}
                         </div>
-                    </a>
+                        
+                        <div class="rulebook__header">
+                            <h2 class="rulebook__header__title">{{ r.title }}</h2>
+                            <span class="rulebook__header__tag">
+                                {% if r.is_official == True %}
+                                    Ufficiale
+                                {% else %}
+                                    Non Ufficiale
+                                {% endif %}
+                            </span>
+                        </div>
 
-                    <div class="rulebook__links">
-                        <ul>
-                            {% if r.link_original %}
-                                <li><a href="{{ r.link_original }}" target="_blank">
-                                    <span class="iconify" data-icon="akar-icons:link-out"></span>
-                                    Regolamento originale (eng)
-                                </a></li>
-                            {% endif %}
-                            {% if r.link_ita %}
-                                <li><a href="{{ r.link_ita }}" target="_blank">
-                                    <span class="iconify" data-icon="akar-icons:link-out"></span>
-                                    Regolamento su BGG (ita)
-                                </a></li>
-                            {% endif %}
-                            {% if r.file_PDF %}
-                                <li><a href="{{ r.file_PDF }}" target="_blank">
-                                    <span class="iconify" data-icon="carbon:document-pdf"></span>
-                                    Download PDF (ita)
-                                </a></li>
-                            {% endif %}
-                            {% if r.link_amazon %}
-                                <li><a href="{{ r.link_amazon }}" target="_blank">
-                                    <span class="iconify" data-icon="icon-park-outline:buy"></span>
-                                    Qui puoi acquistare il gioco
-                                </a></li>
-                            {% endif %}
-
-                            {% for url in r.url.all %}
-                                <li><a href="{{ url.url }}" target="_blank">
-                                    
-                                    {% if url.link_type == 'VID' %}
-                                        <span class="iconify" data-icon="akar-icons:video"></span>
-                                    {% elif url.link_type == 'FIL' %}
-                                        <span class="iconify" data-icon="akar-icons:file"></span>
-                                    {% elif url.link_type == 'PDF' %} 
-                                        <span class="iconify" data-icon="bi:filetype-pdf"></span>
-                                    {% else %}
-                                        <span class="iconify" data-icon="akar-icons:link-out"></span>
-                                    {% endif %}
-
-                                    {{ url.url_name }}
-                                </a></li>
-                            {% endfor %}
-                        </ul>
+                        <div class="rulebook__description">
+                            <span class="iconify" data-icon="carbon:document"></span>
+                            <span>{{ r.description }}</span>
+                        </div>
                     </div>
+                </a>
+
+                <div class="rulebook__links">
+                    <ul>
+                        {% if r.link_original %}
+                            <li><a href="{{ r.link_original }}" target="_blank">
+                                <span class="iconify" data-icon="akar-icons:link-out"></span>
+                                Regolamento originale (eng)
+                            </a></li>
+                        {% endif %}
+                        {% if r.link_ita %}
+                            <li><a href="{{ r.link_ita }}" target="_blank">
+                                <span class="iconify" data-icon="akar-icons:link-out"></span>
+                                Regolamento su BGG (ita)
+                            </a></li>
+                        {% endif %}
+                        {% if r.file_PDF %}
+                            <li><a href="{{ r.file_PDF }}" target="_blank">
+                                <span class="iconify" data-icon="carbon:document-pdf"></span>
+                                Download PDF (ita)
+                            </a></li>
+                        {% endif %}
+                        {% if r.link_amazon %}
+                            <li><a href="{{ r.link_amazon }}" target="_blank">
+                                <span class="iconify" data-icon="icon-park-outline:buy"></span>
+                                Qui puoi acquistare il gioco
+                            </a></li>
+                        {% endif %}
+
+                        {% for url in r.url.all %}
+                            <li><a href="{{ url.url }}" target="_blank">
+                                
+                                {% if url.link_type == 'VID' %}
+                                    <span class="iconify" data-icon="akar-icons:video"></span>
+                                {% elif url.link_type == 'FIL' %}
+                                    <span class="iconify" data-icon="akar-icons:file"></span>
+                                {% elif url.link_type == 'PDF' %} 
+                                    <span class="iconify" data-icon="bi:filetype-pdf"></span>
+                                {% else %}
+                                    <span class="iconify" data-icon="akar-icons:link-out"></span>
+                                {% endif %}
+
+                                {{ url.url_name }}
+                            </a></li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            {% endif %}
-        {% endfor %}
-    </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
 
 {% endblock %}
 

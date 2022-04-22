@@ -3,6 +3,7 @@ from django.db import models
 class Rulebook(models.Model):
     is_ready = models.BooleanField(default=False)
     title = models.CharField(max_length=32)
+    is_official = models.BooleanField(default=False)
     thumbnail = models.ImageField(upload_to="rulebooks/thumbnails", null=True, blank=True)
     description = models.TextField()
     link_to_page_rules = models.CharField(max_length=128)

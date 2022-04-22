@@ -37,6 +37,7 @@ CSRF_TRUSTED_ORIGINS = ['https://*.happydungeon.quest','https://*.127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'main',
     'automa',
     'rulebooks',
     'tutorials',
