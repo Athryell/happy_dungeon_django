@@ -56,6 +56,8 @@ goBackBtn.addEventListener('click', () => {
 
     confirmationBox.hidden = true
     randomBtn.style.display = 'inline-block'
+    randomBtn.style.visibility = 'visible'
+
     resetCheckbox()
     checkbox.parentElement.style.display = 'none'
 

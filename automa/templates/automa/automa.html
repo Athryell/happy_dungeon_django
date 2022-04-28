@@ -11,7 +11,7 @@
 {% block body %}
     <div class="search-bar">
         <div class="bar">
-            <input type="text" placeholder="Cosa cerchi?">
+            <input class="search-input" type="text" placeholder="Cosa cerchi?">
             <div class="search-icon"><span class="iconify" data-icon="fa6-solid:magnifying-glass"></span></div>
         </div>
     </div>
@@ -24,7 +24,7 @@
                     <div class="game-top {% if bg.size == 'S' %} game-top-small {% endif %}" data-label="{% if 'automa' in bg.tags.all|lower %}automa{% else %}solitario{% endif %}">
                         <div class="shadow"></div>
                         <a href="{% url 'automa' bg.short_title %}">
-                            <img src="{{ bg.image.url }}" alt="{{ bg.title }}">
+                            <img src="{% static 'automa/media/games_cover/' %}{{ bg.short_title }}-cover.webp" alt="{{ bg.title }}">
                         </a>
                     </div>
                     <div class="game-bottom {% if bg.size == 'S' %} game-bottom-small {% endif %}"></div>

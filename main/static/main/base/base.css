@@ -51,7 +51,7 @@ button {
   transition: background 0.3s, color 0.3s;
   font-size: 1em;
 }
-button:hover {
+button:hover, button:focus {
   background: #E2EDF3;
   color: #292929;
 }

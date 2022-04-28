@@ -20,7 +20,9 @@
                     <div class="rulebook__info">
                         <div class="rulebook__thumbnail">
                         {% if r.thumbnail %}
-                            <img src="{{ r.thumbnail.url }}" alt="tn {{ r.title }}">
+                            {% with img_name=r.title|lower %}
+                                <img src="{% static 'media/' %}tn_{{ img_name | cut:' ' }}.webp" alt="{{ r.title }} thumbnail">
+                            {% endwith %}
                         {% endif %}
                         </div>
                         
