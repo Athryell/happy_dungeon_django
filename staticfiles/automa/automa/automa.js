@@ -1,11 +1,16 @@
 const bar = document.querySelector('.bar')
-const inputSearch = document.querySelector('input')
+const inputSearch = document.querySelector('.search-input')
 const games = document.querySelectorAll('.game-containers')
 
 // Search bar
 bar.addEventListener('click', () => {
     bar.style.transform = 'rotateY(0)'
     inputSearch.focus()
+})
+
+inputSearch.addEventListener('focus', () => {
+    bar.style.transform = 'rotateY(0)'
+    console.log('focused')
 })
 
 inputSearch.addEventListener('blur', () => {

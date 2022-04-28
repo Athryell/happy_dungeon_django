@@ -1,10 +1,5 @@
 @use "../../../main/static/main/utils/colors" as *
 @use "../../../main/static/main/utils/mixins" as *
-
-svg
-    font-size: 1.3em
-    margin-bottom: -0.2em
-    margin-right: 0.3em
     
 .rulebooks-container
     max-width: 800px
@@ -20,7 +15,7 @@ svg
     flex-wrap: wrap
     margin-inline: 2em
     padding: 1em
-    gap: 2em
+    gap: 1em
     margin-bottom: 3em
     border: 1px solid rgba(0, 0, 0, 0.2)
     border-radius: 5px
@@ -36,57 +31,65 @@ svg
     gap: 0 1em
 
     .rulebook__header
+
         .rulebook__header__title
             margin: 0
 
         .rulebook__header__tag
+            position: relative
             background-color: $color-orange-400
             border-radius: 100px
             text-transform: uppercase
             letter-spacing: 0.1em
             font-weight: 700
             font-size: 0.5rem
-            padding: 0.4em 1em 0.4em 1em
+            padding: 0.4em 1em 0.4em 2em
+
+            &::before
+                content: ''
+                position: absolute
+                left: 0.7em
+                top: 50%
+                transform: translateY(-50%)
+                width: 5px
+                height: 5px
+                border-radius: 50%
+                background-color: rgba(0, 0, 0, 0.2)
 
     .rulebook__description
-        max-width: 340px
+        margin-top: 1em
         display: flex
+        align-items: center
 
         .iconify
-            min-width: 20px
+            margin-right: 0.3em
+            flex-shrink: 0
         
-    &:hover
-        background-color: red
-    // &:focus
-    //     .rulebook__description
-    //         outline: 1px solid $color-blue-400
-    //         border-radius: 5px
-    //         outline-offset: 0.2em
+    &:hover,
+    &:focus
+        .rulebook__description
+            outline: 1px solid $color-blue-400
+            border-radius: 5px
+            outline-offset: 0.2em
 
     @include for-phone-only
-        .rulebook__title
-            text-align: center
-
         .rulebook__description
-            margin-top: 1em
             grid-column: span 3
 
 .rulebook__thumbnail
-    width: 10vw
-    height: 10vw
-    max-width: 6em
-    max-height: 6em
-    grid-row-start: 1
-    grid-row-end: 3
+    width: 3em
+    height: 3em
+    margin-top: 0.4em
+    grid-row: span 2
     
     img
         border-radius: 50%
 
-    // @media screen and ( max-width: 340px)
-    @include for-phone-only
-        grid-row-end: 2
+    @include for-tablet-portrait-up
+        width: 6em
+        height: 6em
 
-.rulebook__title
+.rulebook__header__title
     font-size: 2rem
 
 .rulebook__links
@@ -98,10 +101,16 @@ svg
     li:not(:last-child)
         margin-bottom: 0.4em
 
-    li
+    li  
+        a
+            display: flex
+            align-items: center
+
+            .iconify
+                margin-right: 0.3em
+
         &:hover,
         &:focus
             outline: 1px solid $color-orange-400
             outline-offset: 0.2em
-            border-radius: 5px 
-
+            border-radius: 5px
