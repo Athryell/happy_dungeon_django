@@ -19,11 +19,9 @@
                 <a href="{% url 'rules' r.link_to_page_rules%}">
                     <div class="rulebook__info">
                         <div class="rulebook__thumbnail">
-                        {% if r.thumbnail %}
-                            {% with img_name=r.title|lower %}
-                                <img src="{% static 'media/' %}tn_{{ img_name | cut:' ' }}.webp" alt="{{ r.title }} thumbnail">
-                            {% endwith %}
-                        {% endif %}
+                        {% with img_name=r.title|lower %}
+                            <img src="{% static 'media/' %}tn_{{ img_name | cut:' ' }}.webp" alt="{{ r.title }} thumbnail">
+                        {% endwith %}
                         </div>
                         
                         <div class="rulebook__header">
