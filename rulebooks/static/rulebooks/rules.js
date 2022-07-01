@@ -1,4 +1,3 @@
-//Get the button:
 const goTopButton = document.getElementById('topBtn')
 const header = document.getElementById('header')
 const scrollSpyHeader = document.getElementById('header-scrollspy')

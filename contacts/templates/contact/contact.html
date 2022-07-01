@@ -18,8 +18,7 @@
         <h2>Fammi sapere!</h2>
         <p>Sentiti liber* di contattarmi. Sono sempre aperto ad ascoltare consigli, nuovi progetti o idee creative in generale!</p>
         
-        <!-- <form onsubmit="sendEmail(); reset(); return false;"> -->
-        <form action="{% url 'contact' %}" method="post">
+        <form action="{% url 'contact' %}" method="POST">
             {% csrf_token %}
             <div class="input-container">
                 <input type="text" id="name" name="message-name" class="input-container__input" autocomplete="off" placeholder=" " required>
