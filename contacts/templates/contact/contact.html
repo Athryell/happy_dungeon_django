@@ -17,8 +17,8 @@
 <section id="contact-form" class="block form-block">
         <h2>Fammi sapere!</h2>
         <p>Sentiti liber* di contattarmi. Sono sempre aperto ad ascoltare consigli, nuovi progetti o idee creative in generale!</p>
-        
-        <form action="{% url 'contact' %}" method="POST">
+
+        <!-- <form action="{% url 'contact' %}" method="POST">
             {% csrf_token %}
             <div class="input-container">
                 <input type="text" id="name" name="message-name" class="input-container__input" autocomplete="off" placeholder=" " required>
@@ -45,7 +45,35 @@
                 <span class="iconify" data-icon="carbon:send-alt"></span>
                 Invia
             </button>
+        </form> -->
+
+        <form class="contact-form" action="https://formsubmit.co/happy_dungeon@hotmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from portfolio!">
+
+            <div class="input-container">
+                <input type="text" id="name" name="name" class="input-container__input" autocomplete="off" placeholder=" " required>
+                <label for="name" class="input-container__label">
+                    <span class="contact-name">Nome</span>
+                </label>
+            </div>
+
+            <div class="input-container">
+                <input type="email" id="email" name="email" class="input-container__input" autocomplete="off" placeholder=" " required>
+                <label for="email" class="input-container__label">
+                    <span class="content-email">Email</span>
+                </label>
+            </div>
+
+            <div class="input-container input-container__textarea">
+                <textarea type="text" cols="30" rows="1" class="input-container__input" name="message-text" id="message" autocomplete="off" placeholder=" " required></textarea>
+                <label for="message" class="input-container__label">
+                    <span class="content-text">Il tuo messaggio</span>
+                </label>
+            </div>
+
+            <button class="btn-big" type="submit">Invia<span class="iconify" data-icon="carbon:send-alt"></span></button>
         </form>
+        
 </section>
 {% endif %}
 
