@@ -5,14 +5,7 @@
     <link rel="stylesheet" href="{% static 'contact/contact.css' %}">
 {% endblock %}
 
-
 {% block body %}
-{% if message_name %}
-    <div class="alert-message">
-        <h2>Grazie {{ message_name }}!</h2>
-        <p>Email ricevuta! La leggo il prima possibile :-)</p>
-    </div>
-{% else %}
 
 <section id="contact-form" class="block form-block">
         <h2>Fammi sapere!</h2>
@@ -48,6 +41,8 @@
         </form> -->
 
         <form class="contact-form" action="https://formsubmit.co/happy_dungeon@hotmail.com" method="POST">
+            <input type="hidden" name="_url" value="https://www.happydungeon.quest/contact/mail-sent/">
+            <input type="hidden" name="_next" value="https://www.happydungeon.quest/contact/mail-sent/">
             <input type="hidden" name="_subject" value="New message from portfolio!">
 
             <div class="input-container">
@@ -75,12 +70,11 @@
         </form>
         
 </section>
-{% endif %}
 
 {% endblock %}
 
 {% block script %}
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
 
 {% endblock %}

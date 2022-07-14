@@ -21,3 +21,6 @@ def contact(request):
 #     else:
     return render(request, 'contact/contact.html')
 
+def mail_sent(request):
+    return render(request, 'contact/mail-sent.html')
+

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'contact/contact.css' %}">
+{% endblock %}
+
+
+{% block body %}
+
+
+
+    <div class="alert-message">
+        <h2>Grazie!</h2>
+        <p>Email ricevuta, la leggo il prima possibile :-)</p>
+    </div>
+
+    <a class="go-back-btn" href="{% url 'homepage' %}"> &lArr; Riportami alla Home</a>
+
+
+
+{% endblock %}

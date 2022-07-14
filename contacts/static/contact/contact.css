@@ -80,11 +80,24 @@ button svg {
 }
 
 .alert-message {
-  border: 3px solid green;
-  padding: 1em 2em;
   max-width: 500px;
-  margin-top: 5em;
   margin-inline: auto;
-  border-radius: 5px;
   text-align: center;
+}
+.alert-message h2 {
+  font-size: 2.5rem;
+}
+.alert-message p {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.go-back-btn {
+  display: inline-block;
+  background: #21B4FF;
+  border-radius: 4px;
+  padding: 0.4em 1em;
+  margin: 5em auto;
+  font-size: 1.2rem;
+  font-weight: bold;
 }/*# sourceMappingURL=contact.css.map */
