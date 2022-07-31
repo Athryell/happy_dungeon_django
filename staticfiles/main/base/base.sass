@@ -97,6 +97,9 @@ img
 
 footer
     margin-top: auto
+    
+    .icon_cta
+        display: none
 
 #header,
 footer
@@ -116,19 +119,16 @@ footer
         height: 100%
 
         svg
-            display: none
             font-size: 1.2rem
-            margin-right: .5em
             margin-bottom: -0.2em
 
-    @media screen and ( max-width: 400px )
-    // @include for-phone-only
+    // @media screen and ( min-width: 400px )
+    @include for-phone-only
         .contact_cta
             display: none
 
-        a
-            svg
-                display: block
+        .icon_cta
+            display: block
 
 #header
     padding-right: 0.5em

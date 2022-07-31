@@ -12,7 +12,7 @@
     border-radius: 5px
     min-width: 250px
     width: 20vw
-    box-shadow: inset 0 -150px 100px -100px black, 5px 5px 10px rgba(0, 0, 0, 0.5)
+    box-shadow: inset 0 -160px 100px -100px black, 5px 5px 10px rgba(0, 0, 0, 0.5)
 
     &::after
         z-index: -1
@@ -47,6 +47,9 @@
         margin: 0
         color: white
         transition: transform 0.5s
+
+        &--twolines
+            transform: translateX(-50%) translateY(100%)
 
         &::before,
         &::after

@@ -95,6 +95,9 @@ img {
 footer {
   margin-top: auto;
 }
+footer .icon_cta {
+  display: none;
+}
 
 #header,
 footer {
@@ -117,11 +120,20 @@ footer a {
 }
 #header a svg,
 footer a svg {
-  display: none;
   font-size: 1.2rem;
-  margin-right: 0.5em;
   margin-bottom: -0.2em;
 }
+@media (max-width: 599px) {
+  #header .contact_cta,
+footer .contact_cta {
+    display: none;
+  }
+  #header .icon_cta,
+footer .icon_cta {
+    display: block;
+  }
+}
+
 #header {
   padding-right: 0.5em;
   position: relative;
