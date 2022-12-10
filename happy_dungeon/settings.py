@@ -28,7 +28,8 @@ DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = [
     'happydungeon.quest',
-    '*'
+    'www.hapydungeon.quest',
+    'web-production-5f1d.up.railway.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://*.happydungeon.quest','https://*.127.0.0.1']
