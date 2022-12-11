@@ -28,7 +28,7 @@ DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = [
     'happydungeon.quest',
-    'www.hapydungeon.quest',
+    'www.happydungeon.quest',
     'web-production-5f1d.up.railway.app'
 ]
 
