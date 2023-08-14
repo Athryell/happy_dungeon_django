@@ -27,6 +27,7 @@ SECRET_KEY = os.environ.get('HD_SECRET_KEY')
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'happydungeon.quest',
     'www.happydungeon.quest',
     '.vercel.app'
