@@ -9,7 +9,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "django_app_name/wsgi.py"
+        "dest": "happy_dungeon/wsgi.py"
       }
     ]
 }
