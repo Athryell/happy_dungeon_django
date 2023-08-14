@@ -81,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'happy_dungeon.wsgi.application'
+WSGI_APPLICATION = 'happy_dungeon.wsgi.app'
 
 
 # Database
