@@ -94,9 +94,9 @@ DATABASES = {
          'OPTIONS': {
             'timeout': 20,
             'check_same_thread': False,
+            'version': '3.9.0',
         },
         'CONN_MAX_AGE': 600,
-        'VERSION': '3.9.0',
     }
 }
 
